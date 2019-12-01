@@ -9,7 +9,15 @@ public class AgentDestroyer : MonoBehaviour
         if (other.name == "KillPlane")
         {
             GameManager.Instance.GetComponent<PopulationController>()
-                .DespawnAgent(gameObject);
+                .RemoveAgent(gameObject);
+            Destroy(gameObject);
+        }
+
+        if (other.tag == "Exit")
+        {
+            GameManager.Instance.GetComponent<PopulationController>()
+                .RemoveAgent(gameObject);
+            Destroy(gameObject);
         }
     }
 }

@@ -7,35 +7,48 @@ public class PopulationController : MonoBehaviour
     [SerializeField]
     private List<GameObject> agents = new List<GameObject>();
 
-    [Range(100, 1000)]
+    [Range(0, 10000)]
     [SerializeField]
     private int maxAgents;
 
     [SerializeField]
     private GameObject agentPrefab;
 
-    private void Update()
+    [SerializeField]
+    private Transform agentHolder;
+
+    private void Start()
     {
-        ControlPopulation();
+        SpawnPopulation();
     }
 
-    private void ControlPopulation()
+    private void SpawnPopulation()
     {
-        if (agents.Count < maxAgents)
+        for (int i = 0; i < maxAgents; i++)
         {
-            SpawnAgent();
+            SpawnAgent(i);
         }
     }
 
-    private void SpawnAgent()
+    private void SpawnAgent(int i)
     {
-        GameObject agent = Instantiate(agentPrefab);
+        GameObject agent = Instantiate(agentPrefab, agentHolder);
+        agent.name += i;
         agents.Add(agent);
     }
 
-    public void DespawnAgent(GameObject agent)
+    public void RemoveAgent(GameObject agent)
     {
-        Destroy(agent);
         agents.Remove(agent);
+    }
+
+    public GameObject GetRandomAgent()
+    {
+        return agents[Random.Range(0, agents.Count - 1)];
+    }
+
+    public int GetAgentListSize()
+    {
+        return agents.Count;
     }
 }
