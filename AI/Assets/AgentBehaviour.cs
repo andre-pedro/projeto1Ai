@@ -10,11 +10,15 @@ public class AgentBehaviour : MonoBehaviour
     public bool isAlive;
     public bool isStunned;
     public bool inPanic;
-    public bool isHungry;
-    public bool isTired;
 
+    private bool isHungry;
+    private bool isTired;
+
+    private bool isHavingFun;
     private bool isEating;
     private bool isResting;
+    private bool isGoingToFun;
+    private bool isGoingToRest;
 
     private NavMeshAgent agent;
     private NavMeshPath path;
@@ -22,105 +26,77 @@ public class AgentBehaviour : MonoBehaviour
     private Vector3 destination;    
     private Vector3 panicOrigin;
 
+    private GameObject[] stages;
+    private GameObject[] openAreas;
+
     private Transform exit;
     private Transform restauracao;
-    private Transform openArea;
 
-    public float hunger = 100f;
-    public float tired = 100f;
+    private float hunger;
+    private float tired;
+    private float fun = 0f;
+
+    private int x = default;
     
 
     private void Start()
-    {
+    {        
+        hunger = Random.Range(50f, 100f);
+        tired = Random.Range(50f, 100f);
+
         path = new NavMeshPath();
         agent = GetComponent<NavMeshAgent>();
 
+        stages = GameObject.FindGameObjectsWithTag("Fun");
+        openAreas = GameObject.FindGameObjectsWithTag("Open");
+
         exit = GameObject.FindGameObjectWithTag("Exit").transform;
         restauracao = GameObject.FindGameObjectWithTag("Eat").transform;
-        openArea = GameObject.FindGameObjectWithTag("Open").transform;
-
-        behaviour = Behaviour.Wander;
+        
+        
+        behaviour = Behaviour.Seek;
 
         isAlive = true;
     }
 
     private void Update()
     {
+        //Debug.Log($"Hunger - {hunger} {isHungry} | tired {tired} {isTired} | fun {fun} \n GoingToRest {isGoingToRest} | GoingToFun {isGoingToFun} | isResting {isResting}");
 
-        if (!isEating)
+        if (!inPanic && !isStunned && isAlive)
         {
-            if (hunger >= 0.03f)
-            {
-                hunger -= Random.Range(0f, 0.03f);
-            }
-        }
-        else
-        {
-            hunger += Random.Range(0.3f, 0.8f);
+            Conditions();
+            ChecksStats();
+        }        
 
-            if (hunger > Random.Range(75f, 101f))
-            {
-                isHungry = false;
-                StopCoroutine(GoToFood());
-            }
-        }
-
-        if (!isResting)
-        {
-            if (tired >= 0.05f)
-            {
-                tired -= Random.Range(0f, 0.05f);
-            }
-        }
-        else
-        {
-            tired += Random.Range(0.3f, 0.8f);
-
-            if(tired > Random.Range(75f, 101f))
-            {
-                isTired = false;
-                StopCoroutine(GoToOpenZone());
-            }
-        }                 
-        
         switch (behaviour)
         {
             case Behaviour.Idle:
                 Idle();
                 break;
 
-            case Behaviour.Wander:
-                if (hunger <= 25f)
-                {
-                    isHungry = true;
-                    behaviour = Behaviour.Seek;                        
-                }
-                if (tired <= 25f)
-                {
-                    isTired = true;
-                    behaviour = Behaviour.Seek;
-                }
-                
-                Wander();
-                                   
+            case Behaviour.Wander:                               
+                Wander();                                   
                 break;
 
             case Behaviour.Seek:
                 //Prioritizes Food over Tired
                 if (isHungry)
-                {
+                {                    
                     SeekFood();
 
-                }else if (isTired)
+                }else if (isTired && !isGoingToRest)
                 {
+                    isGoingToRest = true;
                     SeekOpenZone();
                 }
 
-                if (!isHungry && !isTired)
+                if (!isHungry && !isTired && !isGoingToFun)
                 {
-                    behaviour = Behaviour.Wander;
-                }
-                
+                    isGoingToRest = false;
+                    isGoingToFun = true;
+                    SeekFun();
+                }        
                 break;
 
             case Behaviour.Flee:
@@ -128,33 +104,104 @@ public class AgentBehaviour : MonoBehaviour
                 break;
         }       
         
+    }    
+
+    private void Conditions()
+    {
+        if (!isEating)
+        {
+            if (hunger >= 0.03f)
+            {
+                hunger -= 0.01f;
+            }
+        }
+        else
+        {
+            hunger += Random.Range(0.3f, 0.8f);
+        }
+
+        if (isHavingFun)
+        {
+            fun += Random.Range(0.01f, 0.04f);
+            if(tired <= 0.05f)
+            {
+                // nao faz nada para estabilizar o valor e nao estar sempre a por tired = 0
+            }
+            else
+            {
+                tired -= Random.Range(0.02f, 0.05f);
+            }           
+
+            if (fun > Random.Range(100f, 251f))
+            {
+                StopAllCoroutines();
+                StartCoroutine(RunToExit());
+            }
+        }
+
+        if (isResting)
+        {
+            tired += Random.Range(0.3f, 0.8f);
+        }
     }
 
-
-
-    private void OnTriggerStay(Collider other)
+    private void ChecksStats()
     {
-        Debug.Log($"TouchedTag {other.gameObject.tag}");
+        if (hunger <= 25f)
+        {
+            isHungry = true;
+            isGoingToFun = false;
+            isGoingToRest = false;
+        }
+        else
+        {           
+            isHungry = false;
+            StopCoroutine(GoToFood());
+        }
+        if (tired <= 50f)
+        {
+            isGoingToFun = false;
+            isTired = true;
+        }
+        else
+        {
+            isTired = false;
+            StopCoroutine(GoToOpenZone(x));
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log(other.gameObject.tag);
 
         if (other.gameObject.tag == "Eat")
         {
             isEating = true;
-        }
-        else
-        {
-            isEating = false;
         }
 
         if (other.gameObject.tag == "Open")
         {
             isResting = true;
         }
-        else
+
+        if (other.gameObject.tag == "Fun")
         {
-            isResting = false;
+            isHavingFun = true;
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        isEating = false;
+        isResting = false;
+        isHavingFun = false;
+    }
+
+    private void SeekFun()
+    {
+        int i = Random.Range(0, stages.Length);
+        StartCoroutine(GoToFun(i));
+    }
 
     private void Idle()
     {
@@ -168,7 +215,8 @@ public class AgentBehaviour : MonoBehaviour
 
     private void SeekOpenZone()
     {
-        StartCoroutine(GoToOpenZone());
+        int i = Random.Range(0, openAreas.Length);
+        StartCoroutine(GoToOpenZone(i));
     }
 
     private void Wander()
@@ -207,6 +255,7 @@ public class AgentBehaviour : MonoBehaviour
         inPanic = true;
         panicOrigin = origin;
         behaviour = Behaviour.Flee;
+        StopAllCoroutines();
         Flee();
     }
 
@@ -261,13 +310,19 @@ public class AgentBehaviour : MonoBehaviour
         }
     }
 
-    private IEnumerator GoToOpenZone()
+    private IEnumerator GoToOpenZone(int i)
     {
         yield return new WaitForSeconds(Random.Range(5, 10));
         if (isTired)
         {
-            agent.SetDestination(openArea.position);
+            agent.SetDestination(openAreas[i].transform.position);
         }
+    }
+
+    private IEnumerator GoToFun(int i)
+    {
+        yield return new WaitForSeconds(Random.Range(5, 10));
+        agent.SetDestination(stages[i].transform.position);
     }
 
     private IEnumerator RunToExit()
