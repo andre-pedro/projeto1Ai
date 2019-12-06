@@ -13,6 +13,9 @@ public class AgentBehaviour : MonoBehaviour
     public bool isHungry;
     public bool isTired;
 
+    private bool isEating;
+    private bool isResting;
+
     private NavMeshAgent agent;
     private NavMeshPath path;
 
@@ -23,15 +26,12 @@ public class AgentBehaviour : MonoBehaviour
     private Transform restauracao;
     private Transform openArea;
 
-    private float hunger;
-    private float tired;
+    public float hunger = 100f;
+    public float tired = 100f;
     
 
     private void Start()
     {
-        hunger = Random.Range(50f, 101f);
-        tired = Random.Range(50f, 101f);
-
         path = new NavMeshPath();
         agent = GetComponent<NavMeshAgent>();
 
@@ -47,22 +47,41 @@ public class AgentBehaviour : MonoBehaviour
     private void Update()
     {
 
-        if(hunger >= 0f)
+        if (!isEating)
         {
-            hunger -= Random.Range(0f, 0.03f);
-
-        }else if (hunger < 0f)
-        {
-            hunger = 0f;
+            if (hunger >= 0.03f)
+            {
+                hunger -= Random.Range(0f, 0.03f);
+            }
         }
-        if (tired >= 0f)
+        else
         {
-            tired -= Random.Range(0f, 0.04f);
+            hunger += Random.Range(0.3f, 0.8f);
 
-        }else if(tired < 0f)
+            if (hunger > Random.Range(75f, 101f))
+            {
+                isHungry = false;
+                StopCoroutine(GoToFood());
+            }
+        }
+
+        if (!isResting)
         {
-            tired = 0f;
-        }                   
+            if (tired >= 0.05f)
+            {
+                tired -= Random.Range(0f, 0.05f);
+            }
+        }
+        else
+        {
+            tired += Random.Range(0.3f, 0.8f);
+
+            if(tired > Random.Range(75f, 101f))
+            {
+                isTired = false;
+                StopCoroutine(GoToOpenZone());
+            }
+        }                 
         
         switch (behaviour)
         {
@@ -94,7 +113,12 @@ public class AgentBehaviour : MonoBehaviour
 
                 }else if (isTired)
                 {
+                    SeekOpenZone();
+                }
 
+                if (!isHungry && !isTired)
+                {
+                    behaviour = Behaviour.Wander;
                 }
                 
                 break;
@@ -103,9 +127,34 @@ public class AgentBehaviour : MonoBehaviour
                 if (agent.remainingDistance < 0.5f) Debug.Log("DONE");
                 break;
         }       
-
         
     }
+
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log($"TouchedTag {other.gameObject.tag}");
+
+        if (other.gameObject.tag == "Eat")
+        {
+            isEating = true;
+        }
+        else
+        {
+            isEating = false;
+        }
+
+        if (other.gameObject.tag == "Open")
+        {
+            isResting = true;
+        }
+        else
+        {
+            isResting = false;
+        }
+    }
+
 
     private void Idle()
     {
@@ -115,6 +164,11 @@ public class AgentBehaviour : MonoBehaviour
     private void SeekFood()
     {
         StartCoroutine(GoToFood());
+    }
+
+    private void SeekOpenZone()
+    {
+        StartCoroutine(GoToOpenZone());
     }
 
     private void Wander()
@@ -204,6 +258,15 @@ public class AgentBehaviour : MonoBehaviour
         if (isHungry)
         {
             agent.SetDestination(restauracao.position);
+        }
+    }
+
+    private IEnumerator GoToOpenZone()
+    {
+        yield return new WaitForSeconds(Random.Range(5, 10));
+        if (isTired)
+        {
+            agent.SetDestination(openArea.position);
         }
     }
 

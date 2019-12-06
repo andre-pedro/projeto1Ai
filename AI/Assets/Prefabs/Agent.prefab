@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2891043875114943092}
   - component: {fileID: 3645794992281536372}
   - component: {fileID: -2897413340660069343}
+  - component: {fileID: 9199711124081262233}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -160,3 +161,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviour: 0
+  isAlive: 0
+  isStunned: 0
+  inPanic: 0
+  isHungry: 0
+  isTired: 0
+  hunger: 0
+  tired: 0
+--- !u!136 &9199711124081262233
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8528166329196768322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.54
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
