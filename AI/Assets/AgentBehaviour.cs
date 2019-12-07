@@ -41,8 +41,8 @@ public class AgentBehaviour : MonoBehaviour
 
     private void Start()
     {        
-        hunger = Random.Range(50f, 100f);
-        tired = Random.Range(50f, 100f);
+        hunger = Random.Range(10f, 100f);
+        tired = Random.Range(10f, 100f);
 
         path = new NavMeshPath();
         agent = GetComponent<NavMeshAgent>();
@@ -199,8 +199,21 @@ public class AgentBehaviour : MonoBehaviour
 
     private void SeekFun()
     {
-        int i = Random.Range(0, stages.Length);
-        StartCoroutine(GoToFun(i));
+        if (stages[0].GetComponent<Count>().GetNumberOfAgents() >
+            stages[1].GetComponent<Count>().GetNumberOfAgents())
+        {
+            StartCoroutine(GoToFun(1));
+        }
+        else if (stages[0].GetComponent<Count>().GetNumberOfAgents() <
+           stages[1].GetComponent<Count>().GetNumberOfAgents())
+        {
+            StartCoroutine(GoToFun(0));
+        }
+        else
+        {
+            int i = Random.Range(0, openAreas.Length);
+            StartCoroutine(GoToFun(i));
+        }
     }
 
     private void Idle()
@@ -215,8 +228,20 @@ public class AgentBehaviour : MonoBehaviour
 
     private void SeekOpenZone()
     {
-        int i = Random.Range(0, openAreas.Length);
-        StartCoroutine(GoToOpenZone(i));
+        if(openAreas[0].GetComponent<Count>().GetNumberOfAgents() >
+            openAreas[1].GetComponent<Count>().GetNumberOfAgents())
+        {
+            StartCoroutine(GoToOpenZone(1));
+        }else if (openAreas[0].GetComponent<Count>().GetNumberOfAgents() <
+            openAreas[1].GetComponent<Count>().GetNumberOfAgents())
+        {
+            StartCoroutine(GoToOpenZone(0));
+        }
+        else
+        {
+            int i = Random.Range(0, openAreas.Length);
+            StartCoroutine(GoToOpenZone(i));
+        }            
     }
 
     private void Wander()
