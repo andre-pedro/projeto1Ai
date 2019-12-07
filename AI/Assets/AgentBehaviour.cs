@@ -117,7 +117,7 @@ public class AgentBehaviour : MonoBehaviour
         }
         else
         {
-            hunger += Random.Range(0.3f, 0.8f);
+            hunger += Random.Range(0.01f, 0.2f);
         }
 
         if (isHavingFun)
@@ -141,7 +141,7 @@ public class AgentBehaviour : MonoBehaviour
 
         if (isResting)
         {
-            tired += Random.Range(0.3f, 0.8f);
+            tired += Random.Range(0.01f, 0.2f);
         }
     }
 

@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agents: []
-  maxAgents: 200
+  maxAgents: 500
   agentPrefab: {fileID: 8528166329196768322, guid: b1652ed9d1c3664458d6104517f67d80,
     type: 3}
   agentHolder: {fileID: 2082866383}
