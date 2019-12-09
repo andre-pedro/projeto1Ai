@@ -41,8 +41,8 @@ public class AgentBehaviour : MonoBehaviour
 
     private void Start()
     {        
-        hunger = Random.Range(10f, 100f);
-        tired = Random.Range(10f, 100f);
+        hunger = Random.Range(5f, 200f);
+        tired = Random.Range(5f, 200f);
 
         path = new NavMeshPath();
         agent = GetComponent<NavMeshAgent>();
@@ -102,7 +102,9 @@ public class AgentBehaviour : MonoBehaviour
             case Behaviour.Flee:
                 if (agent.remainingDistance < 0.5f) Debug.Log("DONE");
                 break;
-        }       
+        }
+
+        Debug.DrawLine(agent.transform.position, agent.pathEndPosition, Color.black, 0.1f);
         
     }    
 
@@ -132,11 +134,11 @@ public class AgentBehaviour : MonoBehaviour
                 tired -= Random.Range(0.02f, 0.05f);
             }           
 
-            if (fun > Random.Range(100f, 251f))
+            /*if (fun > Random.Range(100f, 251f))
             {
                 StopAllCoroutines();
                 StartCoroutine(RunToExit());
-            }
+            }*/
         }
 
         if (isResting)
@@ -254,6 +256,7 @@ public class AgentBehaviour : MonoBehaviour
 
     private void Flee()
     {
+        NavMesh.SetAreaCost(3, 0);
         GenerateFleeDestination(panicOrigin);
         StartCoroutine(RunToExit());
     }
