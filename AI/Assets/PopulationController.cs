@@ -17,18 +17,34 @@ public class PopulationController : MonoBehaviour
     [SerializeField]
     private Transform agentHolder;
 
+    private float timer;
+    int i;
+
     private void Start()
     {
-        SpawnPopulation();
+        i = 0;
+        timer = 0.1f;
+        //SpawnPopulation();
     }
 
-    private void SpawnPopulation()
+    private void Update()
     {
-        for (int i = 0; i < maxAgents; i++)
+        timer -= Time.deltaTime;
+
+        if(timer <= 0f && i != maxAgents)
         {
+            Debug.Log($"{i + 1} agents on field");
             SpawnAgent(i);
+            i++;
+            timer = 0.1f;
+            //SpawnPopulation();
+        }
+        else
+        {
+
         }
     }
+
 
     private void SpawnAgent(int i)
     {
