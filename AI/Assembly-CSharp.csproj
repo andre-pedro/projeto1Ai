@@ -69,6 +69,7 @@
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\ExplosionController.cs" />
     <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\PeopleGoing.cs" />
     <Compile Include="Assets\PopulationController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Diogo Maia/Desktop/AI/projeto1Ai/AI/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
