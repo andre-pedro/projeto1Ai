@@ -6,6 +6,10 @@ public class ExplosionController : MonoBehaviour
 {
     [SerializeField]
     private GameObject explosion;
+    [SerializeField]
+    private GameObject fire;
+
+    private Vector3 agent;
 
     private void Update()
     {
@@ -15,11 +19,15 @@ public class ExplosionController : MonoBehaviour
                 .GetComponent<PopulationController>()
                 .GetAgentListSize() > 0)
             {
-                Instantiate(
-                    explosion, 
-                    GameManager.Instance
+                agent = GameManager.Instance
                     .GetComponent<PopulationController>()
-                    .GetRandomAgent().transform.position + Vector3.down,
+                    .GetRandomAgent().transform.position + Vector3.down;
+                Instantiate(
+                    explosion, agent,
+                    transform.rotation
+                    );
+                Instantiate(
+                    fire, agent,
                     transform.rotation
                     );
             }

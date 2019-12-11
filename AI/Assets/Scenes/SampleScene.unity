@@ -1463,6 +1463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 3271043388586118222, guid: 1299b11162a098e44a5bea4f50716713,
     type: 3}
+  fire: {fileID: 5434911169209871067, guid: e28f8fd5c890ad84c862ed457c87f0ed, type: 3}
 --- !u!1 &313833399
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Count.cs" />
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\ExplosionController.cs" />
+    <Compile Include="Assets\Fire.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\PanicSpread.cs" />
     <Compile Include="Assets\PeopleGoing.cs" />
