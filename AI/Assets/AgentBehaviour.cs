@@ -65,12 +65,15 @@ public class AgentBehaviour : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"hunger {isEating} | tired {isResting}");
+        //Debug.Log($"hunger {isEating} | tired {isResting}");
 
         if (!inPanic && !isStunned && isAlive)
         {
             Conditions();
             ChecksStats();
+        }else if (inPanic)
+        {
+            behaviour = Behaviour.Flee;
         }        
 
         switch (behaviour)
@@ -378,6 +381,16 @@ public class AgentBehaviour : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(8, 15));
         if (isAlive == false)
             Destroy(gameObject);
+    }
+
+    public void GoToExit()
+    {
+        Flee();
+    }
+
+    public void ChangePanic(bool state)
+    {
+        inPanic = state;
     }
 
     public void SetHungryMode(bool mode)

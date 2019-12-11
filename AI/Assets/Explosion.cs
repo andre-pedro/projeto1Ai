@@ -60,7 +60,7 @@ public class Explosion : MonoBehaviour
     {
         Collider[] hits = Physics.OverlapSphere(
                   transform.position,
-                  100f);
+                  50);
 
         foreach (Collider hit in hits)
         {

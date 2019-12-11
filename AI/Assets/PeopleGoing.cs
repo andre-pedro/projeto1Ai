@@ -12,7 +12,7 @@ public class PeopleGoing : MonoBehaviour
     {
         if (other.gameObject.name == agentName)
         {
-            Debug.Log("he entered");
+            //Debug.Log("he entered");
             other.gameObject.GetComponent<AgentBehaviour>().SetHungryMode(true);
         }
     }

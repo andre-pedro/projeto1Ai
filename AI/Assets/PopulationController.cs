@@ -33,7 +33,7 @@ public class PopulationController : MonoBehaviour
 
         if(timer <= 0f && i != maxAgents)
         {
-            Debug.Log($"{i + 1} agents on field");
+            //Debug.Log($"{i + 1} agents on field");
             SpawnAgent(i);
             i++;
             timer = 0.1f;
