@@ -22,16 +22,13 @@ public class Explosion : MonoBehaviour
         {
             if (hit.GetComponent<AgentBehaviour>() != null)
             {
-                hit.GetComponent<AgentBehaviour>().enabled = false;
-                hit.GetComponent<NavMeshAgent>().enabled = false;
-                hit.GetComponent<Rigidbody>().isKinematic = false;
-                hit.GetComponent<Rigidbody>().AddExplosionForce(
-                    1000f, 
-                    transform.position, 
-                    10f, 
-                    1000f);
-
                 hit.GetComponent<AgentBehaviour>().Die();
+
+                hit.GetComponent<Rigidbody>().AddExplosionForce(
+                    1000f,
+                    transform.position,
+                    10f,
+                    1000f);
 
                 Debug.Log($"Killed {hit.gameObject.name}");
             }

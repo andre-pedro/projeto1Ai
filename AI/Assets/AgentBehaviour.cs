@@ -287,11 +287,14 @@ public class AgentBehaviour : MonoBehaviour
     public void Die()
     {
         isAlive = false;
+
+        GetComponent<AgentBehaviour>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = false;
+
         GameManager.Instance.GetComponent<PopulationController>()
             .RemoveAgent(gameObject);
 
-        StopAllCoroutines();
-        agent.SetDestination(agent.transform.position);
         StartCoroutine(DestroyAgent());
 
     }
