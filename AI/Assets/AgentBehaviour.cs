@@ -113,7 +113,7 @@ public class AgentBehaviour : MonoBehaviour
                     break;
 
                 case Behaviour.Flee:
-                    if (agent.remainingDistance < 0.5f) Debug.Log("DONE");
+                    Flee();
                     break;
             }
 
@@ -385,6 +385,7 @@ public class AgentBehaviour : MonoBehaviour
     private IEnumerator RunToExit()
     {
         yield return new WaitForSeconds(Random.Range(5, 10));
+        NavMesh.avoidancePredictionTime = 5f;
         if (isAlive && isStunned == false)
         {
             agent.SetDestination(exit.position);
