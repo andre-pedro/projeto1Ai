@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Fire : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class Fire : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
-        if(other.gameObject.tag == "Agent")
+        if(other.tag == "Agent")
         {
-            other.gameObject.GetComponent<AgentBehaviour>().Die();
+            other.GetComponent<AgentBehaviour>().Die();
+            Debug.Log($"Touched {other.name}");
         }
         
     }

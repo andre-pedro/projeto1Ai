@@ -66,55 +66,64 @@ public class AgentBehaviour : MonoBehaviour
     private void Update()
     {
         //Debug.Log($"hunger {isEating} | tired {isResting}");
-
-        if (!inPanic && !isStunned && isAlive)
+        if (isAlive)
         {
-            Conditions();
-            ChecksStats();
-        }else if (inPanic)
-        {
-            behaviour = Behaviour.Flee;
-        }        
+            if (!inPanic && !isStunned && isAlive)
+            {
+                Conditions();
+                ChecksStats();
+            }
+            else if (inPanic)
+            {
+                behaviour = Behaviour.Flee;
+            }
 
-        switch (behaviour)
-        {
-            case Behaviour.Idle:
-                Idle();
-                break;
+            switch (behaviour)
+            {
+                case Behaviour.Idle:
+                    Idle();
+                    break;
 
-            case Behaviour.Wander:                               
-                Wander();                                   
-                break;
+                case Behaviour.Wander:
+                    Wander();
+                    break;
 
-            case Behaviour.Seek:
-                //Prioritizes Food over Tired
-                if (isHungry && !isGoingForFood)
-                {
-                    isGoingForFood = true;
-                    SeekFood();
+                case Behaviour.Seek:
+                    //Prioritizes Food over Tired
+                    if (isHungry && !isGoingForFood)
+                    {
+                        isGoingForFood = true;
+                        SeekFood();
 
-                }else if (isTired && !isGoingToRest)
-                {
-                    isGoingToRest = true;
-                    isGoingForFood = false;
-                    SeekOpenZone();
-                }
+                    }
+                    else if (isTired && !isGoingToRest)
+                    {
+                        isGoingToRest = true;
+                        isGoingForFood = false;
+                        SeekOpenZone();
+                    }
 
-                if (!isHungry && !isTired && !isGoingToFun)
-                {
-                    isGoingToRest = false;
-                    isGoingToFun = true;
-                    isGoingForFood = false;
-                    SeekFun();
-                }        
-                break;
+                    if (!isHungry && !isTired && !isGoingToFun)
+                    {
+                        isGoingToRest = false;
+                        isGoingToFun = true;
+                        isGoingForFood = false;
+                        SeekFun();
+                    }
+                    break;
 
-            case Behaviour.Flee:
-                if (agent.remainingDistance < 0.5f) Debug.Log("DONE");
-                break;
+                case Behaviour.Flee:
+                    if (agent.remainingDistance < 0.5f) Debug.Log("DONE");
+                    break;
+            }
+
+            Debug.DrawLine(agent.transform.position, agent.pathEndPosition, Color.black, 0.1f);
         }
-
-        Debug.DrawLine(agent.transform.position, agent.pathEndPosition, Color.black, 0.1f);
+        else
+        {
+            StopAllCoroutines();
+        }
+        
         
     }    
 
@@ -281,7 +290,10 @@ public class AgentBehaviour : MonoBehaviour
         GameManager.Instance.GetComponent<PopulationController>()
             .RemoveAgent(gameObject);
 
+        StopAllCoroutines();
+        agent.SetDestination(agent.transform.position);
         StartCoroutine(DestroyAgent());
+
     }
 
     public void Stun()

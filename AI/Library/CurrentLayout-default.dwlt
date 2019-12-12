@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 494}
   m_MaxSize: {x: 14002, y: 14044}
   vertical: 0
-  controlID: 129
+  controlID: 52
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   - {fileID: 16}
   - {fileID: 17}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -386,7 +386,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6afbffff
+      m_ExpandedIDs: aef9ffff823b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -446,9 +446,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -18.748579, y: -9.343498, z: 74.27472}
+    m_Target: {x: 19.413063, y: -78.25574, z: 5.391205}
     speed: 2
-    m_Value: {x: -18.748579, y: -9.343498, z: 74.27472}
+    m_Value: {x: 19.413063, y: -78.25574, z: 5.391205}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -477,13 +477,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.19634742, y: 0.507808, z: -0.121342994, w: 0.8304929}
+    m_Target: {x: 0.50590146, y: 0.28802195, z: -0.18557964, w: 0.7921693}
     speed: 2
-    m_Value: {x: 0.19501784, y: 0.5077705, z: -0.12052815, w: 0.83042777}
+    m_Value: {x: 0.5068698, y: 0.2876185, z: -0.18593174, w: 0.7910677}
   m_Size:
-    m_Target: 155.28075
+    m_Target: 149.9333
     speed: 2
-    m_Value: 148.59401
+    m_Value: 156.99823
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -548,20 +548,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Diogo Maia\Desktop\AI\projeto1Ai\AI
+  m_LastProjectPath: C:\Users\Maia\Desktop\projeto1Ai\AI
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ec2c0000
-    m_LastClickedID: 11500
-    m_ExpandedIDs: 00000000ec2c000000ca9a3b
+    m_SelectedIDs: 12340000
+    m_LastClickedID: 13330
+    m_ExpandedIDs: 00000000b632000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -589,7 +589,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec2c0000
+    m_ExpandedIDs: 00000000b6320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -668,7 +668,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 436
-    width: 1080
+    width: 1081
     height: 253
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &17
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_PosLeft: {x: 0, y: 0}
   m_PosRight: {x: 0, y: 0}
   m_Scope: 1
-  m_SplitterFlex: 0
+  m_SplitterFlex: 0.2
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
