@@ -421,17 +421,17 @@ public class AgentBehaviour : MonoBehaviour
     private IEnumerator GoToFun(int i)
     {
         yield return new WaitForSeconds(Random.Range(5, 10));
-        agent.SetDestination(ye(i));
+        agent.SetDestination(SpreadAlong(i));
     }
 
-    private Vector3 ye(int i)
+    private Vector3 SpreadAlong(int i)
     {
-        Vector3 aaaa;
-        Collider col = stages[1].GetComponent<Collider>();
-        aaaa = col.ClosestPoint(upperStage[i].transform.position);
-        aaaa = new Vector3(aaaa.x + Random.Range(-0.5f, 0.5f), aaaa.y, aaaa.z);
+        Vector3 along;
+        Collider col = stages[i].GetComponent<Collider>();
+        along = col.ClosestPoint(upperStage[i].transform.position);
+        along = new Vector3(along.x + Random.Range(-15f, 15f), along.y, along.z);
 
-        return aaaa;
+        return along;
     }
 
     private IEnumerator RunToExit()
