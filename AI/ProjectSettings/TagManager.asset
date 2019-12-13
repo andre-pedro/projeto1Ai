@@ -10,6 +10,8 @@ TagManager:
   - Fun
   - Seats
   - Agent
+  - Spawn
+  - Stage
   layers:
   - Default
   - TransparentFX

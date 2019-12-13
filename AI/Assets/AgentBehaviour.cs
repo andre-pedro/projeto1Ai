@@ -32,8 +32,8 @@ public class AgentBehaviour : MonoBehaviour
     private GameObject[] stages;
     private GameObject[] openAreas;
     private GameObject[] seats;
-
-    private Transform exit;
+    private GameObject[] exits;
+    private GameObject[] upperStage;
 
     private float hunger;
     private float tired;
@@ -45,8 +45,8 @@ public class AgentBehaviour : MonoBehaviour
 
     private void Start()
     {        
-        hunger = Random.Range(5f, 200f);
-        tired = Random.Range(5f, 200f);
+        hunger = Random.Range(5f, 800f);
+        tired = Random.Range(5f, 500f);
 
         path = new NavMeshPath();
         agent = GetComponent<NavMeshAgent>();
@@ -54,8 +54,9 @@ public class AgentBehaviour : MonoBehaviour
         stages = GameObject.FindGameObjectsWithTag("Fun");
         openAreas = GameObject.FindGameObjectsWithTag("Open");
         seats = GameObject.FindGameObjectsWithTag("Seats");
+        upperStage = GameObject.FindGameObjectsWithTag("Stage");
 
-        exit = GameObject.FindGameObjectWithTag("Exit").transform;
+        exits = GameObject.FindGameObjectsWithTag("Exit");
         
         
         behaviour = Behaviour.Seek;
@@ -113,7 +114,7 @@ public class AgentBehaviour : MonoBehaviour
                     break;
 
                 case Behaviour.Flee:
-                    Flee();
+                    FleeWithoutExplosion();
                     break;
             }
 
@@ -131,7 +132,7 @@ public class AgentBehaviour : MonoBehaviour
     {
         if (isEating)
         {
-            hunger += 0.08f;
+            hunger += Random.Range(0.1f , 1f);
         }
         else
         {
@@ -143,7 +144,7 @@ public class AgentBehaviour : MonoBehaviour
         //----------------------------------------
         if (isResting)
         {
-            tired += 0.09f;
+            tired += Random.Range(0.1f, 1f);
         }
         else
         {
@@ -189,12 +190,16 @@ public class AgentBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Open")
         {
             isResting = true;
+            agent.radius = 2f;
+            
         }
 
         if (other.gameObject.tag == "Fun")
         {
             isHavingFun = true;
         }
+
+        agent.radius = 0.6f;
     }
 
     private void OnTriggerExit(Collider other)
@@ -208,16 +213,19 @@ public class AgentBehaviour : MonoBehaviour
         if (stages[0].GetComponent<Count>().GetNumberOfAgents() >
             stages[1].GetComponent<Count>().GetNumberOfAgents())
         {
+            stages[1].GetComponent<Count>().IsGoing(this.name);
             StartCoroutine(GoToFun(1));
         }
         else if (stages[0].GetComponent<Count>().GetNumberOfAgents() <
            stages[1].GetComponent<Count>().GetNumberOfAgents())
         {
+            stages[0].GetComponent<Count>().IsGoing(this.name);
             StartCoroutine(GoToFun(0));
         }
         else
         {
             int i = Random.Range(0, openAreas.Length);
+            stages[i].GetComponent<Count>().IsGoing(this.name);
             StartCoroutine(GoToFun(i));
         }
     }
@@ -254,17 +262,20 @@ public class AgentBehaviour : MonoBehaviour
             openAreas[1].GetComponent<Count>().GetNumberOfAgents())
         {
             StopAllCoroutines();
+            openAreas[1].GetComponent<Count>().IsGoing(this.name);
             StartCoroutine(GoToOpenZone(1));
         }else if (openAreas[0].GetComponent<Count>().GetNumberOfAgents() <
             openAreas[1].GetComponent<Count>().GetNumberOfAgents())
         {
             StopAllCoroutines();
+            openAreas[0].GetComponent<Count>().IsGoing(this.name);
             StartCoroutine(GoToOpenZone(0));
         }
         else
         {
             int i = Random.Range(0, openAreas.Length);
             StopAllCoroutines();
+            openAreas[i].GetComponent<Count>().IsGoing(this.name);
             StartCoroutine(GoToOpenZone(i));
         }            
     }
@@ -281,6 +292,11 @@ public class AgentBehaviour : MonoBehaviour
     {
         NavMesh.SetAreaCost(3, 0);
         GenerateFleeDestination(panicOrigin);
+        StartCoroutine(RunToExit());
+    }
+
+    private void FleeWithoutExplosion()
+    {
         StartCoroutine(RunToExit());
     }
 
@@ -347,6 +363,32 @@ public class AgentBehaviour : MonoBehaviour
         agent.SetDestination(destination);
     }
 
+    private Transform ClosestExit()
+    {
+        Transform best = default;
+        float dist;
+        float bestDist = 0;
+        int cycle = 0;
+        foreach(GameObject exit in exits)
+        {
+            dist = Vector3.Distance(this.gameObject.transform.position,
+                exit.transform.position);
+
+            if(cycle == 0)
+            {
+                best = exit.transform;
+                bestDist = dist;
+            }else if (dist < bestDist)
+            {
+                best = exit.transform;
+                bestDist = dist;
+            }
+            cycle++;
+        }
+
+        return best;
+    }
+
     private IEnumerator RegainConsciousness()
     {
         yield return new WaitForSeconds(Random.Range(2, 10));
@@ -379,7 +421,17 @@ public class AgentBehaviour : MonoBehaviour
     private IEnumerator GoToFun(int i)
     {
         yield return new WaitForSeconds(Random.Range(5, 10));
-        agent.SetDestination(stages[i].transform.position);
+        agent.SetDestination(ye(i));
+    }
+
+    private Vector3 ye(int i)
+    {
+        Vector3 aaaa;
+        Collider col = stages[1].GetComponent<Collider>();
+        aaaa = col.ClosestPoint(upperStage[i].transform.position);
+        aaaa = new Vector3(aaaa.x + Random.Range(-0.5f, 0.5f), aaaa.y, aaaa.z);
+
+        return aaaa;
     }
 
     private IEnumerator RunToExit()
@@ -388,7 +440,7 @@ public class AgentBehaviour : MonoBehaviour
         NavMesh.avoidancePredictionTime = 5f;
         if (isAlive && isStunned == false)
         {
-            agent.SetDestination(exit.position);
+            agent.SetDestination(ClosestExit().position);
         }
     }
 

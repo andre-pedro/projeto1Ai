@@ -14,8 +14,7 @@ public class PopulationController : MonoBehaviour
     [SerializeField]
     private GameObject agentPrefab;
 
-    [SerializeField]
-    private Transform agentHolder;
+    private GameObject[] agentHolder;
 
     private float timer;
     int i;
@@ -24,7 +23,7 @@ public class PopulationController : MonoBehaviour
     {
         i = 0;
         timer = 0.1f;
-        //SpawnPopulation();
+        agentHolder = GameObject.FindGameObjectsWithTag("Spawn");
     }
 
     private void Update()
@@ -48,7 +47,8 @@ public class PopulationController : MonoBehaviour
 
     private void SpawnAgent(int i)
     {
-        GameObject agent = Instantiate(agentPrefab, agentHolder);
+        int x = Random.Range(0, agentHolder.Length);
+        GameObject agent = Instantiate(agentPrefab, agentHolder[x].transform);
         agent.name += i;
         agents.Add(agent);
     }
