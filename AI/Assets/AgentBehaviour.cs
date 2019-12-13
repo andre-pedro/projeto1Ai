@@ -14,9 +14,10 @@ public class AgentBehaviour : MonoBehaviour
     private bool isHungry;
     private bool isTired;
 
-    private bool isHavingFun;
-    private bool isEating;
-    private bool isResting;
+    public bool isHavingFun { get; set; }
+    public bool isResting { get; set; }
+
+    private bool isEating;    
     private bool isGoingToFun;
     private bool isGoingToRest;
     private bool isGoingForFood;
@@ -183,29 +184,6 @@ public class AgentBehaviour : MonoBehaviour
         {
             isTired = false;
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Open")
-        {
-            isResting = true;
-            agent.radius = 2f;
-            
-        }
-
-        if (other.gameObject.tag == "Fun")
-        {
-            isHavingFun = true;
-        }
-
-        agent.radius = 0.6f;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        isResting = false;
-        isHavingFun = false;
     }
 
     private void SeekFun()

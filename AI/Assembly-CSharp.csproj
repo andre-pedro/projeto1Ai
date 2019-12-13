@@ -66,6 +66,7 @@
     <Compile Include="Assets\AgentDestroyer.cs" />
     <Compile Include="Assets\Behaviour.cs" />
     <Compile Include="Assets\Count.cs" />
+    <Compile Include="Assets\DetectGround.cs" />
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\ExplosionController.cs" />
     <Compile Include="Assets\Fire.cs" />
