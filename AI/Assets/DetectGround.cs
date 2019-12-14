@@ -3,26 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// This Class is used to detect what kind of ground is bellow the agent and 
+/// make adjustments to his behaviour based on that
+/// </summary>
 public class DetectGround : MonoBehaviour
 {
-    public string currentTagAgentIsIn;
-    public string LastTagAgentWasIn;
-
+    /// <summary>
+    /// This is the method that detects the type of ground the agent is in
+    /// using tags
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Open")
         {
             GetComponentInParent<AgentBehaviour>().isResting = true;
-            GetComponentInParent<NavMeshAgent>().radius = Random.Range(0.6f, 2.5f);
+            GetComponentInParent<NavMeshAgent>().radius =
+                Random.Range(2.5f, 3f);
         }
         if(other.tag == "Fun")
         {
             GetComponentInParent<AgentBehaviour>().isHavingFun = true;
         }
-
-        currentTagAgentIsIn = other.tag;
     }
 
+    /// <summary>
+    /// This method is used to detect the type of ground the agent left and 
+    /// make adjustments based in that information
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Open")
@@ -34,6 +44,5 @@ public class DetectGround : MonoBehaviour
         {
             GetComponentInParent<AgentBehaviour>().isHavingFun = false;
         }
-        LastTagAgentWasIn = other.tag;
     }
 }
