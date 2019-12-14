@@ -393,6 +393,21 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
+    /// This method is used to create a random point inside a gameObject
+    /// </summary>
+    /// <param name="i"></param>
+    /// <returns>Random Point</returns>
+    private Vector3 RandomPointInsideCollider(int i)
+    {
+        Collider col = openAreas[i].GetComponent<Collider>();
+        Vector3 RandomPoint = new Vector3(
+            Random.Range(col.bounds.min.x, col.bounds.max.x),
+            0f,
+            Random.Range(col.bounds.min.z, col.bounds.max.z));
+        return RandomPoint;
+    }
+
+    /// <summary>
     /// This method is used to determine the nearest exit and returns it
     /// </summary>
     /// <returns>The nearest exit</returns>
@@ -461,7 +476,7 @@ public class AgentBehaviour : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(5, 10));
         if (isTired)
         {
-            agent.SetDestination(openAreas[i].transform.position);
+            agent.SetDestination(RandomPointInsideCollider(i));
         }
     }
 
