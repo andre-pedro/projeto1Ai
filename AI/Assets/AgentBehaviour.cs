@@ -41,10 +41,6 @@ public class AgentBehaviour : MonoBehaviour
 
     private float hunger;
     private float tired;
-    //private float fun = 0f;
-
-    private Vector3 z;
-    private int x = default;
     
     /// <summary>
     /// This method is used to assign all the GameObjects and 
@@ -92,6 +88,10 @@ public class AgentBehaviour : MonoBehaviour
             
             switch (behaviour)
             {
+                case Behaviour.Idle:
+                    StopAllCoroutines();
+                    break;
+
                 case Behaviour.Wander:
                     Wander();
                     break;
@@ -160,12 +160,7 @@ public class AgentBehaviour : MonoBehaviour
             {
                 tired -= 0.03f;
             }
-        }
-        //----------------------------------------
-        /*if (isHavingFun)
-        {
-            fun += Random.Range(0.01f, 0.04f);
-        }   */     
+        }    
     }
 
     /// <summary>
@@ -236,9 +231,11 @@ public class AgentBehaviour : MonoBehaviour
 
         while (i != seats.Length && !hasFoundSeat)
         {
-            if (seats[i].GetComponent<PeopleGoing>().GetNumberOfAgentsGoing() == 0 && !hasFoundSeat)
+            if (seats[i].GetComponent<PeopleGoing>()
+                .GetNumberOfAgentsGoing() == 0 && !hasFoundSeat)
             {
-                seats[i].GetComponent<PeopleGoing>().UpdateAgentsGoing(agent.name);
+                seats[i].GetComponent<PeopleGoing>()
+                    .UpdateAgentsGoing(agent.name);
                 StopAllCoroutines();
                 StartCoroutine(GoToFood(seats[i].transform.position));
                 hasFoundSeat = true;

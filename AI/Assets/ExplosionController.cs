@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to instanciate the explosion
+/// </summary>
 public class ExplosionController : MonoBehaviour
 {
     [SerializeField]
@@ -11,6 +14,10 @@ public class ExplosionController : MonoBehaviour
 
     private Vector3 agent;
 
+    /// <summary>
+    /// The Update checks if the DownArrow has been pressed and
+    /// after it has been pressed instanciates an explosion on a random agent
+    /// </summary>
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))

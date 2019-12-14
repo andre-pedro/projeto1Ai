@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to populate the scene with the agents
+/// </summary>
 public class PopulationController : MonoBehaviour
 {
     [SerializeField]
@@ -19,6 +22,9 @@ public class PopulationController : MonoBehaviour
     private float timer;
     int i;
 
+    /// <summary>
+    /// The start is used to assign variables and GameObjects
+    /// </summary>
     private void Start()
     {
         i = 0;
@@ -26,6 +32,10 @@ public class PopulationController : MonoBehaviour
         agentHolder = GameObject.FindGameObjectsWithTag("Spawn");
     }
 
+    /// <summary>
+    /// The Update is used to populate the scene, instanciating one agent
+    /// each 0.1 seconds
+    /// </summary>
     private void Update()
     {
         timer -= Time.deltaTime;
@@ -44,7 +54,10 @@ public class PopulationController : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// This method is used to spawn an agent and add it to a List of agents
+    /// </summary>
+    /// <param name="i"></param>
     private void SpawnAgent(int i)
     {
         int x = Random.Range(0, agentHolder.Length);
@@ -53,16 +66,28 @@ public class PopulationController : MonoBehaviour
         agents.Add(agent);
     }
 
+    /// <summary>
+    /// This method is used to remove agents from a list
+    /// </summary>
+    /// <param name="agent"></param>
     public void RemoveAgent(GameObject agent)
     {
         agents.Remove(agent);
     }
 
+    /// <summary>
+    /// This method is used to retrn a random agent from the list
+    /// </summary>
+    /// <returns>Random Agent</returns>
     public GameObject GetRandomAgent()
     {
         return agents[Random.Range(0, agents.Count - 1)];
     }
 
+    /// <summary>
+    /// This list gets the size of the agent list
+    /// </summary>
+    /// <returns>Size of agent list</returns>
     public int GetAgentListSize()
     {
         return agents.Count;

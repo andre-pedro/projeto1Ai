@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// This Class is used to generate an explosion
+/// </summary>
 public class Explosion : MonoBehaviour
 {
+    /// <summary>
+    /// The start is used to start the explosion by calling 3 methods that
+    /// apply the effects of the 3 radius
+    /// </summary>
     private void Start()
     {
         KillAgentsInRadius1();
@@ -12,6 +19,9 @@ public class Explosion : MonoBehaviour
         ScareAgentsInRadius3();
     }
 
+    /// <summary>
+    /// This method applies the effect of the first Radius(Kills the agents)
+    /// </summary>
     private void KillAgentsInRadius1()
     {
         Collider[] hits = Physics.OverlapSphere(
@@ -35,6 +45,9 @@ public class Explosion : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This method applies the effect of the second Radius(Stuns the agents)
+    /// </summary>
     private void StunAgentsInRadius2()
     {
         Collider[] hits = Physics.OverlapSphere(
@@ -53,6 +66,9 @@ public class Explosion : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This method applies the effect of the third Radius(Scares the agents)
+    /// </summary>
     private void ScareAgentsInRadius3()
     {
         Collider[] hits = Physics.OverlapSphere(

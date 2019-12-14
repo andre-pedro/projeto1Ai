@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Thsi class is used to determine the number 
+/// This class is used to determine the number 
 /// of agents that are going to one place
 /// </summary>
 public class PeopleGoing : MonoBehaviour

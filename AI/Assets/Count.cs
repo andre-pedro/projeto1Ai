@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class checks the number of agents going and currently are in a place
+/// </summary>
 public class Count : MonoBehaviour
 {
     private int numberOfAgents = 0;
     private List<string> nameOfAgents = new List<string>();
 
+    /// <summary>
+    /// This method takes the agent of the list of agents goin/are in the place
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
         if (nameOfAgents.Contains(other.name))
@@ -16,6 +23,10 @@ public class Count : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This method adds an agent to the list of agents going/are
+    /// </summary>
+    /// <param name="nameOfAgent"></param>
     public void IsGoing(string nameOfAgent)
     {
         numberOfAgents++;
@@ -23,6 +34,10 @@ public class Count : MonoBehaviour
         nameOfAgents.Add(nameOfAgent);
     }
 
+    /// <summary>
+    /// This method is used to see the number of agents goin/are in a place
+    /// </summary>
+    /// <returns>Number of agents going/are</returns>
     public int GetNumberOfAgents()
     {
         return numberOfAgents;
