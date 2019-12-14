@@ -89,7 +89,7 @@ public class AgentBehaviour : MonoBehaviour
             switch (behaviour)
             {
                 case Behaviour.Idle:
-                    StopAllCoroutines();
+                    Idle();
                     break;
 
                 case Behaviour.Wander:
@@ -322,6 +322,14 @@ public class AgentBehaviour : MonoBehaviour
 
         StartCoroutine(DestroyAgent());
 
+    }
+
+    /// <summary>
+    /// Make agent stop
+    /// </summary>
+    private void Idle()
+    {
+        agent.isStopped = true;
     }
 
     /// <summary>
