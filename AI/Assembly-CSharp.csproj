@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\AgentBehaviour.cs" />
      <Compile Include="Assets\AgentDestroyer.cs" />
+     <Compile Include="Assets\AgentsInTable.cs" />
      <Compile Include="Assets\Behaviour.cs" />
      <Compile Include="Assets\Count.cs" />
      <Compile Include="Assets\DetectGround.cs" />

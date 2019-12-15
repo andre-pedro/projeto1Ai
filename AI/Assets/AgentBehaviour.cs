@@ -35,9 +35,10 @@ public class AgentBehaviour : MonoBehaviour
     
     private GameObject[] stages;
     private GameObject[] openAreas;
-    private GameObject[] seats;
     private GameObject[] exits;
     private GameObject[] upperStage;
+    private GameObject[] tables;
+    private GameObject[] seats;
 
     private float hunger;
     private float tired;
@@ -56,10 +57,11 @@ public class AgentBehaviour : MonoBehaviour
 
         stages = GameObject.FindGameObjectsWithTag("Fun");
         openAreas = GameObject.FindGameObjectsWithTag("Open");
-        seats = GameObject.FindGameObjectsWithTag("Seats");
         upperStage = GameObject.FindGameObjectsWithTag("Stage");
-        exits = GameObject.FindGameObjectsWithTag("Exit");        
-        
+        exits = GameObject.FindGameObjectsWithTag("Exit");
+        tables = GameObject.FindGameObjectsWithTag("Tables");
+        seats = GameObject.FindGameObjectsWithTag("Seats");
+
         behaviour = Behaviour.Seek;
 
         isAlive = true;
@@ -95,7 +97,10 @@ public class AgentBehaviour : MonoBehaviour
                     if (isHungry && !isGoingForFood)
                     {
                         isGoingForFood = true;
-                        SeekFood();
+                        if (!hasFoundSeat)
+                        {
+                            SeekFood();
+                        }                       
 
                     }
                     else if (isTired && !isGoingToRest)
@@ -222,25 +227,79 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns></returns>
     private bool SeekFood()
     {
-        int i = 0;        
+        int i = 0;
+        GameObject table = LeastFullTable();
 
         while (i != seats.Length && !hasFoundSeat)
         {
-            if (seats[i].GetComponent<PeopleGoing>()
-                .GetNumberOfAgentsGoing() == 0 && !hasFoundSeat)
+            if (seats[i].GetComponent<PeopleGoing>().GetNumberOfAgentsGoing() == 0 && !hasFoundSeat)
             {
-                seats[i].GetComponent<PeopleGoing>()
-                    .UpdateAgentsGoing(agent.name);
-                StopAllCoroutines();
-                StartCoroutine(GoTo(seats[i].transform.position));
-                hasFoundSeat = true;
-                return true;
+                if (CheckTransforms(table, seats[i]))
+                {
+                    seats[i].GetComponent<PeopleGoing>().UpdateAgentsGoing(agent.name);
+                    StopAllCoroutines();
+                    StartCoroutine(GoTo(seats[i].transform.position));
+                
+                    hasFoundSeat = true;
+                    return true;
+                }
+                
             }
             i++;
         }
-
+        
         return false;
         
+    }
+
+    /// <summary>
+    /// Checks if the seat is assignt to the least full table
+    /// </summary>
+    /// <param name="table"></param>
+    /// <param name="seat"></param>
+    /// <returns>If the Seat is in the least full table</returns>
+    private bool CheckTransforms (GameObject table, GameObject seat)
+    {
+        Transform[] transforms = table.GetComponentsInChildren<Transform>();
+        foreach(Transform transform in transforms)
+        {
+            if(transform.position == seat.transform.position)
+            {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    /// <summary>
+    /// Finds The table with least people
+    /// </summary>
+    /// <returns></returns>
+    private GameObject LeastFullTable()
+    {
+        GameObject best = default;
+        int cycle = 0;
+        int numberOfAgents = 0;
+        int bestNumber = 0;
+        foreach (GameObject table in tables)
+        {
+            numberOfAgents = table.GetComponent<AgentsInTable>().GetAgents();
+
+            if (cycle == 0)
+            {
+                bestNumber = numberOfAgents;
+                best = table;
+            }
+            else if (bestNumber > numberOfAgents)
+            {
+                bestNumber = numberOfAgents;
+                best = table;
+            }
+
+            cycle++;
+        }
+        return best;
     }
 
     /// <summary>
@@ -372,7 +431,7 @@ public class AgentBehaviour : MonoBehaviour
             0f,
             Random.Range(col.bounds.min.z, col.bounds.max.z));
         return RandomPoint;
-    }
+    }    
 
     /// <summary>
     /// This method is called to ake the agents spred along 

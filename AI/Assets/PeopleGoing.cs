@@ -8,10 +8,17 @@ using UnityEngine;
 /// </summary>
 public class PeopleGoing : MonoBehaviour
 {
-    private int numberOfAgentsGoing = 0;
-    private string agentName;
+    public int numberOfAgentsGoing = 0;
+    public string agentName;
     private bool canEat;
-    
+
+    private AgentsInTable table;
+
+    private void Start()
+    {
+        table = GetComponentInParent<AgentsInTable>();
+    }
+
     /// <summary>
     /// This method checks if the agent that entered the seat is 
     /// the one assigned and if it is he let's him eat
@@ -40,6 +47,7 @@ public class PeopleGoing : MonoBehaviour
                 .SetHungryMode(false);
             numberOfAgentsGoing = 0;
             agentName = "";
+            table.RemoveAgents();
         }
     }
 
@@ -51,6 +59,8 @@ public class PeopleGoing : MonoBehaviour
     {
         agentName = name;
         numberOfAgentsGoing = 1;
+        table.AddAgents();
+        
     }
 
     /// <summary>
