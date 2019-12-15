@@ -20,23 +20,23 @@ public class ExplosionController : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
-
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 wordPos;
-            Ray ray = Camera.main.ScreenPointToRay(mousePos);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+
             if (Physics.Raycast(ray, out hit, 1000f))
             {
-                wordPos = hit.point;
+                Debug.Log(hit.collider.gameObject.tag);
+                if (hit.collider.gameObject.tag != "Stage" &&
+                    hit.collider.gameObject.tag != "Walls")
+                {
+                    Instantiate(explosion, hit.point, Quaternion.identity);
+                    Instantiate(fire, hit.point, Quaternion.identity);
+                }
+
             }
-            else
-            {
-                wordPos = Camera.main.ScreenToWorldPoint(mousePos);
-            }
-            Instantiate(explosion, wordPos, Quaternion.identity);
-            Instantiate(fire, wordPos, Quaternion.identity);
-        }        
+
+        }
     }
 }
