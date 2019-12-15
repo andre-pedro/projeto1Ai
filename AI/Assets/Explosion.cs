@@ -59,6 +59,7 @@ public class Explosion : MonoBehaviour
             if (hit.GetComponent<AgentBehaviour>() != null &&
                 hit.GetComponent<AgentBehaviour>().isAlive == true)
             {
+                hit.GetComponent<NavMeshAgent>().speed = 2.5f;
                 hit.GetComponent<AgentBehaviour>().Stun();
 
                 Debug.Log($"Stunned {hit.gameObject.name}");
@@ -81,6 +82,7 @@ public class Explosion : MonoBehaviour
                 hit.GetComponent<AgentBehaviour>().isAlive == true &&
                 hit.GetComponent<AgentBehaviour>().isStunned == false)
             {
+                hit.GetComponent<NavMeshAgent>().speed = 10f;
                 hit.GetComponent<AgentBehaviour>().Panic(transform.position);
 
                 Debug.Log($"Scared {hit.gameObject.name}");

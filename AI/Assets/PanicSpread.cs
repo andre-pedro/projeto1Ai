@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 /// <summary>
 /// This Class is used to spread the panic to ther agents
@@ -32,6 +33,7 @@ public class PanicSpread : MonoBehaviour
         {
             if (!other.gameObject.GetComponent<AgentBehaviour>().inPanic)
             {
+                other.gameObject.GetComponent<NavMeshAgent>().speed = 10;
                 other.gameObject.GetComponent<AgentBehaviour>().inPanic = true;
                 other.gameObject.GetComponent<AgentBehaviour>().GoToExit();
             }

@@ -19,12 +19,6 @@ public class DetectGround : MonoBehaviour
         if(other.tag == "Open")
         {
             GetComponentInParent<AgentBehaviour>().isResting = true;
-            //GetComponentInParent<NavMeshAgent>().radius =
-                //Random.Range(2.5f, 3f);
-        }
-        if(other.tag == "Fun")
-        {
-            GetComponentInParent<AgentBehaviour>().isHavingFun = true;
         }
     }
 
@@ -39,10 +33,6 @@ public class DetectGround : MonoBehaviour
         {
             GetComponentInParent<AgentBehaviour>().isResting = false;
             //GetComponentInParent<NavMeshAgent>().radius = 0.6f;
-        }
-        if (other.tag == "Fun")
-        {
-            GetComponentInParent<AgentBehaviour>().isHavingFun = false;
         }
     }
 }

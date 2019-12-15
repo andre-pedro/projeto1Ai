@@ -17,10 +17,10 @@ public class AgentBehaviour : MonoBehaviour
     private bool isHungry;
     private bool isTired;
 
-    public bool isHavingFun { get; set; }
     public bool isResting { get; set; }
 
-    private bool isEating;    
+    private bool isEating; 
+    
     private bool isGoingToFun;
     private bool isGoingToRest;
     private bool isGoingForFood;
