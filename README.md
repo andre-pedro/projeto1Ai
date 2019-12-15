@@ -6,8 +6,18 @@ Projeto em desenvolvimento pelos seguintes alunos:
 * [Tiago Alves](https://github.com/Synpse) - Nº a21701031
 ## Distribuição de tarefas
 Descriçao da distribuição de tarefas 
+
 ## Introdução
-Este projeto está a ser desenvolvido no âmbito da disciplina de Inteligencia Artificial, onde nos foi proposto o desenvolvimento de uma simulação de um concerto, onde os agentes presentes tem necessidades como fome, cansaço e divertimento. Foi-nos pedido também que os varios agentes tivessem uma reação a acontecimentos catastróficos - uma explosão. O projeto encontra-se no seguinte [repositório] de git, bem como o respetivo [enunciado]. 
+Este projeto está a ser desenvolvido no âmbito da disciplina de Inteligencia Artificial, onde nos foi proposto o desenvolvimento de uma simulação de um concerto, onde os agentes presentes no recinto tivessem necessidades como fome, cansaço e divertimento. Foi-nos pedido também que os vários agentes tivessem uma reação a acontecimentos catastróficos (explosões) que ocorrem durante o evento. Desenvolvemos este projeto no Unity, recorrendo a sistemas de Inteligência Artificial nos agentes, que navegam no festival numa _navmesh_. Mediante as condições, estes agentes respondem com comportamentos de "Seek", "Idle" e "Flee".
+
+ O projeto encontra-se no seguinte [repositório] de git, bem como o respetivo [enunciado].
+
+Pequena descrição sobre o problema e a forma como o resolveram. Deve oferecer ao leitor informação suficiente para entender e contextualizar o projeto,
+bem como quais foram os objetivos e resultados alcançados.
+
+### Pesquisa
+ Deve também ser apresentada nesta secção a pesquisa efetuada sobre simulação baseada em agentes aplicada ao pânico em multidões.
+
 ## Metodologia
 A simulação foi implementada utilizando a Game Engine Unity num projeto 3D.
 Os agentes presentes são cinematicos...
