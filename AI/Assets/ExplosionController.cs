@@ -15,29 +15,28 @@ public class ExplosionController : MonoBehaviour
     private Vector3 agent;
 
     /// <summary>
-    /// The Update checks if the DownArrow has been pressed and
-    /// after it has been pressed instanciates an explosion on a random agent
+    /// The Update checks if the mouse was click and instanciate an explosion
+    /// and fire in the location
     /// </summary>
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+
+        if (Input.GetMouseButtonDown(0))
         {
-            if (GameManager.Instance
-                .GetComponent<PopulationController>()
-                .GetAgentListSize() > 0)
+            Vector3 wordPos;
+            Ray ray = Camera.main.ScreenPointToRay(mousePos);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 1000f))
             {
-                agent = GameManager.Instance
-                    .GetComponent<PopulationController>()
-                    .GetRandomAgent().transform.position + Vector3.down;
-                Instantiate(
-                    explosion, agent,
-                    transform.rotation
-                    );
-                Instantiate(
-                    fire, agent,
-                    transform.rotation
-                    );
+                wordPos = hit.point;
             }
-        }
+            else
+            {
+                wordPos = Camera.main.ScreenToWorldPoint(mousePos);
+            }
+            Instantiate(explosion, wordPos, Quaternion.identity);
+            Instantiate(fire, wordPos, Quaternion.identity);
+        }        
     }
 }
