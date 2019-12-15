@@ -32,7 +32,7 @@ public class AgentBehaviour : MonoBehaviour
 
     private Vector3 destination;    
     private Vector3 panicOrigin;
-
+    
     private GameObject[] stages;
     private GameObject[] openAreas;
     private GameObject[] seats;
@@ -58,9 +58,7 @@ public class AgentBehaviour : MonoBehaviour
         openAreas = GameObject.FindGameObjectsWithTag("Open");
         seats = GameObject.FindGameObjectsWithTag("Seats");
         upperStage = GameObject.FindGameObjectsWithTag("Stage");
-
-        exits = GameObject.FindGameObjectsWithTag("Exit");
-        
+        exits = GameObject.FindGameObjectsWithTag("Exit");        
         
         behaviour = Behaviour.Seek;
 
@@ -92,10 +90,6 @@ public class AgentBehaviour : MonoBehaviour
                     Idle();
                     break;
 
-                case Behaviour.Wander:
-                    Wander();
-                    break;
-
                 case Behaviour.Seek:
                     //Prioritizes Food over Tired
                     if (isHungry && !isGoingForFood)
@@ -125,7 +119,8 @@ public class AgentBehaviour : MonoBehaviour
                     break;
             }
 
-            Debug.DrawLine(agent.transform.position, agent.pathEndPosition, Color.black, 0.1f);
+            Debug.DrawLine(agent.transform.position, agent.pathEndPosition,
+                Color.black, 0.1f);
         }
         else
         {
@@ -193,7 +188,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// This method is called for when the agent is looking for the stages
+    /// This method is called for when the agent is looking for the stages.
     /// It helps determine the stage with fewer agents and
     /// sends him to that one
     /// </summary>
@@ -203,19 +198,19 @@ public class AgentBehaviour : MonoBehaviour
             stages[1].GetComponent<Count>().GetNumberOfAgents())
         {
             stages[1].GetComponent<Count>().IsGoing(this.name);
-            StartCoroutine(GoToFun(1));
+            StartCoroutine(GoTo(SpreadAlong(1)));
         }
         else if (stages[0].GetComponent<Count>().GetNumberOfAgents() <
            stages[1].GetComponent<Count>().GetNumberOfAgents())
         {
             stages[0].GetComponent<Count>().IsGoing(this.name);
-            StartCoroutine(GoToFun(0));
+            StartCoroutine(GoTo(SpreadAlong(0)));
         }
         else
         {
             int i = Random.Range(0, openAreas.Length);
             stages[i].GetComponent<Count>().IsGoing(this.name);
-            StartCoroutine(GoToFun(i));
+            StartCoroutine(GoTo(SpreadAlong(i)));
         }
     }
 
@@ -237,7 +232,7 @@ public class AgentBehaviour : MonoBehaviour
                 seats[i].GetComponent<PeopleGoing>()
                     .UpdateAgentsGoing(agent.name);
                 StopAllCoroutines();
-                StartCoroutine(GoToFood(seats[i].transform.position));
+                StartCoroutine(GoTo(seats[i].transform.position));
                 hasFoundSeat = true;
                 return true;
             }
@@ -259,32 +254,21 @@ public class AgentBehaviour : MonoBehaviour
         {
             StopAllCoroutines();
             openAreas[1].GetComponent<Count>().IsGoing(this.name);
-            StartCoroutine(GoToOpenZone(1));
+            StartCoroutine(GoTo(RandomPointInsideCollider(1)));
         }else if (openAreas[0].GetComponent<Count>().GetNumberOfAgents() <
             openAreas[1].GetComponent<Count>().GetNumberOfAgents())
         {
             StopAllCoroutines();
             openAreas[0].GetComponent<Count>().IsGoing(this.name);
-            StartCoroutine(GoToOpenZone(0));
+            StartCoroutine(GoTo(RandomPointInsideCollider(0)));
         }
         else
         {
             int i = Random.Range(0, openAreas.Length);
             StopAllCoroutines();
             openAreas[i].GetComponent<Count>().IsGoing(this.name);
-            StartCoroutine(GoToOpenZone(i));
+            StartCoroutine(GoTo(RandomPointInsideCollider(i)));
         }            
-    }
-
-    /// <summary>
-    /// This method is used to make the agent wander around
-    /// </summary>
-    private void Wander()
-    {
-        if (agent.remainingDistance < 0.5f)
-        {
-            GenerateWanderDestination();
-        }
     }
 
     /// <summary>
@@ -325,7 +309,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// Make agent stop
+    /// Make agent stop when called
     /// </summary>
     private void Idle()
     {
@@ -355,23 +339,6 @@ public class AgentBehaviour : MonoBehaviour
         behaviour = Behaviour.Flee;
         StopAllCoroutines();
         Flee();
-    }
-
-    /// <summary>
-    /// This methos generates a wander destination 
-    /// for the agent to wander around
-    /// </summary>
-    private void GenerateWanderDestination()
-    {
-        destination = new Vector3(
-            transform.position.x + Random.Range(-15, 15),
-            transform.position.y,
-            transform.position.z + Random.Range(-15, 15));
-
-        if (agent.CalculatePath(destination, path))
-            agent.SetDestination(destination);
-        else
-            GenerateWanderDestination();
     }
 
     /// <summary>
@@ -405,6 +372,25 @@ public class AgentBehaviour : MonoBehaviour
             0f,
             Random.Range(col.bounds.min.z, col.bounds.max.z));
         return RandomPoint;
+    }
+
+    /// <summary>
+    /// This method is called to ake the agents spred along 
+    /// the front row of the stage
+    /// </summary>
+    /// <param name="i"></param>
+    /// <returns>Point on front row</returns>
+    private Vector3 SpreadAlong(int i)
+    {
+        Vector3 along;
+        Collider col = stages[i].GetComponent<Collider>();
+        along = col.ClosestPoint(upperStage[i].transform.position);
+        along = new Vector3(
+            along.x + Random.Range(-15f, 15f),
+            along.y,
+            along.z);
+
+        return along;
     }
 
     /// <summary>
@@ -453,58 +439,17 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// This Courotine is used to make the agent go to the assign seat;
+    /// Is used to make the agent go to somehwhere
     /// </summary>
-    /// <param name="seatPos"></param>
+    /// <param name="place"></param>
     /// <returns></returns>
-    private IEnumerator GoToFood(Vector3 seatPos)
+    private IEnumerator GoTo(Vector3 place)
     {
         yield return new WaitForSeconds(Random.Range(5, 10));
-        if (isHungry)
+        if (isAlive)
         {
-            agent.SetDestination(seatPos);
+            agent.SetDestination(place);
         }
-    }
-
-    /// <summary>
-    /// This Courotine is used to make the agent go to the selected Open Zone
-    /// </summary>
-    /// <param name="i"></param>
-    /// <returns></returns>
-    private IEnumerator GoToOpenZone(int i)
-    {
-        yield return new WaitForSeconds(Random.Range(5, 10));
-        if (isTired)
-        {
-            agent.SetDestination(RandomPointInsideCollider(i));
-        }
-    }
-
-    /// <summary>
-    /// This Courotine is used to make the agent go to the selected stage
-    /// </summary>
-    /// <param name="i"></param>
-    /// <returns></returns>
-    private IEnumerator GoToFun(int i)
-    {
-        yield return new WaitForSeconds(Random.Range(5, 10));
-        agent.SetDestination(SpreadAlong(i));
-    }
-
-    /// <summary>
-    /// This method is called to ake the agents spred along 
-    /// the front row of the stage
-    /// </summary>
-    /// <param name="i"></param>
-    /// <returns>Point on front row</returns>
-    private Vector3 SpreadAlong(int i)
-    {
-        Vector3 along;
-        Collider col = stages[i].GetComponent<Collider>();
-        along = col.ClosestPoint(upperStage[i].transform.position);
-        along = new Vector3(along.x + Random.Range(-15f, 15f), along.y, along.z);
-
-        return along;
     }
 
     /// <summary>

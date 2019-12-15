@@ -8,7 +8,6 @@ using UnityEngine;
 public enum Behaviour
 {
     Idle,
-    Wander,
     Seek,
     Flee
 }
