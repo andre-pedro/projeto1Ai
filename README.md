@@ -8,7 +8,7 @@ Projeto em desenvolvimento pelos seguintes alunos:
 Descriçao da distribuição de tarefas 
 
 ## Introdução
-Este projeto está a ser desenvolvido no âmbito da disciplina de Inteligencia Artificial, onde nos foi proposto o desenvolvimento de uma simulação de um concerto, onde os agentes presentes no recinto tivessem necessidades como fome, cansaço e divertimento. Foi-nos pedido também que os vários agentes tivessem uma reação a acontecimentos catastróficos (explosões) que ocorrem durante o evento. O projeto encontra-se no seguinte [repositório] de git, bem como o respetivo [enunciado].
+Este projeto foi desenvolvido no âmbito da unidade curricular "Inteligencia Artificial", onde nos foi proposto o desenvolvimento de uma simulação de um concerto, onde os agentes presentes no recinto tivessem necessidades como fome e cansaço. Foi-nos pedido também que os vários agentes reagissem a acontecimentos catastróficos (explosões) que ocorrem durante o evento. O projeto encontra-se no seguinte [repositório] de git, bem como o respetivo [enunciado].
 
 //Pequena descrição sobre o problema e a forma como o resolveram. Deve oferecer ao leitor informação suficiente para entender e contextualizar o projeto,
 bem como quais foram os objetivos e resultados alcançados.
@@ -17,16 +17,16 @@ bem como quais foram os objetivos e resultados alcançados.
  Deve também ser apresentada nesta secção a pesquisa efetuada sobre simulação baseada em agentes aplicada ao pânico em multidões.
 
 ## Metodologia
-A simulação foi implementada utilizando a Game Engine Unity, num projeto 3D.
+A simulação foi implementada utilizando a Game Engine "Unity", num projeto 3D. A _build_ da mesma foi feita para Windows (64 bits).
 
 ### Agentes
-Correndo a sistemas de inteligência artificial nos agentes cinematicos presentes, estes navegam no festival numa _navmesh_. A quantidade de agentes presentes é definida através de um input que pode ser alterado na interface visual ( de X até Y ).
+Recorrendo a sistemas de inteligência artificial nos agentes cinematicos presentes, estes navegam no festival numa _navmesh_. A quantidade de agentes presentes é definida através de um input que pode ser alterado na interface visual ( de X até Y ).
 
 Mediante as condições, estes agentes respondem com os seguintes comportamentos:
 
-* "Seek" - 
-* "Idle" - 
-* "Flee" - Quando ocorre uma explosão, os agentes num determinado raio 
+* "Seek" - Sendo a acção que dá a maior "autonomia" aos agentes, o comportamento _seek_ acontece sempre que cada agente precisa de se deslocar para um local (por exemplo, quando alguém se desloca para um palco ou outra zona).
+* "Idle" - Considerado o comportamento "neutro", os agentes ficam no estado _idle_ quando não estão a efetuar nenhum dos restantes comportamentos, ocorrendo frequentemente quando os agentes estão a recuperar alguma necessidade.
+* "Flee" - Quando ocorre uma explosão, os agentes num determinado raio (ver secção "Explosões") correm na direção oposta.
 
 #### Necessidades
 
@@ -44,7 +44,7 @@ No recinto do festival existem 3 zonas:
 
 * **Palcos** - 
 
-* **Área de Restauração** - 
+* **Área de Restauração** -  Local com diversas mesas e cadeiras onde os agentes se deslocam quando a sua fome desce, permanecendo no local até o valor ficar acima de 50. Ao dirigir-se para o local, o agente reserva um lugar o mais afastado possível dos restantes. Quando um agente escolhe um lugar, só ele é que pode lá ficar.
 
 * **Zonas de Descanso** - 
 
@@ -55,7 +55,7 @@ O jogador pode escolher com o rato o local onde quer causar uma explosão. Ao cl
 
 * **1º Raio** - Todos os agentes morrem;
 
-* **2º Raio** - Todos os agentes ficam atordoados (_stunned_) (ver secção Reações), ficando  parados num intervalo de tempo entre 2 a 10 segundos. Passado esse tempo, voltam a andar, porém com velocidade de -50%.
+* **2º Raio** - Todos os agentes ficam atordoados (_stunned_) (ver secção Reações), ficando  parados num intervalo de tempo entre 2 a 10 segundos. Passado esse tempo, voltam a andar, porém com velocidade reduzida em -50%.
 
 * **3º Raio** - Todos os agentes são assustados (_scared_), fugindo na direção oposta da explosão. Se um agente assustado entrar em contacto com outros agentes, estes ficam assustados também.
 
