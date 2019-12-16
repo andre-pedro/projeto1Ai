@@ -504,7 +504,7 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns></returns>
     private IEnumerator GoTo(Vector3 place)
     {
-        yield return new WaitForSeconds(Random.Range(5, 10));
+        yield return new WaitForSeconds(Random.Range(1, 5));
         if (isAlive)
         {
             agent.SetDestination(place);
@@ -517,7 +517,7 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns></returns>
     private IEnumerator RunToExit()
     {
-        yield return new WaitForSeconds(Random.Range(5, 10));
+        yield return new WaitForSeconds(Random.Range(1, 3));
         NavMesh.avoidancePredictionTime = 5f;
         if (isAlive && isStunned == false)
         {

@@ -8,16 +8,12 @@ using UnityEngine.AI;
 /// </summary>
 public class Explosion : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject gameManager;
-
     /// <summary>
     /// The start is used to start the explosion by calling 3 methods that
     /// apply the effects of the 3 radius
     /// </summary>
     private void Start()
     {
-        gameManager = GameObject.Find("GameManager");
         KillAgentsInRadius1();
         StunAgentsInRadius2();
         ScareAgentsInRadius3();
@@ -44,7 +40,7 @@ public class Explosion : MonoBehaviour
                     10f,
                     1000f);
 
-                gameManager.GetComponent<PopulationController>()
+                GameManager.Instance.GetComponent<PopulationController>()
                     .UpdatedDeadAngents();
 
                 Debug.Log($"Killed {hit.gameObject.name}");

@@ -43,6 +43,8 @@ public class Fire : MonoBehaviour
     {
         if(other.tag == "Agent")
         {
+            GameManager.Instance.GetComponent<PopulationController>()
+                    .UpdatedDeadAngents();
             other.GetComponent<AgentBehaviour>().Die();
             Debug.Log($"Touched {other.name}");
         }
