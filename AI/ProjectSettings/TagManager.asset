@@ -13,6 +13,7 @@ TagManager:
   - Spawn
   - Stage
   - Tables
+  - Fire
   layers:
   - Default
   - TransparentFX

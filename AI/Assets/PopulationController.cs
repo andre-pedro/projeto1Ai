@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// This class is used to populate the scene with the agents
@@ -17,7 +18,16 @@ public class PopulationController : MonoBehaviour
     [SerializeField]
     private GameObject agentPrefab;
 
+    [SerializeField]
+    private Text currentAgents;
+
+    [SerializeField]
+    private Text dead;
+
     private GameObject[] agentHolder;
+
+    private int deadAgents = 0;
+    private int agentsThatEscaped = 0;
 
     private float timer;
     int i;
@@ -52,6 +62,15 @@ public class PopulationController : MonoBehaviour
         {
 
         }
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(10, 10, 200, 20), $"Current agents on scene - " +
+            $"{agents.Count}");
+
+        GUI.Label(new Rect(10, 25, 200, 20), $"Dead agents - {deadAgents}");
+        GUI.Label(new Rect(10, 40, 300, 20), $"Sucessefully escaped agents - {agentsThatEscaped}");
     }
 
     /// <summary>
@@ -92,4 +111,15 @@ public class PopulationController : MonoBehaviour
     {
         return agents.Count;
     }
+
+    public void UpdatedDeadAngents()
+    {
+        deadAgents++;
+    }
+
+    public void EscapedAgents()
+    {
+        agentsThatEscaped++;
+    }
+
 }

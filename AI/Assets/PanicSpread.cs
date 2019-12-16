@@ -38,6 +38,14 @@ public class PanicSpread : MonoBehaviour
                 other.gameObject.GetComponent<AgentBehaviour>().GoToExit();
             }
             
+        }else if (!canPass)
+        {
+            if(other.tag == "Fire")
+            {
+                this.GetComponentInParent<AgentBehaviour>().inPanic = true;
+                this.gameObject.GetComponent<AgentBehaviour>().GoToExit();
+                this.gameObject.GetComponent<NavMeshAgent>().speed = 10;
+            }
         }
     }
 }

@@ -27,9 +27,9 @@ public class ExplosionController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 1000f))
             {
-                Debug.Log(hit.collider.gameObject.tag);
                 if (hit.collider.gameObject.tag != "Stage" &&
-                    hit.collider.gameObject.tag != "Walls")
+                    hit.collider.gameObject.tag != "Walls" &&
+                    hit.collider.gameObject.tag != "Agent")
                 {
                     Instantiate(explosion, hit.point, Quaternion.identity);
                     Instantiate(fire, hit.point, Quaternion.identity);

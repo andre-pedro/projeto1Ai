@@ -25,6 +25,8 @@ public class AgentDestroyer : MonoBehaviour
         {
             GameManager.Instance.GetComponent<PopulationController>()
                 .RemoveAgent(gameObject);
+            GameManager.Instance.GetComponent<PopulationController>()
+                .EscapedAgents();
             Destroy(gameObject);
         }
     }
