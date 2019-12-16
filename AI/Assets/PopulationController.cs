@@ -11,7 +11,6 @@ public class PopulationController : MonoBehaviour
     [SerializeField]
     private List<GameObject> agents = new List<GameObject>();
 
-    [Range(0, 10000)]
     [SerializeField]
     private int maxAgents;
 
@@ -23,6 +22,26 @@ public class PopulationController : MonoBehaviour
 
     [SerializeField]
     private Text dead;
+
+    [SerializeField]
+    private GameObject exit1;
+
+    [SerializeField]
+    private GameObject exit2;
+
+    [SerializeField]
+    private GameObject wall1;
+
+    [SerializeField]
+    private GameObject wall2;
+
+    [SerializeField]
+    private GameObject spawn1;
+
+    [SerializeField]
+    private GameObject spawn2;
+
+    public bool canStart { get; set; }
 
     private GameObject[] agentHolder;
 
@@ -48,20 +67,24 @@ public class PopulationController : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        timer -= Time.deltaTime;
-
-        if(timer <= 0f && i != maxAgents)
+        if (canStart)
         {
-            //Debug.Log($"{i + 1} agents on field");
-            SpawnAgent(i);
-            i++;
-            timer = 0.1f;
-            //SpawnPopulation();
-        }
-        else
-        {
+            timer -= Time.deltaTime;
 
+            if (timer <= 0f && i != maxAgents)
+            {
+                //Debug.Log($"{i + 1} agents on field");
+                SpawnAgent(i);
+                i++;
+                timer = 0.1f;
+                //SpawnPopulation();
+            }
+            else
+            {
+
+            }
         }
+        
     }
 
     void OnGUI()
@@ -120,6 +143,44 @@ public class PopulationController : MonoBehaviour
     public void EscapedAgents()
     {
         agentsThatEscaped++;
+    }
+
+    public void SetMaxAgents(int x)
+    {
+        maxAgents = x;
+    }
+
+    public void SetExits(int x)
+    {
+        switch (x)
+        {
+            case 1:
+                wall1.SetActive(true);
+                wall2.SetActive(true);
+                exit1.SetActive(false);
+                exit2.SetActive(false);
+                spawn1.SetActive(false);
+                spawn2.SetActive(false);
+                break;
+
+            case 2:
+                wall1.SetActive(true);
+                wall2.SetActive(false);
+                exit1.SetActive(false);
+                exit2.SetActive(true);
+                spawn1.SetActive(false);
+                spawn2.SetActive(true);
+                break;
+
+            case 3:
+                wall1.SetActive(false);
+                wall2.SetActive(false);
+                exit1.SetActive(true);
+                exit2.SetActive(true);
+                spawn1.SetActive(true);
+                spawn2.SetActive(true);
+                break;
+        }
     }
 
 }

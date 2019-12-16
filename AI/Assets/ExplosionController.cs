@@ -20,23 +20,28 @@ public class ExplosionController : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (GameManager.Instance.GetComponent<PopulationController>().canStart)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 1000f))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (hit.collider.gameObject.tag != "Stage" &&
-                    hit.collider.gameObject.tag != "Walls" &&
-                    hit.collider.gameObject.tag != "Agent")
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, 1000f))
                 {
-                    Instantiate(explosion, hit.point, Quaternion.identity);
-                    Instantiate(fire, hit.point, Quaternion.identity);
+                    if (hit.collider.gameObject.tag != "Stage" &&
+                        hit.collider.gameObject.tag != "Walls" &&
+                        hit.collider.gameObject.tag != "Agent" &&
+                        hit.collider.gameObject.tag != "Panel")
+                    {
+                        Vector3 pos = new Vector3(hit.point.x, 0, hit.point.z);
+                        Instantiate(explosion, pos, Quaternion.identity);
+                        Instantiate(fire, pos, Quaternion.identity);
+                    }
+
                 }
 
             }
-
-        }
+        }        
     }
 }

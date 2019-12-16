@@ -68,6 +68,7 @@
      <Compile Include="Assets\PanicSpread.cs" />
      <Compile Include="Assets\PeopleGoing.cs" />
      <Compile Include="Assets\PopulationController.cs" />
+     <Compile Include="Assets\UI.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Diogo Maia/Desktop/projeto1Ai/AI/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
