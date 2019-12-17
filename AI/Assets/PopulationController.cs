@@ -102,10 +102,7 @@ public class PopulationController : MonoBehaviour
         i = 0;
 
         //Amount of time in between each agent spawns
-        timer = 0.1f;
-
-        //Fetched all the active spawners
-        spawners = GameObject.FindGameObjectsWithTag("Spawn");
+        timer = 0.1f;        
     }
 
     /// <summary>
@@ -253,6 +250,9 @@ public class PopulationController : MonoBehaviour
                 spawn2.SetActive(true);
                 break;
         }
+
+        //Fetched all the active spawners
+        spawners = GameObject.FindGameObjectsWithTag("Spawn");
     }
 
 }
