@@ -26,7 +26,7 @@ Uma das grandes prioridades na gestão de eventos de grande escala (como concert
 A simulação foi implementada utilizando a Game Engine "Unity", num projeto 3D. A _build_ da mesma foi feita para Windows (64 bits).
 
 ### Agentes
-Recorrendo a sistemas de inteligência artificial nos agentes cinematicos presentes, estes navegam no festival numa _navmesh_. A quantidade de agentes presentes é definida através de um _input_ que pode ser alterado na interface visual ( de X até Y ).
+Recorrendo a sistemas de inteligência artificial nos agentes presentes, estes navegam no festival numa _navmesh_. A quantidade de agentes presentes é definida através de um _input_ que pode ser alterado no inicio da simulação.
 
 Mediante as condições, estes agentes respondem com os seguintes comportamentos:
 
@@ -94,6 +94,8 @@ O jogador pode escolher com o rato o local onde quer causar uma explosão. Ao cl
 (Anexo 2 - Raios de Explosão)
 
 Perante as explosões, os agentes podem reagir de maneiras diferentes. Ao serem atingidos nos raios 2 ou 3, para além do referido anteriormente, ficam também em pânico. Agentes com `panic` afetam outros agentes perto deles, fazendo com que fiquem em `panic` também.
+
+Após a explosão, o fogo causado pela mesma vai aumentando e espalhando-se pelo recinto. Se um agente é atingido pelo fogo, morre.
 
 ## Resultados e Discussão
 De um modo geral, a I.A. comportou-se como o esperado. No entanto, descobrimos alguns comportamentos emergentes presentes na simulação, onde agentes fazem filas para ir para algum sitio, e em distâncias pequenas, alguns agentes cortam caminho independentemente do custo dos mesmos.
