@@ -6,10 +6,7 @@ Projeto em desenvolvimento pelos seguintes alunos:
 * [Tiago Alves](https://github.com/Synpse) - Nº a21701031
 
 ## Distribuição de tarefas
-Para a execução deste projeto, as tarefas foram repartidas de acordo com as aptidões de cada um:
-* **André Pedro** - Elaboração do relatório
-* **Diogo Maia** - 
-* **Tiago Alves** -
+Para a execução deste projeto, as tarefas foram repartidas de acordo com as aptidões de cada um: André Pedro: Relatório do projeto; Diogo Maia e Tiago Alves: Unity. No entanto, o Tiago Alves não executou uma pequena parte das suas tarefas devido à sobreposição de projetos, nomeadamente o de Linguagens de Programação II e Sistemas de Entretenimento, ao qual deu prioridade. O André Pedro, idem, devido à sobreposição dos projetos de Interfaces Tangíveis II e Sistemas de Entretenimento.
 
 ## Introdução
 Este projeto foi desenvolvido no âmbito da unidade curricular "Inteligência Artificial", onde nos foi proposto o desenvolvimento de uma simulação de um concerto, onde os agentes presentes no recinto tivessem necessidades como fome e cansaço. Foi-nos pedido também que os vários agentes reagissem a acontecimentos catastróficos (explosões) que ocorrem durante o evento. O projeto encontra-se no seguinte [repositório] de git, bem como o respetivo [enunciado].
