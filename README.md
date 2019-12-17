@@ -19,11 +19,12 @@ _O Flowchart_ abaixo reflete o nosso processo de verificação de estados de cad
 ![flowchart](relatorioAnexos/flowchart.svg)
 (Anexo 1 - Fluxograma)
 
-No inicio da simulação, é pedido ao jogador para escolher a quantidade de agentes, bem como o número de saídas disponíveis.
+No inicio da simulação, é pedido ao jogador para escolher a quantidade de agentes, bem como o número de saídas do recinto disponíveis.
 
 ### Pesquisa
 Uma das grandes prioridades na gestão de eventos de grande escala (como concertos, estádios, entre outros) é a segurança. Em locais com imensas pessoas, tornar-se-ia bastante dispendioso construir diversos edifícios diferentes para comprovar qual deles teria o melhor método de segurança. Devido a esta necessidade, uma das maneiras mais económicas que [Neal Wagner e Vikas Agrawal](https://www.sciencedirect.com/science/article/pii/S0957417413008270?via%3Dihub) utilizaram foi simular situações catastróficas nos recintos em ambientes virtuais. A principal componente deste método é atribuir determinadas reações às pessoas (que nesta simulação são representados por agentes com inteligência artificial) perante a emergência. Para atribuir tais características semelhantes às de um ser humano, tivemos que utilizar diversos algoritmos que automatizassem as reações. Como tal, seguimos os principais algoritmos de movimento cinemático presentes em "[AI for Games](https://books.google.pt/books/about/Artificial_Intelligence_for_Games.html?id=zCiv-lMad-AC&redir_esc=y)", de Ian Millington: Seek e Flee. Aplicámos o primeiro aos agentes para poderem locomover-se do ponto A ao ponto B de forma individual e independente. Já o segundo é aplicado na presença de uma explosão, fazendo com que os agentes se afastem do centro da explosão.
-Tendo os comportamentos da I.A. funcionais, passámos para a implementação do recinto, 
+Tendo os comportamentos da I.A. funcionais, passámos para a implementação do recinto. Espalhámos as zonas tendo em conta como alguns festivais (como [Rock in Rio](https://s3.amazonaws.com/cdn.rockinrio.com.br/uploads/news_images/9857/mapa_RiR2016.png), [Super Bock Super Rock](https://fotos.web.sapo.io/i/G1d11052b/18587131_fr3LN.jpeg), [MEO Sudoeste](https://ohmdj.files.wordpress.com/2015/07/mapa-recinto-meo-sudoeste.png), entre outros) o fazem, de modo a terem o máximo de equidistância uns dos outros possível.
+Para caminhar em caminhos diferentes usámos diferentes _costs_ da _navmesh_, porque achámos ser a maneira mais simples de implementar os diferentes caminhos possíveis.
 
 ## Metodologia
 A simulação foi implementada utilizando a Game Engine "Unity", num projeto 3D. A _build_ da mesma foi feita para Windows (64 bits).
@@ -34,7 +35,8 @@ Recorrendo a sistemas de inteligência artificial nos agentes presentes, estes n
 Mediante as condições, estes agentes respondem com os seguintes comportamentos:
 
 * "**Seek**" - Sendo a acção que dá a maior "autonomia" aos agentes, o comportamento _seek_ acontece sempre que cada agente precisa de se deslocar para um local (por exemplo, quando alguém se desloca para um palco ou outra zona).
-* "**Idle**" - Considerado o comportamento "neutro", os agentes ficam estáticos no estado _idle_ quando não estão a efetuar nenhum dos restantes comportamentos, ocorrendo frequentemente quando os agentes estão a recuperar alguma necessidade.
+* "**Idle**" - Considerado o comportamento "neutro", os agentes ficam estáticos no estado _idle_ quando são atingidos pelo 2º raio de explosões.
+
 * "**Flee**" - Quando ocorre uma explosão, os agentes num determinado raio (ver secção "Explosões") correm na direção oposta.
 
 #### Necessidades
@@ -68,8 +70,6 @@ private void ChecksStats()
     }
 ```
  A permanência de um agente numa área aumenta exponencialmente o valor correspondente. Ao ter as necessidades favoráveis para o efeito, o agente calcula o palco com menos agentes e desloca-se para o mesmo. No caso de ambos os palcos terem exatamente a mesma quantidade de agentes, é feito um _random_ para decidir para onde é feita a deslocação.
-
-
 
 ### Zonas / Áreas
 
@@ -107,15 +107,21 @@ De um modo geral, a I.A. comportou-se como o esperado. No entanto, descobrimos a
 
 ## Conclusão
 Na elaboração desta simulação foi-nos possivel concluir que:
+* É uma das melhores maneiras de prever acontecimentos inesperados em eventos de grande escala;
+* É bastante interessante observar o comportamento dos agentes, descobrir comportamentos emergentes e tentar deduzir as reações dos mesmos às explosões;
+* Descobrimos através do diálogo com colegas que existem diversas maneiras de fazer a simulação, e que existem vários fatores que geram ou retiram diferentes comportamentos emergentes.
 
 
 ## Agradecimentos
+
 * Prof. Nuno Fachada
 
 ## Referências
-Wagner, N. & Agrawal, V. (2014). "An agent-based simulation system for concert venue crowd evacuation modeling in the presence of a fire disaster".
+* Wagner, N. & Agrawal, V. (2014). "An agent-based simulation system for concert venue crowd evacuation modeling in the presence of a fire disaster".
 
-Millington, I. (2019). AI for Games (3rd ed.). CRC Press.
+* Silva M. V., Scholl V. M., Adamatti, D. (2017) ["Simulação Multiagente da Evacuação da Boate Kiss: A Importância da NBR 9.077 e sua Relação com o 'Pânico'"](https://www.researchgate.net/publication/321713849_Simulacao_Multiagente_da_Evacuacao_da_Boate_Kiss_A_Importancia_da_NBR_9077_e_sua_Relacao_com_o_'Panico'_Multia-Agent_Simulation_of_the_Kiss_Nightclub_Evacuation_The_Importance_of_NBR_9077_and_its_rela)
+
+* Millington, I. (2019). AI for Games (3rd ed.). CRC Press.
 
 
 [repositório]:https://github.com/andre-pedro/projeto1Ai
