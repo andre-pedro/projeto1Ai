@@ -48,6 +48,7 @@
     <member refid="class_agent_behaviour_1af14990c64e96c48b2edf706e8e750d84" kind="function"><name>Die</name></member>
     <member refid="class_agent_behaviour_1a21aba1e2f790b882878ace979ced6498" kind="function"><name>Stun</name></member>
     <member refid="class_agent_behaviour_1a450409331fa676bd66f2470613ad38c8" kind="function"><name>Panic</name></member>
+    <member refid="class_agent_behaviour_1ac9cb3e104a353a336399281cb99839d0" kind="function"><name>Check</name></member>
     <member refid="class_agent_behaviour_1a7a74a0ca74a8a79583660d7d1a28161a" kind="function"><name>GoToExit</name></member>
     <member refid="class_agent_behaviour_1a51394c4ea8e329d792ce4c4d0b578877" kind="function"><name>SetHungryMode</name></member>
   </compound>

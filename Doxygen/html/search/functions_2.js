@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['escapedagents_57',['EscapedAgents',['../class_population_controller.html#a8bc739c650124132225a9aab8c0f07ea',1,'PopulationController']]]
+  ['die_58',['Die',['../class_agent_behaviour.html#af14990c64e96c48b2edf706e8e750d84',1,'AgentBehaviour']]]
 ];

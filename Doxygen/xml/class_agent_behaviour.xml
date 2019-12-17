@@ -373,7 +373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="163" column="18" bodyfile="AgentBehaviour.cs" bodystart="163" bodyend="249"/>
+        <location file="AgentBehaviour.cs" line="163" column="18" bodyfile="AgentBehaviour.cs" bodystart="163" bodyend="252"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a49a8181a99e384174374b60f83ba191a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -387,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="254" column="18" bodyfile="AgentBehaviour.cs" bodystart="254" bodyend="286"/>
+        <location file="AgentBehaviour.cs" line="257" column="18" bodyfile="AgentBehaviour.cs" bodystart="257" bodyend="289"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a9fe715bd3ed37bc581d815b22f7e461b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -401,7 +401,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="292" column="18" bodyfile="AgentBehaviour.cs" bodystart="292" bodyend="332"/>
+        <location file="AgentBehaviour.cs" line="295" column="18" bodyfile="AgentBehaviour.cs" bodystart="295" bodyend="335"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a14f6bf3f7cb9d14547b6a26eef1503b4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -415,7 +415,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="339" column="18" bodyfile="AgentBehaviour.cs" bodystart="339" bodyend="381"/>
+        <location file="AgentBehaviour.cs" line="342" column="18" bodyfile="AgentBehaviour.cs" bodystart="342" bodyend="384"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a391d29ce1bcf12bf7de0ab160bab0e29" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -432,7 +432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="389" column="18" bodyfile="AgentBehaviour.cs" bodystart="389" bodyend="435"/>
+        <location file="AgentBehaviour.cs" line="392" column="18" bodyfile="AgentBehaviour.cs" bodystart="392" bodyend="438"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1ae84a4be5ef9651dd00b68f54b3d9ed06" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -472,7 +472,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="443" column="18" bodyfile="AgentBehaviour.cs" bodystart="443" bodyend="461"/>
+        <location file="AgentBehaviour.cs" line="446" column="18" bodyfile="AgentBehaviour.cs" bodystart="446" bodyend="464"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1afa32c92b3428e777f9b0b3181a76d7de" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>GameObject</type>
@@ -489,7 +489,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="467" column="24" bodyfile="AgentBehaviour.cs" bodystart="467" bodyend="514"/>
+        <location file="AgentBehaviour.cs" line="470" column="24" bodyfile="AgentBehaviour.cs" bodystart="470" bodyend="517"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1ae394192290e85be762fc051639e2a47d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -503,7 +503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="520" column="18" bodyfile="AgentBehaviour.cs" bodystart="520" bodyend="562"/>
+        <location file="AgentBehaviour.cs" line="523" column="18" bodyfile="AgentBehaviour.cs" bodystart="523" bodyend="565"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1af315df842b4b80b3b7052e645ba44c29" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -517,7 +517,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="568" column="18" bodyfile="AgentBehaviour.cs" bodystart="568" bodyend="578"/>
+        <location file="AgentBehaviour.cs" line="571" column="18" bodyfile="AgentBehaviour.cs" bodystart="571" bodyend="581"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1aa88cf8be0e3a0b414d90a61bd1d35b9c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -531,7 +531,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="583" column="18" bodyfile="AgentBehaviour.cs" bodystart="583" bodyend="587"/>
+        <location file="AgentBehaviour.cs" line="586" column="18" bodyfile="AgentBehaviour.cs" bodystart="586" bodyend="590"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a00c9871488d986fa76bcbba8896e57e9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -545,7 +545,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="613" column="18" bodyfile="AgentBehaviour.cs" bodystart="613" bodyend="617"/>
+        <location file="AgentBehaviour.cs" line="616" column="18" bodyfile="AgentBehaviour.cs" bodystart="616" bodyend="620"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1ad988a9438f32547a68457149c842cdf8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -572,7 +572,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="662" column="18" bodyfile="AgentBehaviour.cs" bodystart="662" bodyend="678"/>
+        <location file="AgentBehaviour.cs" line="665" column="18" bodyfile="AgentBehaviour.cs" bodystart="665" bodyend="681"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1aacacc4f4669fd8f5a874d14c5b273af5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Vector3</type>
@@ -601,7 +601,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="685" column="21" bodyfile="AgentBehaviour.cs" bodystart="685" bodyend="698"/>
+        <location file="AgentBehaviour.cs" line="688" column="21" bodyfile="AgentBehaviour.cs" bodystart="688" bodyend="701"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a3f7ec7feb698dd4a7df4e5609b741217" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Vector3</type>
@@ -630,7 +630,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="706" column="21" bodyfile="AgentBehaviour.cs" bodystart="706" bodyend="724"/>
+        <location file="AgentBehaviour.cs" line="709" column="21" bodyfile="AgentBehaviour.cs" bodystart="709" bodyend="727"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a860a1ee80fb7963ddb61d75f1286bfd8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Transform</type>
@@ -647,7 +647,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="730" column="23" bodyfile="AgentBehaviour.cs" bodystart="730" bodyend="776"/>
+        <location file="AgentBehaviour.cs" line="733" column="23" bodyfile="AgentBehaviour.cs" bodystart="733" bodyend="779"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1ae6369b8edb00915e543d4199d75bc0cf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>IEnumerator</type>
@@ -664,7 +664,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="782" column="25" bodyfile="AgentBehaviour.cs" bodystart="782" bodyend="797"/>
+        <location file="AgentBehaviour.cs" line="816" column="25" bodyfile="AgentBehaviour.cs" bodystart="816" bodyend="831"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a9818bc665d8535f7cffd3f92d10fb7a4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>IEnumerator</type>
@@ -693,7 +693,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="804" column="25" bodyfile="AgentBehaviour.cs" bodystart="804" bodyend="813"/>
+        <location file="AgentBehaviour.cs" line="838" column="25" bodyfile="AgentBehaviour.cs" bodystart="838" bodyend="847"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a3da99619db4b3402f9c76092ff84555e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>IEnumerator</type>
@@ -710,7 +710,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="819" column="25" bodyfile="AgentBehaviour.cs" bodystart="819" bodyend="830"/>
+        <location file="AgentBehaviour.cs" line="853" column="25" bodyfile="AgentBehaviour.cs" bodystart="853" bodyend="864"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a0d063d1779b3c38b923a115c8a662dd0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>IEnumerator</type>
@@ -727,7 +727,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="836" column="25" bodyfile="AgentBehaviour.cs" bodystart="836" bodyend="846"/>
+        <location file="AgentBehaviour.cs" line="870" column="25" bodyfile="AgentBehaviour.cs" bodystart="870" bodyend="880"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -743,7 +743,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="592" column="17" bodyfile="AgentBehaviour.cs" bodystart="592" bodyend="608"/>
+        <location file="AgentBehaviour.cs" line="595" column="17" bodyfile="AgentBehaviour.cs" bodystart="595" bodyend="611"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a21aba1e2f790b882878ace979ced6498" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -757,7 +757,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="623" column="17" bodyfile="AgentBehaviour.cs" bodystart="623" bodyend="633"/>
+        <location file="AgentBehaviour.cs" line="626" column="17" bodyfile="AgentBehaviour.cs" bodystart="626" bodyend="636"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a450409331fa676bd66f2470613ad38c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -784,7 +784,47 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="639" column="17" bodyfile="AgentBehaviour.cs" bodystart="639" bodyend="655"/>
+        <location file="AgentBehaviour.cs" line="642" column="17" bodyfile="AgentBehaviour.cs" bodystart="642" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1ac9cb3e104a353a336399281cb99839d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GameObject[]</type>
+        <definition>GameObject [] AgentBehaviour.Check</definition>
+        <argsstring>(GameObject[] exits, NavMeshPath path)</argsstring>
+        <name>Check</name>
+        <param>
+          <type>GameObject[]</type>
+          <declname>exits</declname>
+        </param>
+        <param>
+          <type>NavMeshPath</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Checks Available exits </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>exits</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Available exits</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="787" column="23" bodyfile="AgentBehaviour.cs" bodystart="787" bodyend="810"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a7a74a0ca74a8a79583660d7d1a28161a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -798,7 +838,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="851" column="17" bodyfile="AgentBehaviour.cs" bodystart="851" bodyend="855"/>
+        <location file="AgentBehaviour.cs" line="885" column="17" bodyfile="AgentBehaviour.cs" bodystart="885" bodyend="889"/>
       </memberdef>
       <memberdef kind="function" id="class_agent_behaviour_1a51394c4ea8e329d792ce4c4d0b578877" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -825,7 +865,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentBehaviour.cs" line="861" column="17" bodyfile="AgentBehaviour.cs" bodystart="861" bodyend="865"/>
+        <location file="AgentBehaviour.cs" line="895" column="17" bodyfile="AgentBehaviour.cs" bodystart="895" bodyend="899"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -855,10 +895,11 @@
         <label>MonoBehaviour</label>
       </node>
     </collaborationgraph>
-    <location file="AgentBehaviour.cs" line="10" column="1" bodyfile="AgentBehaviour.cs" bodystart="9" bodyend="866"/>
+    <location file="AgentBehaviour.cs" line="10" column="1" bodyfile="AgentBehaviour.cs" bodystart="9" bodyend="900"/>
     <listofallmembers>
       <member refid="class_agent_behaviour_1a03a23cddfe793892719289b0104d44c8" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>agent</name></member>
       <member refid="class_agent_behaviour_1a8500c85c776f84e620ea616b488743f4" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>behaviour</name></member>
+      <member refid="class_agent_behaviour_1ac9cb3e104a353a336399281cb99839d0" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>Check</name></member>
       <member refid="class_agent_behaviour_1a9fe715bd3ed37bc581d815b22f7e461b" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>ChecksStats</name></member>
       <member refid="class_agent_behaviour_1ae84a4be5ef9651dd00b68f54b3d9ed06" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>CheckTransforms</name></member>
       <member refid="class_agent_behaviour_1a860a1ee80fb7963ddb61d75f1286bfd8" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>ClosestExit</name></member>
