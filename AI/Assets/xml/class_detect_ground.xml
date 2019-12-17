@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_detect_ground" kind="class" language="C#" prot="public">
+    <compoundname>DetectGround</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_detect_ground_1ac3a29f95dd0efd65f52d84cba6d6bbd8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectGround.OnTriggerEnter</definition>
+        <argsstring>(Collider other)</argsstring>
+        <name>OnTriggerEnter</name>
+        <param>
+          <type>Collider</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>This is the method that detects the type of ground the agent is in using tags </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DetectGround.cs" line="17" column="18" bodyfile="DetectGround.cs" bodystart="17" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detect_ground_1a7a396b88d5a154255ea85a1608a29016" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectGround.OnTriggerExit</definition>
+        <argsstring>(Collider other)</argsstring>
+        <name>OnTriggerExit</name>
+        <param>
+          <type>Collider</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>This method is used to detect the type of ground the agent left and make adjustments based in that information </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DetectGround.cs" line="30" column="18" bodyfile="DetectGround.cs" bodystart="30" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This Class is used to detect what kind of ground is bellow the agent and make adjustments to his behaviour based on that </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>DetectGround</label>
+        <link refid="class_detect_ground"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>DetectGround</label>
+        <link refid="class_detect_ground"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="DetectGround.cs" line="11" column="1" bodyfile="DetectGround.cs" bodystart="10" bodyend="38"/>
+    <listofallmembers>
+      <member refid="class_detect_ground_1ac3a29f95dd0efd65f52d84cba6d6bbd8" prot="private" virt="non-virtual"><scope>DetectGround</scope><name>OnTriggerEnter</name></member>
+      <member refid="class_detect_ground_1a7a396b88d5a154255ea85a1608a29016" prot="private" virt="non-virtual"><scope>DetectGround</scope><name>OnTriggerExit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_panic_spread" kind="class" language="C#" prot="public">
+    <compoundname>PanicSpread</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_panic_spread_1a947b070b65c1a4376339855b682b02f8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PanicSpread.canPass</definition>
+        <argsstring></argsstring>
+        <name>canPass</name>
+        <briefdescription>
+<para>Variable to check if this agent can spread fear </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PanicSpread.cs" line="14" column="18" bodyfile="PanicSpread.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_panic_spread_1a4b9fb6518f599696debdcc071f94d0e1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PanicSpread.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <briefdescription>
+<para>The update checks if the agent is in panic and let&apos;s him spread the panic or not according to it </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PanicSpread.cs" line="20" column="10" bodyfile="PanicSpread.cs" bodystart="20" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_panic_spread_1a6d3c16e8672f89217b061ca9fc3fa06a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PanicSpread.OnTriggerEnter</definition>
+        <argsstring>(Collider other)</argsstring>
+        <name>OnTriggerEnter</name>
+        <param>
+          <type>Collider</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>This method detects if other agents enters in the range of the spread area and if he is not alredy in panic the panic is spread to him </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PanicSpread.cs" line="33" column="18" bodyfile="PanicSpread.cs" bodystart="33" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This Class is used to spread the panic to ther agents </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PanicSpread</label>
+        <link refid="class_panic_spread"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PanicSpread</label>
+        <link refid="class_panic_spread"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="PanicSpread.cs" line="10" column="1" bodyfile="PanicSpread.cs" bodystart="9" bodyend="54"/>
+    <listofallmembers>
+      <member refid="class_panic_spread_1a947b070b65c1a4376339855b682b02f8" prot="private" virt="non-virtual"><scope>PanicSpread</scope><name>canPass</name></member>
+      <member refid="class_panic_spread_1a6d3c16e8672f89217b061ca9fc3fa06a" prot="private" virt="non-virtual"><scope>PanicSpread</scope><name>OnTriggerEnter</name></member>
+      <member refid="class_panic_spread_1a4b9fb6518f599696debdcc071f94d0e1" prot="private" virt="non-virtual"><scope>PanicSpread</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_explosion_controller" kind="class" language="C#" prot="public">
+    <compoundname>ExplosionController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_explosion_controller_1a2333595eac0fb45c191c42feb47b86c3" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject ExplosionController.explosion</definition>
+        <argsstring></argsstring>
+        <name>explosion</name>
+        <briefdescription>
+<para>Prefab of the explosion </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ExplosionController.cs" line="14" column="24" bodyfile="ExplosionController.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_explosion_controller_1ab1b668f4ccf4d8d5ecd03a81cb2a0da5" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject ExplosionController.fire</definition>
+        <argsstring></argsstring>
+        <name>fire</name>
+        <briefdescription>
+<para>Prefab of the fire </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ExplosionController.cs" line="20" column="24" bodyfile="ExplosionController.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_explosion_controller_1a9607e22a71672072199c6865b221abe6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExplosionController.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <briefdescription>
+<para>The Update checks if the mouse was click and instanciate an explosion and fire in the location </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ExplosionController.cs" line="26" column="18" bodyfile="ExplosionController.cs" bodystart="26" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class is used to instanciate the explosion </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ExplosionController</label>
+        <link refid="class_explosion_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ExplosionController</label>
+        <link refid="class_explosion_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="ExplosionController.cs" line="9" column="1" bodyfile="ExplosionController.cs" bodystart="8" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_explosion_controller_1a2333595eac0fb45c191c42feb47b86c3" prot="private" virt="non-virtual"><scope>ExplosionController</scope><name>explosion</name></member>
+      <member refid="class_explosion_controller_1ab1b668f4ccf4d8d5ecd03a81cb2a0da5" prot="private" virt="non-virtual"><scope>ExplosionController</scope><name>fire</name></member>
+      <member refid="class_explosion_controller_1a9607e22a71672072199c6865b221abe6" prot="private" virt="non-virtual"><scope>ExplosionController</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

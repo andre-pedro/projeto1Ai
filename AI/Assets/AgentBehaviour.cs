@@ -249,7 +249,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// this method is used to check the stats of the agent and
+    /// This method is used to check the stats of the agent and
     /// to determine is conditions
     /// </summary>
     private void ChecksStats()
@@ -305,7 +305,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// This metho is called when the user needs to seek for food
+    /// This method is called when the user needs to seek for food
     /// It determines which seat is empty and which is taken and assigns one
     /// empty seat to the agent
     /// </summary>
@@ -338,7 +338,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// Checks if the seat is assignt to the least full table
+    /// Merthod that checks if the seat is assignt to the least full table
     /// </summary>
     /// <param name="table"></param>
     /// <param name="seat"></param>
@@ -358,9 +358,9 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// Finds The table with least people
+    /// Method thar finds The table with least people
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The least full table</returns>
     private GameObject LeastFullTable()
     {
         GameObject best = default;
@@ -435,7 +435,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// This agent is called when the agent needs to die
+    /// This method is called when the agent needs to die
     /// </summary>
     public void Die()
     {
@@ -453,7 +453,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// Make agent stop when called
+    /// Metho called to make agent stop when called
     /// </summary>
     private void Idle()
     {
@@ -461,7 +461,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// This agent makes the agent get stunned and its used when the agent
+    /// This method makes the agent get stunned and its used when the agent
     /// is caught in the explosion but not in the deadly range
     /// </summary>
     public void Stun()
@@ -473,7 +473,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// This etho makes de agent panic and flee
+    /// This metho makes de agent panic and flee
     /// </summary>
     /// <param name="origin"></param>
     public void Panic(Vector3 origin)
@@ -585,7 +585,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// Is used to make the agent go to somehwhere
+    /// Courotine used to make the agent go to some positions
     /// </summary>
     /// <param name="place"></param>
     /// <returns></returns>
@@ -599,7 +599,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// This coutotine is used to make the agent run to the exit
+    /// This Courotine is used to make the agent run to the exit
     /// </summary>
     /// <returns></returns>
     private IEnumerator RunToExit()
@@ -632,7 +632,7 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// This methos sets the hungry mode of the agent
+    /// This method sets the hungry mode of the agent
     /// </summary>
     /// <param name="mode"></param>
     public void SetHungryMode(bool mode)

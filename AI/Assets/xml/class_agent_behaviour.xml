@@ -1,0 +1,911 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_agent_behaviour" kind="class" language="C#" prot="public">
+    <compoundname>AgentBehaviour</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_agent_behaviour_1a8500c85c776f84e620ea616b488743f4" prot="public" static="no" mutable="no">
+        <type>Behaviour</type>
+        <definition>Behaviour AgentBehaviour.behaviour</definition>
+        <argsstring></argsstring>
+        <name>behaviour</name>
+        <briefdescription>
+<para>Enum of available Behaviours </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="14" column="22" bodyfile="AgentBehaviour.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a85f5cb0411b923e8d0344b8581c37962" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isAlive</definition>
+        <argsstring></argsstring>
+        <name>isAlive</name>
+        <briefdescription>
+<para>Tells if the player is alive </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="19" column="17" bodyfile="AgentBehaviour.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a6f5cea3d741a28a0c3235467def64808" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isStunned</definition>
+        <argsstring></argsstring>
+        <name>isStunned</name>
+        <briefdescription>
+<para>Tells if the player is dead </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="24" column="17" bodyfile="AgentBehaviour.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a8a6e3e155f1d8a3692879b5fed1c83df" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AgentBehaviour.hunger</definition>
+        <argsstring></argsstring>
+        <name>hunger</name>
+        <briefdescription>
+<para>Current amount of hunger </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="124" column="18" bodyfile="AgentBehaviour.cs" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_agent_behaviour_1a903ea07a3557b57b796e69a7602690a4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.inPanic</definition>
+        <argsstring></argsstring>
+        <name>inPanic</name>
+        <briefdescription>
+<para>Tells if the player is in Panic </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="29" column="17" bodyfile="AgentBehaviour.cs" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="property" id="class_agent_behaviour_1a76def7e26c2d506850648c342973e852" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isResting</definition>
+        <argsstring></argsstring>
+        <name>isResting</name>
+        <briefdescription>
+<para>Tells if the player is resting </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="44" column="17" bodyfile="AgentBehaviour.cs" bodystart="44" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_agent_behaviour_1a7ca68aaf6422e44892475008c18340f9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isHungry</definition>
+        <argsstring></argsstring>
+        <name>isHungry</name>
+        <briefdescription>
+<para>Tells if the player is Hungry </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="34" column="18" bodyfile="AgentBehaviour.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a6c22de30e758a362f019e9ad21569380" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isTired</definition>
+        <argsstring></argsstring>
+        <name>isTired</name>
+        <briefdescription>
+<para>Tells if the player is tired </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="39" column="18" bodyfile="AgentBehaviour.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a5f557f201fec8905cd76333837608d9b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isEating</definition>
+        <argsstring></argsstring>
+        <name>isEating</name>
+        <briefdescription>
+<para>Tells if the player is eating </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="49" column="18" bodyfile="AgentBehaviour.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a812d5be429c0e197cdc9dbb0da561b02" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isGoingToFun</definition>
+        <argsstring></argsstring>
+        <name>isGoingToFun</name>
+        <briefdescription>
+<para>Tells if the player is on the move to a stage </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="54" column="18" bodyfile="AgentBehaviour.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a4981aee008abbba6481c32900bf24763" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isGoingToRest</definition>
+        <argsstring></argsstring>
+        <name>isGoingToRest</name>
+        <briefdescription>
+<para>Tells if the player is on the move to an open Area </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="59" column="18" bodyfile="AgentBehaviour.cs" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1aceeb51cd9c8b02314cb793e63e1f86ba" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.isGoingForFood</definition>
+        <argsstring></argsstring>
+        <name>isGoingForFood</name>
+        <briefdescription>
+<para>Tells is the player is on the move to a seat </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="64" column="18" bodyfile="AgentBehaviour.cs" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a3c4647946ee3c716e8a10340ba4d8e09" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.hasFoundSeat</definition>
+        <argsstring></argsstring>
+        <name>hasFoundSeat</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Tells if the player has found a seat yet </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="69" column="18" bodyfile="AgentBehaviour.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a03a23cddfe793892719289b0104d44c8" prot="private" static="no" mutable="no">
+        <type>NavMeshAgent</type>
+        <definition>NavMeshAgent AgentBehaviour.agent</definition>
+        <argsstring></argsstring>
+        <name>agent</name>
+        <briefdescription>
+<para>NavMeshAgent of this Gameobject </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="74" column="26" bodyfile="AgentBehaviour.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a5456bd4d753566fbacd43b93c717d008" prot="private" static="no" mutable="no">
+        <type>NavMeshPath</type>
+        <definition>NavMeshPath AgentBehaviour.path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <briefdescription>
+<para>NavMeshPath of this agent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="79" column="25" bodyfile="AgentBehaviour.cs" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a3caec1ba1689d8d5bc81cbebaf5f3ea0" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 AgentBehaviour.destination</definition>
+        <argsstring></argsstring>
+        <name>destination</name>
+        <briefdescription>
+<para>Vector3 that holds the destination to the agent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="84" column="21" bodyfile="AgentBehaviour.cs" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a84fa4f10091f5edc25a3ac5858c24833" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 AgentBehaviour.panicOrigin</definition>
+        <argsstring></argsstring>
+        <name>panicOrigin</name>
+        <briefdescription>
+<para>Vector 3 that holds the panic origin of an event(Explosion) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="89" column="21" bodyfile="AgentBehaviour.cs" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a8fcce51ad71626aefec1171284ce211f" prot="private" static="no" mutable="no">
+        <type>GameObject[]</type>
+        <definition>GameObject [] AgentBehaviour.stages</definition>
+        <argsstring></argsstring>
+        <name>stages</name>
+        <briefdescription>
+<para>Array with all the stages </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="94" column="24" bodyfile="AgentBehaviour.cs" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a4dfbbb405dc9af0b3cf8c3b322fe5f71" prot="private" static="no" mutable="no">
+        <type>GameObject[]</type>
+        <definition>GameObject [] AgentBehaviour.openAreas</definition>
+        <argsstring></argsstring>
+        <name>openAreas</name>
+        <briefdescription>
+<para>Array with all the Open Areas </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="99" column="24" bodyfile="AgentBehaviour.cs" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1afc5e8e342aa9bdf39cf9cb8e7cd02c5e" prot="private" static="no" mutable="no">
+        <type>GameObject[]</type>
+        <definition>GameObject [] AgentBehaviour.exits</definition>
+        <argsstring></argsstring>
+        <name>exits</name>
+        <briefdescription>
+<para>Array with all the exits </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="104" column="24" bodyfile="AgentBehaviour.cs" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1acade41b3ba69f5be5cf9ebd2dbef380b" prot="private" static="no" mutable="no">
+        <type>GameObject[]</type>
+        <definition>GameObject [] AgentBehaviour.upperStage</definition>
+        <argsstring></argsstring>
+        <name>upperStage</name>
+        <briefdescription>
+<para>Array with all the upperStageAreas </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="109" column="24" bodyfile="AgentBehaviour.cs" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a90893f14e90fb9443eae41c802fa443c" prot="private" static="no" mutable="no">
+        <type>GameObject[]</type>
+        <definition>GameObject [] AgentBehaviour.tables</definition>
+        <argsstring></argsstring>
+        <name>tables</name>
+        <briefdescription>
+<para>Array with all the tables </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="114" column="24" bodyfile="AgentBehaviour.cs" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1a5260c307cf4aac35f7bd54b68c3b5c6f" prot="private" static="no" mutable="no">
+        <type>GameObject[]</type>
+        <definition>GameObject [] AgentBehaviour.seats</definition>
+        <argsstring></argsstring>
+        <name>seats</name>
+        <briefdescription>
+<para>Array with all the seats </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="119" column="24" bodyfile="AgentBehaviour.cs" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_agent_behaviour_1aebe6ab86bdb0f241065cfad51fc92947" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AgentBehaviour.tired</definition>
+        <argsstring></argsstring>
+        <name>tired</name>
+        <briefdescription>
+<para>Current tired amount </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="129" column="19" bodyfile="AgentBehaviour.cs" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_agent_behaviour_1adce317d97a97a58c4ed0449f455112d5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>This method is used to assign all the GameObjects and stats of the agent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="135" column="18" bodyfile="AgentBehaviour.cs" bodystart="135" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1acdad31dd67e27805faa52b4615aa98e9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <briefdescription>
+<para>The Update is used to keep in check all the stats of the agent and to determine the behaviours he will do next </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="159" column="18" bodyfile="AgentBehaviour.cs" bodystart="159" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a49a8181a99e384174374b60f83ba191a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.Conditions</definition>
+        <argsstring>()</argsstring>
+        <name>Conditions</name>
+        <briefdescription>
+<para>This method serves to update the agent stats </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="224" column="18" bodyfile="AgentBehaviour.cs" bodystart="224" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a9fe715bd3ed37bc581d815b22f7e461b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.ChecksStats</definition>
+        <argsstring>()</argsstring>
+        <name>ChecksStats</name>
+        <briefdescription>
+<para>This method is used to check the stats of the agent and to determine is conditions </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="255" column="18" bodyfile="AgentBehaviour.cs" bodystart="255" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a14f6bf3f7cb9d14547b6a26eef1503b4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.SeekFun</definition>
+        <argsstring>()</argsstring>
+        <name>SeekFun</name>
+        <briefdescription>
+<para>This method is called for when the agent is looking for the stages. It helps determine the stage with fewer agents and sends him to that one </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="285" column="18" bodyfile="AgentBehaviour.cs" bodystart="285" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a391d29ce1bcf12bf7de0ab160bab0e29" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.SeekFood</definition>
+        <argsstring>()</argsstring>
+        <name>SeekFood</name>
+        <briefdescription>
+<para>This method is called when the user needs to seek for food It determines which seat is empty and which is taken and assigns one empty seat to the agent </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="313" column="18" bodyfile="AgentBehaviour.cs" bodystart="313" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1ae84a4be5ef9651dd00b68f54b3d9ed06" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool AgentBehaviour.CheckTransforms</definition>
+        <argsstring>(GameObject table, GameObject seat)</argsstring>
+        <name>CheckTransforms</name>
+        <param>
+          <type>GameObject</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>GameObject</type>
+          <declname>seat</declname>
+        </param>
+        <briefdescription>
+<para>Merthod that checks if the seat is assignt to the least full table </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>seat</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If the Seat is in the least full table</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="346" column="18" bodyfile="AgentBehaviour.cs" bodystart="346" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1afa32c92b3428e777f9b0b3181a76d7de" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GameObject</type>
+        <definition>GameObject AgentBehaviour.LeastFullTable</definition>
+        <argsstring>()</argsstring>
+        <name>LeastFullTable</name>
+        <briefdescription>
+<para>Method thar finds The table with least people </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The least full table</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="364" column="24" bodyfile="AgentBehaviour.cs" bodystart="364" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1ae394192290e85be762fc051639e2a47d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.SeekOpenZone</definition>
+        <argsstring>()</argsstring>
+        <name>SeekOpenZone</name>
+        <briefdescription>
+<para>This method is used when the agent is looking for a open zone to rest Sending him to the most empty one </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="394" column="18" bodyfile="AgentBehaviour.cs" bodystart="394" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1af315df842b4b80b3b7052e645ba44c29" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.Flee</definition>
+        <argsstring>()</argsstring>
+        <name>Flee</name>
+        <briefdescription>
+<para>This method is used to make the agent panic and react to the explosion and run to the nearest exit </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="422" column="18" bodyfile="AgentBehaviour.cs" bodystart="422" bodyend="427"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1aa88cf8be0e3a0b414d90a61bd1d35b9c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.FleeWithoutExplosion</definition>
+        <argsstring>()</argsstring>
+        <name>FleeWithoutExplosion</name>
+        <briefdescription>
+<para>This method is used to make the agen run to the nearest exit </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="432" column="18" bodyfile="AgentBehaviour.cs" bodystart="432" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a00c9871488d986fa76bcbba8896e57e9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.Idle</definition>
+        <argsstring>()</argsstring>
+        <name>Idle</name>
+        <briefdescription>
+<para>Metho called to make agent stop when called </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="458" column="18" bodyfile="AgentBehaviour.cs" bodystart="458" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1ad988a9438f32547a68457149c842cdf8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.GenerateFleeDestination</definition>
+        <argsstring>(Vector3 panicOrigin)</argsstring>
+        <name>GenerateFleeDestination</name>
+        <param>
+          <type>Vector3</type>
+          <declname>panicOrigin</declname>
+        </param>
+        <briefdescription>
+<para>This method makes the agent react to an explosion running to the oppost direction of the explosion </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>panicOrigin</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="493" column="18" bodyfile="AgentBehaviour.cs" bodystart="493" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1aacacc4f4669fd8f5a874d14c5b273af5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector3</type>
+        <definition>Vector3 AgentBehaviour.RandomPointInsideCollider</definition>
+        <argsstring>(int i)</argsstring>
+        <name>RandomPointInsideCollider</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>This method is used to create a random point inside a gameObject </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Random Point</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="511" column="21" bodyfile="AgentBehaviour.cs" bodystart="511" bodyend="519"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a3f7ec7feb698dd4a7df4e5609b741217" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector3</type>
+        <definition>Vector3 AgentBehaviour.SpreadAlong</definition>
+        <argsstring>(int i)</argsstring>
+        <name>SpreadAlong</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>This method is called to ake the agents spred along the front row of the stage </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Point on front row</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="527" column="21" bodyfile="AgentBehaviour.cs" bodystart="527" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a860a1ee80fb7963ddb61d75f1286bfd8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Transform</type>
+        <definition>Transform AgentBehaviour.ClosestExit</definition>
+        <argsstring>()</argsstring>
+        <name>ClosestExit</name>
+        <briefdescription>
+<para>This method is used to determine the nearest exit and returns it </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The nearest exit</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="544" column="23" bodyfile="AgentBehaviour.cs" bodystart="544" bodyend="570"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1ae6369b8edb00915e543d4199d75bc0cf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator AgentBehaviour.RegainConsciousness</definition>
+        <argsstring>()</argsstring>
+        <name>RegainConsciousness</name>
+        <briefdescription>
+<para>This Courotine is used for the agent regain concience after some time </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="576" column="25" bodyfile="AgentBehaviour.cs" bodystart="576" bodyend="585"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a9818bc665d8535f7cffd3f92d10fb7a4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator AgentBehaviour.GoTo</definition>
+        <argsstring>(Vector3 place)</argsstring>
+        <name>GoTo</name>
+        <param>
+          <type>Vector3</type>
+          <declname>place</declname>
+        </param>
+        <briefdescription>
+<para>Courotine used to make the agent go to some positions </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>place</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="592" column="25" bodyfile="AgentBehaviour.cs" bodystart="592" bodyend="599"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a3da99619db4b3402f9c76092ff84555e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator AgentBehaviour.RunToExit</definition>
+        <argsstring>()</argsstring>
+        <name>RunToExit</name>
+        <briefdescription>
+<para>This Courotine is used to make the agent run to the exit </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="605" column="25" bodyfile="AgentBehaviour.cs" bodystart="605" bodyend="613"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a0d063d1779b3c38b923a115c8a662dd0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator AgentBehaviour.DestroyAgent</definition>
+        <argsstring>()</argsstring>
+        <name>DestroyAgent</name>
+        <briefdescription>
+<para>This Courotine is used to destroy the agent </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="619" column="25" bodyfile="AgentBehaviour.cs" bodystart="619" bodyend="624"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_agent_behaviour_1af14990c64e96c48b2edf706e8e750d84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.Die</definition>
+        <argsstring>()</argsstring>
+        <name>Die</name>
+        <briefdescription>
+<para>This method is called when the agent needs to die </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="440" column="17" bodyfile="AgentBehaviour.cs" bodystart="440" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a21aba1e2f790b882878ace979ced6498" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.Stun</definition>
+        <argsstring>()</argsstring>
+        <name>Stun</name>
+        <briefdescription>
+<para>This method makes the agent get stunned and its used when the agent is caught in the explosion but not in the deadly range </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="467" column="17" bodyfile="AgentBehaviour.cs" bodystart="467" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a450409331fa676bd66f2470613ad38c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.Panic</definition>
+        <argsstring>(Vector3 origin)</argsstring>
+        <name>Panic</name>
+        <param>
+          <type>Vector3</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+<para>This metho makes de agent panic and flee </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="479" column="17" bodyfile="AgentBehaviour.cs" bodystart="479" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a7a74a0ca74a8a79583660d7d1a28161a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.GoToExit</definition>
+        <argsstring>()</argsstring>
+        <name>GoToExit</name>
+        <briefdescription>
+<para>This method is used to make the agent go to the exit </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="629" column="17" bodyfile="AgentBehaviour.cs" bodystart="629" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agent_behaviour_1a51394c4ea8e329d792ce4c4d0b578877" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentBehaviour.SetHungryMode</definition>
+        <argsstring>(bool mode)</argsstring>
+        <name>SetHungryMode</name>
+        <param>
+          <type>bool</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>This method sets the hungry mode of the agent </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentBehaviour.cs" line="638" column="17" bodyfile="AgentBehaviour.cs" bodystart="638" bodyend="641"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This Class is used to determine the agent stats and behaviour </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AgentBehaviour</label>
+        <link refid="class_agent_behaviour"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AgentBehaviour</label>
+        <link refid="class_agent_behaviour"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="AgentBehaviour.cs" line="10" column="1" bodyfile="AgentBehaviour.cs" bodystart="9" bodyend="642"/>
+    <listofallmembers>
+      <member refid="class_agent_behaviour_1a03a23cddfe793892719289b0104d44c8" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>agent</name></member>
+      <member refid="class_agent_behaviour_1a8500c85c776f84e620ea616b488743f4" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>behaviour</name></member>
+      <member refid="class_agent_behaviour_1a9fe715bd3ed37bc581d815b22f7e461b" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>ChecksStats</name></member>
+      <member refid="class_agent_behaviour_1ae84a4be5ef9651dd00b68f54b3d9ed06" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>CheckTransforms</name></member>
+      <member refid="class_agent_behaviour_1a860a1ee80fb7963ddb61d75f1286bfd8" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>ClosestExit</name></member>
+      <member refid="class_agent_behaviour_1a49a8181a99e384174374b60f83ba191a" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>Conditions</name></member>
+      <member refid="class_agent_behaviour_1a3caec1ba1689d8d5bc81cbebaf5f3ea0" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>destination</name></member>
+      <member refid="class_agent_behaviour_1a0d063d1779b3c38b923a115c8a662dd0" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>DestroyAgent</name></member>
+      <member refid="class_agent_behaviour_1af14990c64e96c48b2edf706e8e750d84" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>Die</name></member>
+      <member refid="class_agent_behaviour_1afc5e8e342aa9bdf39cf9cb8e7cd02c5e" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>exits</name></member>
+      <member refid="class_agent_behaviour_1af315df842b4b80b3b7052e645ba44c29" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>Flee</name></member>
+      <member refid="class_agent_behaviour_1aa88cf8be0e3a0b414d90a61bd1d35b9c" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>FleeWithoutExplosion</name></member>
+      <member refid="class_agent_behaviour_1ad988a9438f32547a68457149c842cdf8" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>GenerateFleeDestination</name></member>
+      <member refid="class_agent_behaviour_1a9818bc665d8535f7cffd3f92d10fb7a4" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>GoTo</name></member>
+      <member refid="class_agent_behaviour_1a7a74a0ca74a8a79583660d7d1a28161a" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>GoToExit</name></member>
+      <member refid="class_agent_behaviour_1a3c4647946ee3c716e8a10340ba4d8e09" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>hasFoundSeat</name></member>
+      <member refid="class_agent_behaviour_1a8a6e3e155f1d8a3692879b5fed1c83df" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>hunger</name></member>
+      <member refid="class_agent_behaviour_1a00c9871488d986fa76bcbba8896e57e9" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>Idle</name></member>
+      <member refid="class_agent_behaviour_1a903ea07a3557b57b796e69a7602690a4" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>inPanic</name></member>
+      <member refid="class_agent_behaviour_1a85f5cb0411b923e8d0344b8581c37962" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>isAlive</name></member>
+      <member refid="class_agent_behaviour_1a5f557f201fec8905cd76333837608d9b" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>isEating</name></member>
+      <member refid="class_agent_behaviour_1aceeb51cd9c8b02314cb793e63e1f86ba" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>isGoingForFood</name></member>
+      <member refid="class_agent_behaviour_1a812d5be429c0e197cdc9dbb0da561b02" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>isGoingToFun</name></member>
+      <member refid="class_agent_behaviour_1a4981aee008abbba6481c32900bf24763" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>isGoingToRest</name></member>
+      <member refid="class_agent_behaviour_1a7ca68aaf6422e44892475008c18340f9" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>isHungry</name></member>
+      <member refid="class_agent_behaviour_1a76def7e26c2d506850648c342973e852" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>isResting</name></member>
+      <member refid="class_agent_behaviour_1a6f5cea3d741a28a0c3235467def64808" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>isStunned</name></member>
+      <member refid="class_agent_behaviour_1a6c22de30e758a362f019e9ad21569380" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>isTired</name></member>
+      <member refid="class_agent_behaviour_1afa32c92b3428e777f9b0b3181a76d7de" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>LeastFullTable</name></member>
+      <member refid="class_agent_behaviour_1a4dfbbb405dc9af0b3cf8c3b322fe5f71" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>openAreas</name></member>
+      <member refid="class_agent_behaviour_1a450409331fa676bd66f2470613ad38c8" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>Panic</name></member>
+      <member refid="class_agent_behaviour_1a84fa4f10091f5edc25a3ac5858c24833" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>panicOrigin</name></member>
+      <member refid="class_agent_behaviour_1a5456bd4d753566fbacd43b93c717d008" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>path</name></member>
+      <member refid="class_agent_behaviour_1aacacc4f4669fd8f5a874d14c5b273af5" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>RandomPointInsideCollider</name></member>
+      <member refid="class_agent_behaviour_1ae6369b8edb00915e543d4199d75bc0cf" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>RegainConsciousness</name></member>
+      <member refid="class_agent_behaviour_1a3da99619db4b3402f9c76092ff84555e" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>RunToExit</name></member>
+      <member refid="class_agent_behaviour_1a5260c307cf4aac35f7bd54b68c3b5c6f" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>seats</name></member>
+      <member refid="class_agent_behaviour_1a391d29ce1bcf12bf7de0ab160bab0e29" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>SeekFood</name></member>
+      <member refid="class_agent_behaviour_1a14f6bf3f7cb9d14547b6a26eef1503b4" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>SeekFun</name></member>
+      <member refid="class_agent_behaviour_1ae394192290e85be762fc051639e2a47d" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>SeekOpenZone</name></member>
+      <member refid="class_agent_behaviour_1a51394c4ea8e329d792ce4c4d0b578877" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>SetHungryMode</name></member>
+      <member refid="class_agent_behaviour_1a3f7ec7feb698dd4a7df4e5609b741217" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>SpreadAlong</name></member>
+      <member refid="class_agent_behaviour_1a8fcce51ad71626aefec1171284ce211f" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>stages</name></member>
+      <member refid="class_agent_behaviour_1adce317d97a97a58c4ed0449f455112d5" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>Start</name></member>
+      <member refid="class_agent_behaviour_1a21aba1e2f790b882878ace979ced6498" prot="public" virt="non-virtual"><scope>AgentBehaviour</scope><name>Stun</name></member>
+      <member refid="class_agent_behaviour_1a90893f14e90fb9443eae41c802fa443c" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>tables</name></member>
+      <member refid="class_agent_behaviour_1aebe6ab86bdb0f241065cfad51fc92947" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>tired</name></member>
+      <member refid="class_agent_behaviour_1acdad31dd67e27805faa52b4615aa98e9" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>Update</name></member>
+      <member refid="class_agent_behaviour_1acade41b3ba69f5be5cf9ebd2dbef380b" prot="private" virt="non-virtual"><scope>AgentBehaviour</scope><name>upperStage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

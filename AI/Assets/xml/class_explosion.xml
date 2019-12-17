@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_explosion" kind="class" language="C#" prot="public">
+    <compoundname>Explosion</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_explosion_1a8a667287455f1af9fcde062b8b3f19ea" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Explosion.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>The start is used to start the explosion by calling 3 methods that apply the effects of the 3 radius </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Explosion.cs" line="15" column="18" bodyfile="Explosion.cs" bodystart="15" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_explosion_1ada7a24eea1cccea1cff2bf1f69b2fadf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Explosion.KillAgentsInRadius1</definition>
+        <argsstring>()</argsstring>
+        <name>KillAgentsInRadius1</name>
+        <briefdescription>
+<para>This method applies the effect of the first Radius(Kills the agents) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Explosion.cs" line="25" column="18" bodyfile="Explosion.cs" bodystart="25" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_explosion_1acce12b380653ce968382194b794c9b94" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Explosion.StunAgentsInRadius2</definition>
+        <argsstring>()</argsstring>
+        <name>StunAgentsInRadius2</name>
+        <briefdescription>
+<para>This method applies the effect of the second Radius(Stuns the agents) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Explosion.cs" line="54" column="18" bodyfile="Explosion.cs" bodystart="54" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_explosion_1a600c9efb3a2ae14c5a07a43123b9a5cc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Explosion.ScareAgentsInRadius3</definition>
+        <argsstring>()</argsstring>
+        <name>ScareAgentsInRadius3</name>
+        <briefdescription>
+<para>This method applies the effect of the third Radius(Scares the agents) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Explosion.cs" line="76" column="18" bodyfile="Explosion.cs" bodystart="76" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This Class is used to generate an explosion </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Explosion</label>
+        <link refid="class_explosion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Explosion</label>
+        <link refid="class_explosion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Explosion.cs" line="10" column="1" bodyfile="Explosion.cs" bodystart="9" bodyend="95"/>
+    <listofallmembers>
+      <member refid="class_explosion_1ada7a24eea1cccea1cff2bf1f69b2fadf" prot="private" virt="non-virtual"><scope>Explosion</scope><name>KillAgentsInRadius1</name></member>
+      <member refid="class_explosion_1a600c9efb3a2ae14c5a07a43123b9a5cc" prot="private" virt="non-virtual"><scope>Explosion</scope><name>ScareAgentsInRadius3</name></member>
+      <member refid="class_explosion_1a8a667287455f1af9fcde062b8b3f19ea" prot="private" virt="non-virtual"><scope>Explosion</scope><name>Start</name></member>
+      <member refid="class_explosion_1acce12b380653ce968382194b794c9b94" prot="private" virt="non-virtual"><scope>Explosion</scope><name>StunAgentsInRadius2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

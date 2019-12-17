@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.16">
+  <compound refid="class_agent_behaviour" kind="class"><name>AgentBehaviour</name>
+    <member refid="class_agent_behaviour_1a8500c85c776f84e620ea616b488743f4" kind="variable"><name>behaviour</name></member>
+    <member refid="class_agent_behaviour_1a85f5cb0411b923e8d0344b8581c37962" kind="variable"><name>isAlive</name></member>
+    <member refid="class_agent_behaviour_1a6f5cea3d741a28a0c3235467def64808" kind="variable"><name>isStunned</name></member>
+    <member refid="class_agent_behaviour_1a8a6e3e155f1d8a3692879b5fed1c83df" kind="variable"><name>hunger</name></member>
+    <member refid="class_agent_behaviour_1a903ea07a3557b57b796e69a7602690a4" kind="property"><name>inPanic</name></member>
+    <member refid="class_agent_behaviour_1a76def7e26c2d506850648c342973e852" kind="property"><name>isResting</name></member>
+    <member refid="class_agent_behaviour_1a7ca68aaf6422e44892475008c18340f9" kind="variable"><name>isHungry</name></member>
+    <member refid="class_agent_behaviour_1a6c22de30e758a362f019e9ad21569380" kind="variable"><name>isTired</name></member>
+    <member refid="class_agent_behaviour_1a5f557f201fec8905cd76333837608d9b" kind="variable"><name>isEating</name></member>
+    <member refid="class_agent_behaviour_1a812d5be429c0e197cdc9dbb0da561b02" kind="variable"><name>isGoingToFun</name></member>
+    <member refid="class_agent_behaviour_1a4981aee008abbba6481c32900bf24763" kind="variable"><name>isGoingToRest</name></member>
+    <member refid="class_agent_behaviour_1aceeb51cd9c8b02314cb793e63e1f86ba" kind="variable"><name>isGoingForFood</name></member>
+    <member refid="class_agent_behaviour_1a3c4647946ee3c716e8a10340ba4d8e09" kind="variable"><name>hasFoundSeat</name></member>
+    <member refid="class_agent_behaviour_1a03a23cddfe793892719289b0104d44c8" kind="variable"><name>agent</name></member>
+    <member refid="class_agent_behaviour_1a5456bd4d753566fbacd43b93c717d008" kind="variable"><name>path</name></member>
+    <member refid="class_agent_behaviour_1a3caec1ba1689d8d5bc81cbebaf5f3ea0" kind="variable"><name>destination</name></member>
+    <member refid="class_agent_behaviour_1a84fa4f10091f5edc25a3ac5858c24833" kind="variable"><name>panicOrigin</name></member>
+    <member refid="class_agent_behaviour_1a8fcce51ad71626aefec1171284ce211f" kind="variable"><name>stages</name></member>
+    <member refid="class_agent_behaviour_1a4dfbbb405dc9af0b3cf8c3b322fe5f71" kind="variable"><name>openAreas</name></member>
+    <member refid="class_agent_behaviour_1afc5e8e342aa9bdf39cf9cb8e7cd02c5e" kind="variable"><name>exits</name></member>
+    <member refid="class_agent_behaviour_1acade41b3ba69f5be5cf9ebd2dbef380b" kind="variable"><name>upperStage</name></member>
+    <member refid="class_agent_behaviour_1a90893f14e90fb9443eae41c802fa443c" kind="variable"><name>tables</name></member>
+    <member refid="class_agent_behaviour_1a5260c307cf4aac35f7bd54b68c3b5c6f" kind="variable"><name>seats</name></member>
+    <member refid="class_agent_behaviour_1aebe6ab86bdb0f241065cfad51fc92947" kind="variable"><name>tired</name></member>
+    <member refid="class_agent_behaviour_1adce317d97a97a58c4ed0449f455112d5" kind="function"><name>Start</name></member>
+    <member refid="class_agent_behaviour_1acdad31dd67e27805faa52b4615aa98e9" kind="function"><name>Update</name></member>
+    <member refid="class_agent_behaviour_1a49a8181a99e384174374b60f83ba191a" kind="function"><name>Conditions</name></member>
+    <member refid="class_agent_behaviour_1a9fe715bd3ed37bc581d815b22f7e461b" kind="function"><name>ChecksStats</name></member>
+    <member refid="class_agent_behaviour_1a14f6bf3f7cb9d14547b6a26eef1503b4" kind="function"><name>SeekFun</name></member>
+    <member refid="class_agent_behaviour_1a391d29ce1bcf12bf7de0ab160bab0e29" kind="function"><name>SeekFood</name></member>
+    <member refid="class_agent_behaviour_1ae84a4be5ef9651dd00b68f54b3d9ed06" kind="function"><name>CheckTransforms</name></member>
+    <member refid="class_agent_behaviour_1afa32c92b3428e777f9b0b3181a76d7de" kind="function"><name>LeastFullTable</name></member>
+    <member refid="class_agent_behaviour_1ae394192290e85be762fc051639e2a47d" kind="function"><name>SeekOpenZone</name></member>
+    <member refid="class_agent_behaviour_1af315df842b4b80b3b7052e645ba44c29" kind="function"><name>Flee</name></member>
+    <member refid="class_agent_behaviour_1aa88cf8be0e3a0b414d90a61bd1d35b9c" kind="function"><name>FleeWithoutExplosion</name></member>
+    <member refid="class_agent_behaviour_1a00c9871488d986fa76bcbba8896e57e9" kind="function"><name>Idle</name></member>
+    <member refid="class_agent_behaviour_1ad988a9438f32547a68457149c842cdf8" kind="function"><name>GenerateFleeDestination</name></member>
+    <member refid="class_agent_behaviour_1aacacc4f4669fd8f5a874d14c5b273af5" kind="function"><name>RandomPointInsideCollider</name></member>
+    <member refid="class_agent_behaviour_1a3f7ec7feb698dd4a7df4e5609b741217" kind="function"><name>SpreadAlong</name></member>
+    <member refid="class_agent_behaviour_1a860a1ee80fb7963ddb61d75f1286bfd8" kind="function"><name>ClosestExit</name></member>
+    <member refid="class_agent_behaviour_1ae6369b8edb00915e543d4199d75bc0cf" kind="function"><name>RegainConsciousness</name></member>
+    <member refid="class_agent_behaviour_1a9818bc665d8535f7cffd3f92d10fb7a4" kind="function"><name>GoTo</name></member>
+    <member refid="class_agent_behaviour_1a3da99619db4b3402f9c76092ff84555e" kind="function"><name>RunToExit</name></member>
+    <member refid="class_agent_behaviour_1a0d063d1779b3c38b923a115c8a662dd0" kind="function"><name>DestroyAgent</name></member>
+    <member refid="class_agent_behaviour_1af14990c64e96c48b2edf706e8e750d84" kind="function"><name>Die</name></member>
+    <member refid="class_agent_behaviour_1a21aba1e2f790b882878ace979ced6498" kind="function"><name>Stun</name></member>
+    <member refid="class_agent_behaviour_1a450409331fa676bd66f2470613ad38c8" kind="function"><name>Panic</name></member>
+    <member refid="class_agent_behaviour_1a7a74a0ca74a8a79583660d7d1a28161a" kind="function"><name>GoToExit</name></member>
+    <member refid="class_agent_behaviour_1a51394c4ea8e329d792ce4c4d0b578877" kind="function"><name>SetHungryMode</name></member>
+  </compound>
+  <compound refid="class_agent_destroyer" kind="class"><name>AgentDestroyer</name>
+    <member refid="class_agent_destroyer_1a1be22aa716452ee69e1a2c7e3d4e698a" kind="function"><name>OnTriggerEnter</name></member>
+  </compound>
+  <compound refid="class_agents_in_table" kind="class"><name>AgentsInTable</name>
+    <member refid="class_agents_in_table_1a0691cc0053d033790b5ecb0b88f497c5" kind="variable"><name>AgentsIn</name></member>
+    <member refid="class_agents_in_table_1a7c472c98daaf35a14a5b47d3fc28d7db" kind="function"><name>RemoveAgents</name></member>
+    <member refid="class_agents_in_table_1a73d58786773ca21d3364e6d8e637c505" kind="function"><name>AddAgents</name></member>
+    <member refid="class_agents_in_table_1a18559ca3a4ab2cac0136871f95383638" kind="function"><name>GetAgents</name></member>
+  </compound>
+  <compound refid="class_count" kind="class"><name>Count</name>
+    <member refid="class_count_1ad3bd6b3e8685d0126c66b17fabca62d7" kind="variable"><name>numberOfAgents</name></member>
+    <member refid="class_count_1ab11ec463d5d459d1b804b6ba67871d7b" kind="variable"><name>nameOfAgents</name></member>
+    <member refid="class_count_1a8ce079f934ad5e6959e31a76cfa27b5c" kind="function"><name>OnTriggerExit</name></member>
+    <member refid="class_count_1a39089f707a820ccd06b6d9f3feee8145" kind="function"><name>IsGoing</name></member>
+    <member refid="class_count_1a680c17577e2e0939a6f7068cbdfa88df" kind="function"><name>GetNumberOfAgents</name></member>
+  </compound>
+  <compound refid="class_detect_ground" kind="class"><name>DetectGround</name>
+    <member refid="class_detect_ground_1ac3a29f95dd0efd65f52d84cba6d6bbd8" kind="function"><name>OnTriggerEnter</name></member>
+    <member refid="class_detect_ground_1a7a396b88d5a154255ea85a1608a29016" kind="function"><name>OnTriggerExit</name></member>
+  </compound>
+  <compound refid="class_explosion" kind="class"><name>Explosion</name>
+    <member refid="class_explosion_1a8a667287455f1af9fcde062b8b3f19ea" kind="function"><name>Start</name></member>
+    <member refid="class_explosion_1ada7a24eea1cccea1cff2bf1f69b2fadf" kind="function"><name>KillAgentsInRadius1</name></member>
+    <member refid="class_explosion_1acce12b380653ce968382194b794c9b94" kind="function"><name>StunAgentsInRadius2</name></member>
+    <member refid="class_explosion_1a600c9efb3a2ae14c5a07a43123b9a5cc" kind="function"><name>ScareAgentsInRadius3</name></member>
+  </compound>
+  <compound refid="class_explosion_controller" kind="class"><name>ExplosionController</name>
+    <member refid="class_explosion_controller_1a2333595eac0fb45c191c42feb47b86c3" kind="variable"><name>explosion</name></member>
+    <member refid="class_explosion_controller_1ab1b668f4ccf4d8d5ecd03a81cb2a0da5" kind="variable"><name>fire</name></member>
+    <member refid="class_explosion_controller_1a9607e22a71672072199c6865b221abe6" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_fire" kind="class"><name>Fire</name>
+    <member refid="class_fire_1a197ccc3fa31c210b6ac6cf8e72bce44c" kind="variable"><name>col</name></member>
+    <member refid="class_fire_1a0851cfef4b253716ab94c6c12e9a5d60" kind="variable"><name>navObs</name></member>
+    <member refid="class_fire_1a5498c8351780e4c6ff4dbc3b06b88bd0" kind="function"><name>Start</name></member>
+    <member refid="class_fire_1a29ee31d23ddec222f89404368e466a3a" kind="function"><name>Update</name></member>
+    <member refid="class_fire_1a8cd5b928ebf34e41ad897e11e1e14aff" kind="function"><name>OnTriggerEnter</name></member>
+  </compound>
+  <compound refid="class_game_manager" kind="class"><name>GameManager</name>
+    <member refid="class_game_manager_1ad3e717f4fb0f378b969f4457de81f23e" kind="property"><name>Instance</name></member>
+    <member refid="class_game_manager_1a2959177ee51ac31badbf8b1bc8f7f637" kind="function"><name>Awake</name></member>
+  </compound>
+  <compound refid="class_panic_spread" kind="class"><name>PanicSpread</name>
+    <member refid="class_panic_spread_1a947b070b65c1a4376339855b682b02f8" kind="variable"><name>canPass</name></member>
+    <member refid="class_panic_spread_1a4b9fb6518f599696debdcc071f94d0e1" kind="function"><name>Update</name></member>
+    <member refid="class_panic_spread_1a6d3c16e8672f89217b061ca9fc3fa06a" kind="function"><name>OnTriggerEnter</name></member>
+  </compound>
+  <compound refid="class_people_going" kind="class"><name>PeopleGoing</name>
+    <member refid="class_people_going_1a3e2394a3d44af64daaebd0d35266c628" kind="variable"><name>numberOfAgentsGoing</name></member>
+    <member refid="class_people_going_1aede8b2151f461f6d130b69fe3aa5ac8d" kind="variable"><name>agentName</name></member>
+    <member refid="class_people_going_1a6a761392180cf53bd3b3feaf9757eec1" kind="variable"><name>canEat</name></member>
+    <member refid="class_people_going_1a861a026a4b60cb69b0a06f17058f9557" kind="variable"><name>table</name></member>
+    <member refid="class_people_going_1a6ead00d07cf0417154dc43fa74c2169a" kind="function"><name>Start</name></member>
+    <member refid="class_people_going_1ac12de68abc7ee052915cef3432a6d687" kind="function"><name>OnTriggerEnter</name></member>
+    <member refid="class_people_going_1ae5446019c93662dbd7fbe302f7b74dc6" kind="function"><name>OnTriggerExit</name></member>
+    <member refid="class_people_going_1a6d4e3a4432fc7fdd88553e2c44795ea9" kind="function"><name>UpdateAgentsGoing</name></member>
+    <member refid="class_people_going_1a60c133ccd9fd6841778899749b725586" kind="function"><name>GetNumberOfAgentsGoing</name></member>
+  </compound>
+  <compound refid="class_population_controller" kind="class"><name>PopulationController</name>
+    <member refid="class_population_controller_1a71f71a98a37d550784549723dd10dc62" kind="variable"><name>agents</name></member>
+    <member refid="class_population_controller_1a9ff54bc973908841c3a4228312eb4ada" kind="variable"><name>maxAgents</name></member>
+    <member refid="class_population_controller_1a65bd12b3f85563f90b4dc79ad17e5524" kind="variable"><name>agentPrefab</name></member>
+    <member refid="class_population_controller_1ab95e92502baa9bd12fb1822839c7d747" kind="variable"><name>exit1</name></member>
+    <member refid="class_population_controller_1a0c38acbe5b8f6878275f02517f188d4a" kind="variable"><name>exit2</name></member>
+    <member refid="class_population_controller_1ad7842edcd4fa07842f2cc32565015305" kind="variable"><name>wall1</name></member>
+    <member refid="class_population_controller_1a8cf1ecdaa47e1ae9ee75d357d8bb2b38" kind="variable"><name>wall2</name></member>
+    <member refid="class_population_controller_1abd5773e86341bb21d84d3dae5ee15b08" kind="variable"><name>spawn1</name></member>
+    <member refid="class_population_controller_1a9b2d79d33ca463f55c02bfe2578ddd12" kind="variable"><name>spawn2</name></member>
+    <member refid="class_population_controller_1aec15359885ad6a418ee06109d749d053" kind="variable"><name>spawners</name></member>
+    <member refid="class_population_controller_1ae7108171f7838ff9ebf858a626767ace" kind="variable"><name>deadAgents</name></member>
+    <member refid="class_population_controller_1ab989019589bb0c10e676ec096428d7bb" kind="variable"><name>agentsThatEscaped</name></member>
+    <member refid="class_population_controller_1a5fd452d290181db0a9d63c75c8f986b2" kind="variable"><name>timer</name></member>
+    <member refid="class_population_controller_1a638c953bf4afbdac48c448f95012d2d8" kind="variable"><name>i</name></member>
+    <member refid="class_population_controller_1a84aa4c55d4edf11a80c874dc62a1bebb" kind="property"><name>canStart</name></member>
+    <member refid="class_population_controller_1ae4265910e171f3a00d3bd8129b5be81d" kind="function"><name>Start</name></member>
+    <member refid="class_population_controller_1a08f1ab104af96a47d84ae8589f6e92ea" kind="function"><name>Update</name></member>
+    <member refid="class_population_controller_1a9d8e4ea29e900ab354e0ea78e8dfe1f5" kind="function"><name>OnGUI</name></member>
+    <member refid="class_population_controller_1a4bb72dba8d0921fb86106e1af77f1bb9" kind="function"><name>SpawnAgent</name></member>
+    <member refid="class_population_controller_1ab8b4c69fd599ca67fede68f6fb188970" kind="function"><name>RemoveAgent</name></member>
+    <member refid="class_population_controller_1a609579b1f9986affafc932fd68208546" kind="function"><name>GetRandomAgent</name></member>
+    <member refid="class_population_controller_1a1d2ac996727c1ff6329cb36ccd94e1bd" kind="function"><name>GetAgentListSize</name></member>
+    <member refid="class_population_controller_1a6ed4666d28614b8c4c81f2e85c231291" kind="function"><name>UpdatedDeadAngents</name></member>
+    <member refid="class_population_controller_1a8bc739c650124132225a9aab8c0f07ea" kind="function"><name>EscapedAgents</name></member>
+    <member refid="class_population_controller_1a24eca3d77cf5338e4ecab601536c6ca9" kind="function"><name>SetMaxAgents</name></member>
+    <member refid="class_population_controller_1aaa4c805161e13e82767e404dc82bee50" kind="function"><name>SetExits</name></member>
+  </compound>
+  <compound refid="class_u_i" kind="class"><name>UI</name>
+    <member refid="class_u_i_1adda3f30ede3f091b818cee9a44b99c7d" kind="variable"><name>input</name></member>
+    <member refid="class_u_i_1a64ed5d089e9fc7282ac53b2aae2939ef" kind="variable"><name>slider</name></member>
+    <member refid="class_u_i_1a0b339c9a8ced4ffc5a4e2486d79fa939" kind="variable"><name>text</name></member>
+    <member refid="class_u_i_1a20959eb70169acfa35d512ca29f02c53" kind="variable"><name>warming</name></member>
+    <member refid="class_u_i_1abab0d820e653a8e381038145e7622814" kind="function"><name>Start</name></member>
+    <member refid="class_u_i_1a02e916a3b5ebc294c65b5487a3231009" kind="function"><name>Update</name></member>
+    <member refid="class_u_i_1a7b5c03b1659b8747eb2ce215fdaa9b97" kind="function"><name>OnClick</name></member>
+  </compound>
+  <compound refid="namespace_system_1_1_collections" kind="namespace"><name>System::Collections</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_unity_engine" kind="namespace"><name>UnityEngine</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_a_i" kind="namespace"><name>UnityEngine::AI</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_u_i" kind="namespace"><name>UnityEngine::UI</name>
+  </compound>
+  <compound refid="_agent_behaviour_8cs" kind="file"><name>AgentBehaviour.cs</name>
+  </compound>
+  <compound refid="_agent_destroyer_8cs" kind="file"><name>AgentDestroyer.cs</name>
+  </compound>
+  <compound refid="_agents_in_table_8cs" kind="file"><name>AgentsInTable.cs</name>
+  </compound>
+  <compound refid="_behaviour_8cs" kind="file"><name>Behaviour.cs</name>
+    <member refid="_behaviour_8cs_1a64f0885419ebaeaeecf2ce80ba860741" kind="enum"><name>Behaviour</name></member>
+    <member refid="_behaviour_8cs_1a64f0885419ebaeaeecf2ce80ba860741ae599161956d626eda4cb0a5ffb85271c" kind="enumvalue"><name>Idle</name></member>
+    <member refid="_behaviour_8cs_1a64f0885419ebaeaeecf2ce80ba860741aed7ecb1dbb9be8c65f909819dac7aa54" kind="enumvalue"><name>Seek</name></member>
+    <member refid="_behaviour_8cs_1a64f0885419ebaeaeecf2ce80ba860741a20a8b1e6e473f9f1b219973fb365af44" kind="enumvalue"><name>Flee</name></member>
+  </compound>
+  <compound refid="_count_8cs" kind="file"><name>Count.cs</name>
+  </compound>
+  <compound refid="_detect_ground_8cs" kind="file"><name>DetectGround.cs</name>
+  </compound>
+  <compound refid="_explosion_8cs" kind="file"><name>Explosion.cs</name>
+  </compound>
+  <compound refid="_explosion_controller_8cs" kind="file"><name>ExplosionController.cs</name>
+  </compound>
+  <compound refid="_fire_8cs" kind="file"><name>Fire.cs</name>
+  </compound>
+  <compound refid="_game_manager_8cs" kind="file"><name>GameManager.cs</name>
+  </compound>
+  <compound refid="_panic_spread_8cs" kind="file"><name>PanicSpread.cs</name>
+  </compound>
+  <compound refid="_people_going_8cs" kind="file"><name>PeopleGoing.cs</name>
+  </compound>
+  <compound refid="_population_controller_8cs" kind="file"><name>PopulationController.cs</name>
+  </compound>
+  <compound refid="_u_i_8cs" kind="file"><name>UI.cs</name>
+  </compound>
+</doxygenindex>

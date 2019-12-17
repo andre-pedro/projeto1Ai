@@ -1,0 +1,183 @@
+\hypertarget{class_agent_behaviour}{}\doxysection{Agent\+Behaviour Class Reference}
+\label{class_agent_behaviour}\index{AgentBehaviour@{AgentBehaviour}}
+
+
+This Class is used to determine the agent stats and behaviour  
+
+
+Inheritance diagram for Agent\+Behaviour\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_agent_behaviour}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_agent_behaviour_af14990c64e96c48b2edf706e8e750d84}{Die}} ()
+\begin{DoxyCompactList}\small\item\em This method is called when the agent needs to die \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_agent_behaviour_a21aba1e2f790b882878ace979ced6498}{Stun}} ()
+\begin{DoxyCompactList}\small\item\em This method makes the agent get stunned and its used when the agent is caught in the explosion but not in the deadly range \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_agent_behaviour_a450409331fa676bd66f2470613ad38c8}{Panic}} (Vector3 origin)
+\begin{DoxyCompactList}\small\item\em This metho makes de agent panic and flee \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_agent_behaviour_a7a74a0ca74a8a79583660d7d1a28161a}{Go\+To\+Exit}} ()
+\begin{DoxyCompactList}\small\item\em This method is used to make the agent go to the exit \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_agent_behaviour_a51394c4ea8e329d792ce4c4d0b578877}{Set\+Hungry\+Mode}} (bool mode)
+\begin{DoxyCompactList}\small\item\em This method sets the hungry mode of the agent \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Behaviour \mbox{\hyperlink{class_agent_behaviour_a8500c85c776f84e620ea616b488743f4}{behaviour}}
+\begin{DoxyCompactList}\small\item\em Enum of available Behaviours \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_agent_behaviour_a85f5cb0411b923e8d0344b8581c37962}{is\+Alive}}
+\begin{DoxyCompactList}\small\item\em Tells if the player is alive \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_agent_behaviour_a6f5cea3d741a28a0c3235467def64808}{is\+Stunned}}
+\begin{DoxyCompactList}\small\item\em Tells if the player is dead \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_agent_behaviour_a8a6e3e155f1d8a3692879b5fed1c83df}{hunger}}
+\begin{DoxyCompactList}\small\item\em Current amount of hunger \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_agent_behaviour_a903ea07a3557b57b796e69a7602690a4}{in\+Panic}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Tells if the player is in Panic \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_agent_behaviour_a76def7e26c2d506850648c342973e852}{is\+Resting}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Tells if the player is resting \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This Class is used to determine the agent stats and behaviour 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_agent_behaviour_af14990c64e96c48b2edf706e8e750d84}\label{class_agent_behaviour_af14990c64e96c48b2edf706e8e750d84}} 
+\index{AgentBehaviour@{AgentBehaviour}!Die@{Die}}
+\index{Die@{Die}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{Die()}{Die()}}
+{\footnotesize\ttfamily void Agent\+Behaviour.\+Die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method is called when the agent needs to die 
+
+\mbox{\Hypertarget{class_agent_behaviour_a7a74a0ca74a8a79583660d7d1a28161a}\label{class_agent_behaviour_a7a74a0ca74a8a79583660d7d1a28161a}} 
+\index{AgentBehaviour@{AgentBehaviour}!GoToExit@{GoToExit}}
+\index{GoToExit@{GoToExit}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{GoToExit()}{GoToExit()}}
+{\footnotesize\ttfamily void Agent\+Behaviour.\+Go\+To\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method is used to make the agent go to the exit 
+
+\mbox{\Hypertarget{class_agent_behaviour_a450409331fa676bd66f2470613ad38c8}\label{class_agent_behaviour_a450409331fa676bd66f2470613ad38c8}} 
+\index{AgentBehaviour@{AgentBehaviour}!Panic@{Panic}}
+\index{Panic@{Panic}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{Panic()}{Panic()}}
+{\footnotesize\ttfamily void Agent\+Behaviour.\+Panic (\begin{DoxyParamCaption}\item[{Vector3}]{origin }\end{DoxyParamCaption})}
+
+
+
+This metho makes de agent panic and flee 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_agent_behaviour_a51394c4ea8e329d792ce4c4d0b578877}\label{class_agent_behaviour_a51394c4ea8e329d792ce4c4d0b578877}} 
+\index{AgentBehaviour@{AgentBehaviour}!SetHungryMode@{SetHungryMode}}
+\index{SetHungryMode@{SetHungryMode}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{SetHungryMode()}{SetHungryMode()}}
+{\footnotesize\ttfamily void Agent\+Behaviour.\+Set\+Hungry\+Mode (\begin{DoxyParamCaption}\item[{bool}]{mode }\end{DoxyParamCaption})}
+
+
+
+This method sets the hungry mode of the agent 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_agent_behaviour_a21aba1e2f790b882878ace979ced6498}\label{class_agent_behaviour_a21aba1e2f790b882878ace979ced6498}} 
+\index{AgentBehaviour@{AgentBehaviour}!Stun@{Stun}}
+\index{Stun@{Stun}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{Stun()}{Stun()}}
+{\footnotesize\ttfamily void Agent\+Behaviour.\+Stun (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method makes the agent get stunned and its used when the agent is caught in the explosion but not in the deadly range 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_agent_behaviour_a8500c85c776f84e620ea616b488743f4}\label{class_agent_behaviour_a8500c85c776f84e620ea616b488743f4}} 
+\index{AgentBehaviour@{AgentBehaviour}!behaviour@{behaviour}}
+\index{behaviour@{behaviour}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{behaviour}{behaviour}}
+{\footnotesize\ttfamily Behaviour Agent\+Behaviour.\+behaviour}
+
+
+
+Enum of available Behaviours 
+
+\mbox{\Hypertarget{class_agent_behaviour_a8a6e3e155f1d8a3692879b5fed1c83df}\label{class_agent_behaviour_a8a6e3e155f1d8a3692879b5fed1c83df}} 
+\index{AgentBehaviour@{AgentBehaviour}!hunger@{hunger}}
+\index{hunger@{hunger}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{hunger}{hunger}}
+{\footnotesize\ttfamily float Agent\+Behaviour.\+hunger}
+
+
+
+Current amount of hunger 
+
+\mbox{\Hypertarget{class_agent_behaviour_a85f5cb0411b923e8d0344b8581c37962}\label{class_agent_behaviour_a85f5cb0411b923e8d0344b8581c37962}} 
+\index{AgentBehaviour@{AgentBehaviour}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{isAlive}{isAlive}}
+{\footnotesize\ttfamily bool Agent\+Behaviour.\+is\+Alive}
+
+
+
+Tells if the player is alive 
+
+\mbox{\Hypertarget{class_agent_behaviour_a6f5cea3d741a28a0c3235467def64808}\label{class_agent_behaviour_a6f5cea3d741a28a0c3235467def64808}} 
+\index{AgentBehaviour@{AgentBehaviour}!isStunned@{isStunned}}
+\index{isStunned@{isStunned}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{isStunned}{isStunned}}
+{\footnotesize\ttfamily bool Agent\+Behaviour.\+is\+Stunned}
+
+
+
+Tells if the player is dead 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_agent_behaviour_a903ea07a3557b57b796e69a7602690a4}\label{class_agent_behaviour_a903ea07a3557b57b796e69a7602690a4}} 
+\index{AgentBehaviour@{AgentBehaviour}!inPanic@{inPanic}}
+\index{inPanic@{inPanic}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{inPanic}{inPanic}}
+{\footnotesize\ttfamily bool Agent\+Behaviour.\+in\+Panic\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Tells if the player is in Panic 
+
+\mbox{\Hypertarget{class_agent_behaviour_a76def7e26c2d506850648c342973e852}\label{class_agent_behaviour_a76def7e26c2d506850648c342973e852}} 
+\index{AgentBehaviour@{AgentBehaviour}!isResting@{isResting}}
+\index{isResting@{isResting}!AgentBehaviour@{AgentBehaviour}}
+\doxysubsubsection{\texorpdfstring{isResting}{isResting}}
+{\footnotesize\ttfamily bool Agent\+Behaviour.\+is\+Resting\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Tells if the player is resting 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Agent\+Behaviour.\+cs\end{DoxyCompactItemize}

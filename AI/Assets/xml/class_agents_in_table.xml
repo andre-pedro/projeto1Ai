@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_agents_in_table" kind="class" language="C#" prot="public">
+    <compoundname>AgentsInTable</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_agents_in_table_1a0691cc0053d033790b5ecb0b88f497c5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AgentsInTable.AgentsIn</definition>
+        <argsstring></argsstring>
+        <name>AgentsIn</name>
+        <briefdescription>
+<para>Current amount of agents in table </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentsInTable.cs" line="13" column="16" bodyfile="AgentsInTable.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_agents_in_table_1a7c472c98daaf35a14a5b47d3fc28d7db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentsInTable.RemoveAgents</definition>
+        <argsstring>()</argsstring>
+        <name>RemoveAgents</name>
+        <briefdescription>
+<para>This method is used to Remove agents from the table </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentsInTable.cs" line="18" column="17" bodyfile="AgentsInTable.cs" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agents_in_table_1a73d58786773ca21d3364e6d8e637c505" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentsInTable.AddAgents</definition>
+        <argsstring>()</argsstring>
+        <name>AddAgents</name>
+        <briefdescription>
+<para>This method is used to add agents to the table </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentsInTable.cs" line="26" column="17" bodyfile="AgentsInTable.cs" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_agents_in_table_1a18559ca3a4ab2cac0136871f95383638" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int AgentsInTable.GetAgents</definition>
+        <argsstring>()</argsstring>
+        <name>GetAgents</name>
+        <briefdescription>
+<para>This method returns the number of agents in the table </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of agents inside table</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentsInTable.cs" line="35" column="16" bodyfile="AgentsInTable.cs" bodystart="35" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This Class is used to check how many agents are in a table </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AgentsInTable</label>
+        <link refid="class_agents_in_table"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AgentsInTable</label>
+        <link refid="class_agents_in_table"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="AgentsInTable.cs" line="9" column="1" bodyfile="AgentsInTable.cs" bodystart="8" bodyend="39"/>
+    <listofallmembers>
+      <member refid="class_agents_in_table_1a73d58786773ca21d3364e6d8e637c505" prot="public" virt="non-virtual"><scope>AgentsInTable</scope><name>AddAgents</name></member>
+      <member refid="class_agents_in_table_1a0691cc0053d033790b5ecb0b88f497c5" prot="public" virt="non-virtual"><scope>AgentsInTable</scope><name>AgentsIn</name></member>
+      <member refid="class_agents_in_table_1a18559ca3a4ab2cac0136871f95383638" prot="public" virt="non-virtual"><scope>AgentsInTable</scope><name>GetAgents</name></member>
+      <member refid="class_agents_in_table_1a7c472c98daaf35a14a5b47d3fc28d7db" prot="public" virt="non-virtual"><scope>AgentsInTable</scope><name>RemoveAgents</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_agent_destroyer" kind="class" language="C#" prot="public">
+    <compoundname>AgentDestroyer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_agent_destroyer_1a1be22aa716452ee69e1a2c7e3d4e698a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AgentDestroyer.OnTriggerEnter</definition>
+        <argsstring>(Collider other)</argsstring>
+        <name>OnTriggerEnter</name>
+        <param>
+          <type>Collider</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>This method detects if the agent reaches a KillPlane or an exit and destroys them </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AgentDestroyer.cs" line="15" column="18" bodyfile="AgentDestroyer.cs" bodystart="15" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class destroys the agent </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AgentDestroyer</label>
+        <link refid="class_agent_destroyer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AgentDestroyer</label>
+        <link refid="class_agent_destroyer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="AgentDestroyer.cs" line="9" column="1" bodyfile="AgentDestroyer.cs" bodystart="8" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_agent_destroyer_1a1be22aa716452ee69e1a2c7e3d4e698a" prot="private" virt="non-virtual"><scope>AgentDestroyer</scope><name>OnTriggerEnter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
