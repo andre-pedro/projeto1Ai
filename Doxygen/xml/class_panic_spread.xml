@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PanicSpread.cs" line="20" column="10" bodyfile="PanicSpread.cs" bodystart="20" bodyend="26"/>
+        <location file="PanicSpread.cs" line="20" column="10" bodyfile="PanicSpread.cs" bodystart="20" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="class_panic_spread_1a6d3c16e8672f89217b061ca9fc3fa06a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PanicSpread.cs" line="33" column="18" bodyfile="PanicSpread.cs" bodystart="33" bodyend="53"/>
+        <location file="PanicSpread.cs" line="36" column="18" bodyfile="PanicSpread.cs" bodystart="36" bodyend="69"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -89,7 +89,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="PanicSpread.cs" line="10" column="1" bodyfile="PanicSpread.cs" bodystart="9" bodyend="54"/>
+    <location file="PanicSpread.cs" line="10" column="1" bodyfile="PanicSpread.cs" bodystart="9" bodyend="70"/>
     <listofallmembers>
       <member refid="class_panic_spread_1a947b070b65c1a4376339855b682b02f8" prot="private" virt="non-virtual"><scope>PanicSpread</scope><name>canPass</name></member>
       <member refid="class_panic_spread_1a6d3c16e8672f89217b061ca9fc3fa06a" prot="private" virt="non-virtual"><scope>PanicSpread</scope><name>OnTriggerEnter</name></member>

@@ -46,11 +46,11 @@
         </inbodydescription>
         <location file="UI.cs" line="27" column="18" bodyfile="UI.cs" bodystart="27" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_u_i_1a20959eb70169acfa35d512ca29f02c53" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_u_i_1a45ac274abe3277fb84f1c3c80b20d8f3" prot="private" static="no" mutable="no">
         <type>Text</type>
-        <definition>Text UI.warming</definition>
+        <definition>Text UI.warning</definition>
         <argsstring></argsstring>
-        <name>warming</name>
+        <name>warning</name>
         <briefdescription>
 <para>Text that will be used as warning in case player doesn&apos;t insert a valid number </para>
         </briefdescription>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="UI.cs" line="39" column="18" bodyfile="UI.cs" bodystart="39" bodyend="43"/>
+        <location file="UI.cs" line="39" column="18" bodyfile="UI.cs" bodystart="39" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="class_u_i_1a02e916a3b5ebc294c65b5487a3231009" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="UI.cs" line="48" column="10" bodyfile="UI.cs" bodystart="48" bodyend="51"/>
+        <location file="UI.cs" line="50" column="10" bodyfile="UI.cs" bodystart="50" bodyend="54"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -103,8 +103,9 @@
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
+<para>Sends the amount of agents to be spawned to the</para>
         </inbodydescription>
-        <location file="UI.cs" line="56" column="17" bodyfile="UI.cs" bodystart="56" bodyend="76"/>
+        <location file="UI.cs" line="59" column="17" bodyfile="UI.cs" bodystart="59" bodyend="99"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -134,7 +135,7 @@
         <label>MonoBehaviour</label>
       </node>
     </collaborationgraph>
-    <location file="UI.cs" line="10" column="1" bodyfile="UI.cs" bodystart="9" bodyend="77"/>
+    <location file="UI.cs" line="10" column="1" bodyfile="UI.cs" bodystart="9" bodyend="100"/>
     <listofallmembers>
       <member refid="class_u_i_1adda3f30ede3f091b818cee9a44b99c7d" prot="private" virt="non-virtual"><scope>UI</scope><name>input</name></member>
       <member refid="class_u_i_1a7b5c03b1659b8747eb2ce215fdaa9b97" prot="public" virt="non-virtual"><scope>UI</scope><name>OnClick</name></member>
@@ -142,7 +143,7 @@
       <member refid="class_u_i_1abab0d820e653a8e381038145e7622814" prot="private" virt="non-virtual"><scope>UI</scope><name>Start</name></member>
       <member refid="class_u_i_1a0b339c9a8ced4ffc5a4e2486d79fa939" prot="private" virt="non-virtual"><scope>UI</scope><name>text</name></member>
       <member refid="class_u_i_1a02e916a3b5ebc294c65b5487a3231009" prot="private" virt="non-virtual"><scope>UI</scope><name>Update</name></member>
-      <member refid="class_u_i_1a20959eb70169acfa35d512ca29f02c53" prot="private" virt="non-virtual"><scope>UI</scope><name>warming</name></member>
+      <member refid="class_u_i_1a45ac274abe3277fb84f1c3c80b20d8f3" prot="private" virt="non-virtual"><scope>UI</scope><name>warning</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

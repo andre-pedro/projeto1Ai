@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Fire.cs" line="24" column="18" bodyfile="Fire.cs" bodystart="24" bodyend="28"/>
+        <location file="Fire.cs" line="24" column="18" bodyfile="Fire.cs" bodystart="24" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="class_fire_1a29ee31d23ddec222f89404368e466a3a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Fire.cs" line="34" column="10" bodyfile="Fire.cs" bodystart="34" bodyend="42"/>
+        <location file="Fire.cs" line="37" column="10" bodyfile="Fire.cs" bodystart="37" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="class_fire_1a8cd5b928ebf34e41ad897e11e1e14aff" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Fire.cs" line="49" column="18" bodyfile="Fire.cs" bodystart="49" bodyend="59"/>
+        <location file="Fire.cs" line="57" column="18" bodyfile="Fire.cs" bodystart="57" bodyend="70"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -117,7 +117,7 @@
         <label>MonoBehaviour</label>
       </node>
     </collaborationgraph>
-    <location file="Fire.cs" line="10" column="1" bodyfile="Fire.cs" bodystart="9" bodyend="60"/>
+    <location file="Fire.cs" line="10" column="1" bodyfile="Fire.cs" bodystart="9" bodyend="71"/>
     <listofallmembers>
       <member refid="class_fire_1a197ccc3fa31c210b6ac6cf8e72bce44c" prot="private" virt="non-virtual"><scope>Fire</scope><name>col</name></member>
       <member refid="class_fire_1a0851cfef4b253716ab94c6c12e9a5d60" prot="private" virt="non-virtual"><scope>Fire</scope><name>navObs</name></member>

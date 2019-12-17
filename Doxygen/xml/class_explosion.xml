@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Explosion.cs" line="15" column="18" bodyfile="Explosion.cs" bodystart="15" bodyend="20"/>
+        <location file="Explosion.cs" line="15" column="18" bodyfile="Explosion.cs" bodystart="15" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="class_explosion_1ada7a24eea1cccea1cff2bf1f69b2fadf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Explosion.cs" line="25" column="18" bodyfile="Explosion.cs" bodystart="25" bodyend="49"/>
+        <location file="Explosion.cs" line="30" column="18" bodyfile="Explosion.cs" bodystart="30" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="class_explosion_1acce12b380653ce968382194b794c9b94" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Explosion.cs" line="54" column="18" bodyfile="Explosion.cs" bodystart="54" bodyend="71"/>
+        <location file="Explosion.cs" line="63" column="18" bodyfile="Explosion.cs" bodystart="63" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="class_explosion_1a600c9efb3a2ae14c5a07a43123b9a5cc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Explosion.cs" line="76" column="18" bodyfile="Explosion.cs" bodystart="76" bodyend="94"/>
+        <location file="Explosion.cs" line="89" column="18" bodyfile="Explosion.cs" bodystart="89" bodyend="111"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -88,7 +88,7 @@
         <label>MonoBehaviour</label>
       </node>
     </collaborationgraph>
-    <location file="Explosion.cs" line="10" column="1" bodyfile="Explosion.cs" bodystart="9" bodyend="95"/>
+    <location file="Explosion.cs" line="10" column="1" bodyfile="Explosion.cs" bodystart="9" bodyend="112"/>
     <listofallmembers>
       <member refid="class_explosion_1ada7a24eea1cccea1cff2bf1f69b2fadf" prot="private" virt="non-virtual"><scope>Explosion</scope><name>KillAgentsInRadius1</name></member>
       <member refid="class_explosion_1a600c9efb3a2ae14c5a07a43123b9a5cc" prot="private" virt="non-virtual"><scope>Explosion</scope><name>ScareAgentsInRadius3</name></member>

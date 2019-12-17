@@ -35,20 +35,6 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_people_going_1a6a761392180cf53bd3b3feaf9757eec1" prot="private" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool PeopleGoing.canEat</definition>
-        <argsstring></argsstring>
-        <name>canEat</name>
-        <briefdescription>
-<para>Variable to see if an agent is permited to eat in this GameObject </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="PeopleGoing.cs" line="24" column="18" bodyfile="PeopleGoing.cs" bodystart="24" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="class_people_going_1a861a026a4b60cb69b0a06f17058f9557" prot="private" static="no" mutable="no">
         <type><ref refid="class_agents_in_table" kindref="compound">AgentsInTable</ref></type>
         <definition>AgentsInTable PeopleGoing.table</definition>
@@ -61,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PeopleGoing.cs" line="29" column="27" bodyfile="PeopleGoing.cs" bodystart="29" bodyend="-1"/>
+        <location file="PeopleGoing.cs" line="24" column="27" bodyfile="PeopleGoing.cs" bodystart="24" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -77,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PeopleGoing.cs" line="34" column="18" bodyfile="PeopleGoing.cs" bodystart="34" bodyend="37"/>
+        <location file="PeopleGoing.cs" line="29" column="18" bodyfile="PeopleGoing.cs" bodystart="29" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="class_people_going_1ac12de68abc7ee052915cef3432a6d687" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -104,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PeopleGoing.cs" line="44" column="18" bodyfile="PeopleGoing.cs" bodystart="44" bodyend="52"/>
+        <location file="PeopleGoing.cs" line="40" column="18" bodyfile="PeopleGoing.cs" bodystart="40" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="class_people_going_1ae5446019c93662dbd7fbe302f7b74dc6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -131,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PeopleGoing.cs" line="59" column="18" bodyfile="PeopleGoing.cs" bodystart="59" bodyend="69"/>
+        <location file="PeopleGoing.cs" line="57" column="18" bodyfile="PeopleGoing.cs" bodystart="57" bodyend="75"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -160,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PeopleGoing.cs" line="75" column="17" bodyfile="PeopleGoing.cs" bodystart="75" bodyend="81"/>
+        <location file="PeopleGoing.cs" line="81" column="17" bodyfile="PeopleGoing.cs" bodystart="81" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="class_people_going_1a60c133ccd9fd6841778899749b725586" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -177,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PeopleGoing.cs" line="87" column="16" bodyfile="PeopleGoing.cs" bodystart="87" bodyend="90"/>
+        <location file="PeopleGoing.cs" line="97" column="16" bodyfile="PeopleGoing.cs" bodystart="97" bodyend="101"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -207,10 +193,9 @@
         <label>MonoBehaviour</label>
       </node>
     </collaborationgraph>
-    <location file="PeopleGoing.cs" line="10" column="1" bodyfile="PeopleGoing.cs" bodystart="9" bodyend="91"/>
+    <location file="PeopleGoing.cs" line="10" column="1" bodyfile="PeopleGoing.cs" bodystart="9" bodyend="102"/>
     <listofallmembers>
       <member refid="class_people_going_1aede8b2151f461f6d130b69fe3aa5ac8d" prot="public" virt="non-virtual"><scope>PeopleGoing</scope><name>agentName</name></member>
-      <member refid="class_people_going_1a6a761392180cf53bd3b3feaf9757eec1" prot="private" virt="non-virtual"><scope>PeopleGoing</scope><name>canEat</name></member>
       <member refid="class_people_going_1a60c133ccd9fd6841778899749b725586" prot="public" virt="non-virtual"><scope>PeopleGoing</scope><name>GetNumberOfAgentsGoing</name></member>
       <member refid="class_people_going_1a3e2394a3d44af64daaebd0d35266c628" prot="public" virt="non-virtual"><scope>PeopleGoing</scope><name>numberOfAgentsGoing</name></member>
       <member refid="class_people_going_1ac12de68abc7ee052915cef3432a6d687" prot="private" virt="non-virtual"><scope>PeopleGoing</scope><name>OnTriggerEnter</name></member>

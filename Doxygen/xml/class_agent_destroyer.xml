@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentDestroyer.cs" line="15" column="18" bodyfile="AgentDestroyer.cs" bodystart="15" bodyend="32"/>
+        <location file="AgentDestroyer.cs" line="15" column="18" bodyfile="AgentDestroyer.cs" bodystart="15" bodyend="42"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -59,7 +59,7 @@
         <label>MonoBehaviour</label>
       </node>
     </collaborationgraph>
-    <location file="AgentDestroyer.cs" line="9" column="1" bodyfile="AgentDestroyer.cs" bodystart="8" bodyend="33"/>
+    <location file="AgentDestroyer.cs" line="9" column="1" bodyfile="AgentDestroyer.cs" bodystart="8" bodyend="43"/>
     <listofallmembers>
       <member refid="class_agent_destroyer_1a1be22aa716452ee69e1a2c7e3d4e698a" prot="private" virt="non-virtual"><scope>AgentDestroyer</scope><name>OnTriggerEnter</name></member>
     </listofallmembers>

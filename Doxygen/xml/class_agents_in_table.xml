@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentsInTable.cs" line="18" column="17" bodyfile="AgentsInTable.cs" bodystart="18" bodyend="21"/>
+        <location file="AgentsInTable.cs" line="18" column="17" bodyfile="AgentsInTable.cs" bodystart="18" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="class_agents_in_table_1a73d58786773ca21d3364e6d8e637c505" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentsInTable.cs" line="26" column="17" bodyfile="AgentsInTable.cs" bodystart="26" bodyend="29"/>
+        <location file="AgentsInTable.cs" line="27" column="17" bodyfile="AgentsInTable.cs" bodystart="27" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="class_agents_in_table_1a18559ca3a4ab2cac0136871f95383638" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="AgentsInTable.cs" line="35" column="16" bodyfile="AgentsInTable.cs" bodystart="35" bodyend="38"/>
+        <location file="AgentsInTable.cs" line="37" column="16" bodyfile="AgentsInTable.cs" bodystart="37" bodyend="41"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -93,7 +93,7 @@
         <label>MonoBehaviour</label>
       </node>
     </collaborationgraph>
-    <location file="AgentsInTable.cs" line="9" column="1" bodyfile="AgentsInTable.cs" bodystart="8" bodyend="39"/>
+    <location file="AgentsInTable.cs" line="9" column="1" bodyfile="AgentsInTable.cs" bodystart="8" bodyend="42"/>
     <listofallmembers>
       <member refid="class_agents_in_table_1a73d58786773ca21d3364e6d8e637c505" prot="public" virt="non-virtual"><scope>AgentsInTable</scope><name>AddAgents</name></member>
       <member refid="class_agents_in_table_1a0691cc0053d033790b5ecb0b88f497c5" prot="public" virt="non-virtual"><scope>AgentsInTable</scope><name>AgentsIn</name></member>

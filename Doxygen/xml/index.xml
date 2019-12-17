@@ -101,7 +101,6 @@
   <compound refid="class_people_going" kind="class"><name>PeopleGoing</name>
     <member refid="class_people_going_1a3e2394a3d44af64daaebd0d35266c628" kind="variable"><name>numberOfAgentsGoing</name></member>
     <member refid="class_people_going_1aede8b2151f461f6d130b69fe3aa5ac8d" kind="variable"><name>agentName</name></member>
-    <member refid="class_people_going_1a6a761392180cf53bd3b3feaf9757eec1" kind="variable"><name>canEat</name></member>
     <member refid="class_people_going_1a861a026a4b60cb69b0a06f17058f9557" kind="variable"><name>table</name></member>
     <member refid="class_people_going_1a6ead00d07cf0417154dc43fa74c2169a" kind="function"><name>Start</name></member>
     <member refid="class_people_going_1ac12de68abc7ee052915cef3432a6d687" kind="function"><name>OnTriggerEnter</name></member>
@@ -130,8 +129,6 @@
     <member refid="class_population_controller_1a9d8e4ea29e900ab354e0ea78e8dfe1f5" kind="function"><name>OnGUI</name></member>
     <member refid="class_population_controller_1a4bb72dba8d0921fb86106e1af77f1bb9" kind="function"><name>SpawnAgent</name></member>
     <member refid="class_population_controller_1ab8b4c69fd599ca67fede68f6fb188970" kind="function"><name>RemoveAgent</name></member>
-    <member refid="class_population_controller_1a609579b1f9986affafc932fd68208546" kind="function"><name>GetRandomAgent</name></member>
-    <member refid="class_population_controller_1a1d2ac996727c1ff6329cb36ccd94e1bd" kind="function"><name>GetAgentListSize</name></member>
     <member refid="class_population_controller_1a6ed4666d28614b8c4c81f2e85c231291" kind="function"><name>UpdatedDeadAngents</name></member>
     <member refid="class_population_controller_1a8bc739c650124132225a9aab8c0f07ea" kind="function"><name>EscapedAgents</name></member>
     <member refid="class_population_controller_1a24eca3d77cf5338e4ecab601536c6ca9" kind="function"><name>SetMaxAgents</name></member>
@@ -141,7 +138,7 @@
     <member refid="class_u_i_1adda3f30ede3f091b818cee9a44b99c7d" kind="variable"><name>input</name></member>
     <member refid="class_u_i_1a64ed5d089e9fc7282ac53b2aae2939ef" kind="variable"><name>slider</name></member>
     <member refid="class_u_i_1a0b339c9a8ced4ffc5a4e2486d79fa939" kind="variable"><name>text</name></member>
-    <member refid="class_u_i_1a20959eb70169acfa35d512ca29f02c53" kind="variable"><name>warming</name></member>
+    <member refid="class_u_i_1a45ac274abe3277fb84f1c3c80b20d8f3" kind="variable"><name>warning</name></member>
     <member refid="class_u_i_1abab0d820e653a8e381038145e7622814" kind="function"><name>Start</name></member>
     <member refid="class_u_i_1a02e916a3b5ebc294c65b5487a3231009" kind="function"><name>Update</name></member>
     <member refid="class_u_i_1a7b5c03b1659b8747eb2ce215fdaa9b97" kind="function"><name>OnClick</name></member>

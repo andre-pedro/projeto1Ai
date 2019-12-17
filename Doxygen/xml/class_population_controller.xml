@@ -233,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="99" column="18" bodyfile="PopulationController.cs" bodystart="99" bodyend="104"/>
+        <location file="PopulationController.cs" line="99" column="18" bodyfile="PopulationController.cs" bodystart="99" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="class_population_controller_1a08f1ab104af96a47d84ae8589f6e92ea" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -247,7 +247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="110" column="18" bodyfile="PopulationController.cs" bodystart="110" bodyend="130"/>
+        <location file="PopulationController.cs" line="115" column="18" bodyfile="PopulationController.cs" bodystart="115" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="class_population_controller_1a9d8e4ea29e900ab354e0ea78e8dfe1f5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -261,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="135" column="10" bodyfile="PopulationController.cs" bodystart="135" bodyend="142"/>
+        <location file="PopulationController.cs" line="148" column="10" bodyfile="PopulationController.cs" bodystart="148" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="class_population_controller_1a4bb72dba8d0921fb86106e1af77f1bb9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -288,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="148" column="18" bodyfile="PopulationController.cs" bodystart="148" bodyend="154"/>
+        <location file="PopulationController.cs" line="166" column="18" bodyfile="PopulationController.cs" bodystart="166" bodyend="179"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -317,41 +317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="160" column="17" bodyfile="PopulationController.cs" bodystart="160" bodyend="163"/>
-      </memberdef>
-      <memberdef kind="function" id="class_population_controller_1a609579b1f9986affafc932fd68208546" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>GameObject</type>
-        <definition>GameObject PopulationController.GetRandomAgent</definition>
-        <argsstring>()</argsstring>
-        <name>GetRandomAgent</name>
-        <briefdescription>
-<para>This method is used to retrn a random agent from the list </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>Random Agent</para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="PopulationController.cs" line="169" column="23" bodyfile="PopulationController.cs" bodystart="169" bodyend="172"/>
-      </memberdef>
-      <memberdef kind="function" id="class_population_controller_1a1d2ac996727c1ff6329cb36ccd94e1bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>int PopulationController.GetAgentListSize</definition>
-        <argsstring>()</argsstring>
-        <name>GetAgentListSize</name>
-        <briefdescription>
-<para>This list gets the size of the agent list </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>Size of agent list</para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="PopulationController.cs" line="178" column="16" bodyfile="PopulationController.cs" bodystart="178" bodyend="181"/>
+        <location file="PopulationController.cs" line="185" column="17" bodyfile="PopulationController.cs" bodystart="185" bodyend="189"/>
       </memberdef>
       <memberdef kind="function" id="class_population_controller_1a6ed4666d28614b8c4c81f2e85c231291" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -365,7 +331,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="186" column="17" bodyfile="PopulationController.cs" bodystart="186" bodyend="189"/>
+        <location file="PopulationController.cs" line="194" column="17" bodyfile="PopulationController.cs" bodystart="194" bodyend="198"/>
       </memberdef>
       <memberdef kind="function" id="class_population_controller_1a8bc739c650124132225a9aab8c0f07ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -379,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="194" column="17" bodyfile="PopulationController.cs" bodystart="194" bodyend="197"/>
+        <location file="PopulationController.cs" line="203" column="17" bodyfile="PopulationController.cs" bodystart="203" bodyend="207"/>
       </memberdef>
       <memberdef kind="function" id="class_population_controller_1a24eca3d77cf5338e4ecab601536c6ca9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -406,7 +372,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="203" column="17" bodyfile="PopulationController.cs" bodystart="203" bodyend="206"/>
+        <location file="PopulationController.cs" line="213" column="17" bodyfile="PopulationController.cs" bodystart="213" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="class_population_controller_1aaa4c805161e13e82767e404dc82bee50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -433,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="PopulationController.cs" line="212" column="17" bodyfile="PopulationController.cs" bodystart="212" bodyend="243"/>
+        <location file="PopulationController.cs" line="223" column="17" bodyfile="PopulationController.cs" bodystart="223" bodyend="256"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -463,7 +429,7 @@
         <label>MonoBehaviour</label>
       </node>
     </collaborationgraph>
-    <location file="PopulationController.cs" line="10" column="1" bodyfile="PopulationController.cs" bodystart="9" bodyend="245"/>
+    <location file="PopulationController.cs" line="10" column="1" bodyfile="PopulationController.cs" bodystart="9" bodyend="258"/>
     <listofallmembers>
       <member refid="class_population_controller_1a65bd12b3f85563f90b4dc79ad17e5524" prot="private" virt="non-virtual"><scope>PopulationController</scope><name>agentPrefab</name></member>
       <member refid="class_population_controller_1a71f71a98a37d550784549723dd10dc62" prot="private" virt="non-virtual"><scope>PopulationController</scope><name>agents</name></member>
@@ -473,8 +439,6 @@
       <member refid="class_population_controller_1a8bc739c650124132225a9aab8c0f07ea" prot="public" virt="non-virtual"><scope>PopulationController</scope><name>EscapedAgents</name></member>
       <member refid="class_population_controller_1ab95e92502baa9bd12fb1822839c7d747" prot="private" virt="non-virtual"><scope>PopulationController</scope><name>exit1</name></member>
       <member refid="class_population_controller_1a0c38acbe5b8f6878275f02517f188d4a" prot="private" virt="non-virtual"><scope>PopulationController</scope><name>exit2</name></member>
-      <member refid="class_population_controller_1a1d2ac996727c1ff6329cb36ccd94e1bd" prot="public" virt="non-virtual"><scope>PopulationController</scope><name>GetAgentListSize</name></member>
-      <member refid="class_population_controller_1a609579b1f9986affafc932fd68208546" prot="public" virt="non-virtual"><scope>PopulationController</scope><name>GetRandomAgent</name></member>
       <member refid="class_population_controller_1a638c953bf4afbdac48c448f95012d2d8" prot="private" virt="non-virtual"><scope>PopulationController</scope><name>i</name></member>
       <member refid="class_population_controller_1a9ff54bc973908841c3a4228312eb4ada" prot="private" virt="non-virtual"><scope>PopulationController</scope><name>maxAgents</name></member>
       <member refid="class_population_controller_1a9d8e4ea29e900ab354e0ea78e8dfe1f5" prot="private" virt="non-virtual"><scope>PopulationController</scope><name>OnGUI</name></member>
