@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class AgentsInTable : MonoBehaviour
 {
+    /// <summary>
+    /// Current amount of agents in table
+    /// </summary>
     public int AgentsIn;
 
     /// <summary>

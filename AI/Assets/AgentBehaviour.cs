@@ -8,39 +8,124 @@ using UnityEngine.AI;
 /// </summary>
 public class AgentBehaviour : MonoBehaviour
 {
+    /// <summary>
+    /// Enum of available Behaviours
+    /// </summary>
     public Behaviour behaviour;
 
+    /// <summary>
+    /// Tells if the player is alive
+    /// </summary>
     public bool isAlive;
+
+    /// <summary>
+    /// Tells if the player is dead
+    /// </summary>
     public bool isStunned;
+
+    /// <summary>
+    /// Tells if the player is in Panic
+    /// </summary>
     public bool inPanic { get; set; }
 
+    /// <summary>
+    /// Tells if the player is Hungry
+    /// </summary>
     private bool isHungry;
+
+    /// <summary>
+    /// Tells if the player is tired
+    /// </summary>
     private bool isTired;
 
+    /// <summary>
+    /// Tells if the player is resting
+    /// </summary>
     public bool isResting { get; set; }
 
+    /// <summary>
+    /// Tells if the player is eating
+    /// </summary>
     private bool isEating; 
     
+    /// <summary>
+    /// Tells if the player is on the move to a stage
+    /// </summary>
     private bool isGoingToFun;
+
+    /// <summary>
+    /// Tells if the player is on the move to an open Area
+    /// </summary>
     private bool isGoingToRest;
+
+    /// <summary>
+    /// Tells is the player is on the move to a seat
+    /// </summary>
     private bool isGoingForFood;
 
+    /// <summary>
+    /// Tells if the player has found a seat yet
+    /// </summary>
     private bool hasFoundSeat = false;
 
+    /// <summary>
+    /// NavMeshAgent of this Gameobject
+    /// </summary>
     private NavMeshAgent agent;
+
+    /// <summary>
+    /// NavMeshPath of this agent
+    /// </summary>
     private NavMeshPath path;
 
-    private Vector3 destination;    
+    /// <summary>
+    /// Vector3 that holds the destination to the agent
+    /// </summary>
+    private Vector3 destination; 
+    
+    /// <summary>
+    /// Vector 3 that holds the panic origin of an event(Explosion)
+    /// </summary>
     private Vector3 panicOrigin;
     
+    /// <summary>
+    /// Array with all the stages
+    /// </summary>
     private GameObject[] stages;
+
+    /// <summary>
+    /// Array with all the Open Areas
+    /// </summary>
     private GameObject[] openAreas;
+
+    /// <summary>
+    /// Array with all the exits
+    /// </summary>
     private GameObject[] exits;
+
+    /// <summary>
+    /// Array with all the upperStageAreas
+    /// </summary>
     private GameObject[] upperStage;
+
+    /// <summary>
+    /// Array with all the tables
+    /// </summary>
     private GameObject[] tables;
+
+    /// <summary>
+    /// Array with all the seats
+    /// </summary>
     private GameObject[] seats;
 
+    /// <summary>
+    /// Current amount of hunger
+    /// </summary>
     public float hunger;
+
+    /// <summary>
+    /// Current tired amount
+    /// </summary>
     private float tired;
     
     /// <summary>
@@ -462,22 +547,24 @@ public class AgentBehaviour : MonoBehaviour
         float dist;
         float bestDist = 0;
         int cycle = 0;
-        foreach(GameObject exit in exits)
+
+        foreach (GameObject exit in exits)
         {
             dist = Vector3.Distance(this.gameObject.transform.position,
                 exit.transform.position);
 
-            if(cycle == 0)
+            if (cycle == 0)
             {
                 best = exit.transform;
                 bestDist = dist;
-            }else if (dist < bestDist)
+            }
+            else if (dist < bestDist)
             {
                 best = exit.transform;
                 bestDist = dist;
             }
             cycle++;
-        }
+        }     
 
         return best;
     }

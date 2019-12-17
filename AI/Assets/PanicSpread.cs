@@ -8,6 +8,9 @@ using UnityEngine.AI;
 /// </summary>
 public class PanicSpread : MonoBehaviour
 {
+    /// <summary>
+    /// Variable to check if this agent can spread fear
+    /// </summary>
     private bool canPass;
 
     /// <summary>

@@ -7,12 +7,17 @@ using UnityEngine;
 /// </summary>
 public class ExplosionController : MonoBehaviour
 {
+    /// <summary>
+    /// Prefab of the explosion
+    /// </summary>
     [SerializeField]
     private GameObject explosion;
+
+    /// <summary>
+    /// Prefab of the fire
+    /// </summary>
     [SerializeField]
     private GameObject fire;
-
-    private Vector3 agent;
 
     /// <summary>
     /// The Update checks if the mouse was click and instanciate an explosion

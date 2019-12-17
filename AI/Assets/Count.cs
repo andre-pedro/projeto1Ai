@@ -7,7 +7,14 @@ using UnityEngine;
 /// </summary>
 public class Count : MonoBehaviour
 {
+    /// <summary>
+    /// Number of agents in this GameObject
+    /// </summary>
     private int numberOfAgents = 0;
+
+    /// <summary>
+    /// List of agent names in this GameObject
+    /// </summary>
     private List<string> nameOfAgents = new List<string>();
 
     /// <summary>

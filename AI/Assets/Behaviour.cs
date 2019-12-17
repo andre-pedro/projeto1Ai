@@ -7,7 +7,16 @@ using UnityEngine;
 /// </summary>
 public enum Behaviour
 {
+    /// <summary>
+    /// Idle State
+    /// </summary>
     Idle,
+    /// <summary>
+    /// Seek State
+    /// </summary>
     Seek,
+    /// <summary>
+    /// Flee State
+    /// </summary>
     Flee
 }

@@ -2,10 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that starts the GameManager
+/// </summary>
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// Instance of GameManger
+    /// </summary>
     public static GameManager Instance { get; private set; }
 
+    /// <summary>
+    /// Creates only one instance of GameManager
+    /// </summary>
     private void Awake()
     {
         DontDestroyOnLoad(this);

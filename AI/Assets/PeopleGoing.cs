@@ -8,12 +8,29 @@ using UnityEngine;
 /// </summary>
 public class PeopleGoing : MonoBehaviour
 {
+    /// <summary>
+    /// Number of agents that are currently going to ths GameObject
+    /// </summary>
     public int numberOfAgentsGoing = 0;
+
+    /// <summary>
+    /// Name of the Agent coming to this GameObject
+    /// </summary>
     public string agentName;
+
+    /// <summary>
+    /// Variable to see if an agent is permited to eat in this GameObject
+    /// </summary>
     private bool canEat;
 
+    /// <summary>
+    /// Variable used to fetch the table this GameObject is assigned tos
+    /// </summary>
     private AgentsInTable table;
 
+    /// <summary>
+    /// Start is used to assign Components
+    /// </summary>
     private void Start()
     {
         table = GetComponentInParent<AgentsInTable>();

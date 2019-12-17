@@ -8,47 +8,89 @@ using UnityEngine.UI;
 /// </summary>
 public class PopulationController : MonoBehaviour
 {
+    /// <summary>
+    /// List with all the agents alive inside scene
+    /// </summary>
     [SerializeField]
     private List<GameObject> agents = new List<GameObject>();
 
+    /// <summary>
+    /// Define the max number of agents that will be spawned inside scene
+    /// </summary>
     [SerializeField]
     private int maxAgents;
 
+    /// <summary>
+    /// Is the prefab that will be spawned as agents
+    /// </summary>
     [SerializeField]
     private GameObject agentPrefab;
 
-    [SerializeField]
-    private Text currentAgents;
-
-    [SerializeField]
-    private Text dead;
-
+    /// <summary>
+    /// GameObject that will represent the first exit
+    /// </summary>
     [SerializeField]
     private GameObject exit1;
 
+    /// <summary>
+    /// GameObject that will represent the second exit
+    /// </summary>
     [SerializeField]
     private GameObject exit2;
 
+    /// <summary>
+    /// GameObject that will represent the first wall
+    /// </summary>
     [SerializeField]
     private GameObject wall1;
 
+    /// <summary>
+    /// GameObject that will represent the second wall
+    /// </summary>
     [SerializeField]
     private GameObject wall2;
 
+    /// <summary>
+    /// GameObject that will represent the first spawner
+    /// </summary>
     [SerializeField]
     private GameObject spawn1;
 
+    /// <summary>
+    /// GameObject that will represent the second spawner
+    /// </summary>
     [SerializeField]
     private GameObject spawn2;
 
+    /// <summary>
+    /// This bool is used to check if the PopulationController 
+    /// can start spawning agents
+    /// </summary>
     public bool canStart { get; set; }
 
-    private GameObject[] agentHolder;
+    /// <summary>
+    /// Array with all the spawners inside scene
+    /// </summary>
+    private GameObject[] spawners;
 
+    /// <summary>
+    /// Variable with the number of agents that are dead
+    /// </summary>
     private int deadAgents = 0;
+
+    /// <summary>
+    /// Variable with the number of agents that escaped
+    /// </summary>
     private int agentsThatEscaped = 0;
 
+    /// <summary>
+    /// This variable is used to set the time between spawns
+    /// </summary>
     private float timer;
+
+    /// <summary>
+    /// Amount of agents that have been spawned
+    /// </summary>
     int i;
 
     /// <summary>
@@ -58,7 +100,7 @@ public class PopulationController : MonoBehaviour
     {
         i = 0;
         timer = 0.1f;
-        agentHolder = GameObject.FindGameObjectsWithTag("Spawn");
+        spawners = GameObject.FindGameObjectsWithTag("Spawn");
     }
 
     /// <summary>
@@ -87,6 +129,9 @@ public class PopulationController : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Event that Updates GUI
+    /// </summary>
     void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 200, 20), $"Current agents on scene - " +
@@ -102,8 +147,8 @@ public class PopulationController : MonoBehaviour
     /// <param name="i"></param>
     private void SpawnAgent(int i)
     {
-        int x = Random.Range(0, agentHolder.Length);
-        GameObject agent = Instantiate(agentPrefab, agentHolder[x].transform);
+        int x = Random.Range(0, spawners.Length);
+        GameObject agent = Instantiate(agentPrefab, spawners[x].transform);
         agent.name += i;
         agents.Add(agent);
     }
@@ -135,21 +180,35 @@ public class PopulationController : MonoBehaviour
         return agents.Count;
     }
 
+    /// <summary>
+    /// Increases the number of dead agents
+    /// </summary>
     public void UpdatedDeadAngents()
     {
         deadAgents++;
     }
 
+    /// <summary>
+    /// Increases the number of escaped agents
+    /// </summary>
     public void EscapedAgents()
     {
         agentsThatEscaped++;
     }
 
+    /// <summary>
+    /// Sets the number of max agents that can be spawned
+    /// </summary>
+    /// <param name="x"></param>
     public void SetMaxAgents(int x)
     {
         maxAgents = x;
     }
 
+    /// <summary>
+    /// Sets the number of exits that will be available on the scene
+    /// </summary>
+    /// <param name="x"></param>
     public void SetExits(int x)
     {
         switch (x)

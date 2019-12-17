@@ -8,7 +8,14 @@ using UnityEngine.AI;
 /// </summary>
 public class Fire : MonoBehaviour
 {
+    /// <summary>
+    /// Collider of this GameObject
+    /// </summary>
     private Collider col;
+
+    /// <summary>
+    /// NavMeshObstacle of this GameObject
+    /// </summary>
     private NavMeshObstacle navObs;
 
     /// <summary>
