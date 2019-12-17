@@ -6,17 +6,21 @@ Projeto em desenvolvimento pelos seguintes alunos:
 * [Tiago Alves](https://github.com/Synpse) - Nº a21701031
 
 ## Distribuição de tarefas
-Descriçao da distribuição de tarefas 
+Para a execução deste projeto, as tarefas foram repartidas de acordo com as aptidões de cada um:
+* **André Pedro** - 
+* **Diogo Maia** - 
+* **Tiago Alves** -
 
 ## Introdução
-Este projeto foi desenvolvido no âmbito da unidade curricular "Inteligencia Artificial", onde nos foi proposto o desenvolvimento de uma simulação de um concerto, onde os agentes presentes no recinto tivessem necessidades como fome e cansaço. Foi-nos pedido também que os vários agentes reagissem a acontecimentos catastróficos (explosões) que ocorrem durante o evento. O projeto encontra-se no seguinte [repositório] de git, bem como o respetivo [enunciado].
+Este projeto foi desenvolvido no âmbito da unidade curricular "Inteligência Artificial", onde nos foi proposto o desenvolvimento de uma simulação de um concerto, onde os agentes presentes no recinto tivessem necessidades como fome e cansaço. Foi-nos pedido também que os vários agentes reagissem a acontecimentos catastróficos (explosões) que ocorrem durante o evento. O projeto encontra-se no seguinte [repositório] de git, bem como o respetivo [enunciado].
 
 _O Flowchart_ abaixo reflete o nosso processo de verificação de estados de cada agente no decorrer da simulação.
 
 ![flowchart](relatorioAnexos/flowchart.svg)
+(Anexo 1 - Fluxograma)
 
 ### Pesquisa
- Deve também ser apresentada nesta secção a pesquisa efetuada sobre simulação baseada em agentes aplicada ao pânico em multidões.
+Uma das grandes prioridades na gestão de eventos de grande escala (como concertos, estádios, entre outros) é a segurança. Em locais com imensas pessoas, tornar-se-ia bastante dispendioso construir diversos edifícios diferentes para comprovar qual deles teria o melhor método de segurança. Devido a esta necessidade, uma das maneiras mais económicas que [Neal Wagner e Vikas Agrawal](https://www.sciencedirect.com/science/article/pii/S0957417413008270?via%3Dihub) utilizaram foi simular situações catastróficas nos recintos em ambientes virtuais. A principal componente deste método é atribuir determinadas reações às pessoas (que nesta simulação são representados por agentes com inteligência artificial) perante a emergência. Para atribuir tais características semelhantes às de um ser humano, tivemos que utilizar diversos algoritmos que automatizassem as reações. Como tal, seguimos os principais algoritmos de movimento cinemático presentes em "[AI for Games](https://books.google.pt/books/about/Artificial_Intelligence_for_Games.html?id=zCiv-lMad-AC&redir_esc=y)", de Ian Millington: Seek e Flee. Aplicámos o primeiro aos agentes para poderem locomover-se do ponto A ao ponto B de forma individual e independente. Já o segundo é aplicado na presença de uma explosão, fazendo com que os agentes se afastem do centro da explosão.
 
 ## Metodologia
 A simulação foi implementada utilizando a Game Engine "Unity", num projeto 3D. A _build_ da mesma foi feita para Windows (64 bits).
@@ -27,7 +31,7 @@ Recorrendo a sistemas de inteligência artificial nos agentes cinematicos presen
 Mediante as condições, estes agentes respondem com os seguintes comportamentos:
 
 * "**Seek**" - Sendo a acção que dá a maior "autonomia" aos agentes, o comportamento _seek_ acontece sempre que cada agente precisa de se deslocar para um local (por exemplo, quando alguém se desloca para um palco ou outra zona).
-* "**Idle**" - Considerado o comportamento "neutro", os agentes ficam no estado _idle_ quando não estão a efetuar nenhum dos restantes comportamentos, ocorrendo frequentemente quando os agentes estão a recuperar alguma necessidade.
+* "**Idle**" - Considerado o comportamento "neutro", os agentes ficam estáticos no estado _idle_ quando não estão a efetuar nenhum dos restantes comportamentos, ocorrendo frequentemente quando os agentes estão a recuperar alguma necessidade.
 * "**Flee**" - Quando ocorre uma explosão, os agentes num determinado raio (ver secção "Explosões") correm na direção oposta.
 
 #### Necessidades
@@ -62,7 +66,7 @@ private void ChecksStats()
 ```
  A permanência de um agente numa área aumenta exponencialmente o valor correspondente. Ao ter as necessidades favoráveis para o efeito, o agente calcula o palco com menos agentes e desloca-se para o mesmo. No caso de ambos os palcos terem exatamente a mesma quantidade de agentes, é feito um _random_ para decidir para onde é feita a deslocação.
 
-// falar sobre custos de navegação
+
 
 ### Zonas / Áreas
 
@@ -74,6 +78,7 @@ No recinto do festival existem 3 zonas:
 
 * **Zonas de Descanso** - Quando os agentes precisam de aumentar o valor de `tired`, deslocam-se para as Zonas de Descanso, onde escolhem um sítio livre aleatório e ficam nele até estarem com o valor dentro dos parâmetros aceitáveis.
 
+Existem duas formas de andar no recinto: Pelos caminhos pré-definidos e pelo caminho mais curto. Numa situação normal, os caminhos pré-definidos têm um custo inferior do que o caminho mais curto, fazendo com que a I.A. caminhe pelos mesmos. Numa situação de emergência (uma explosão) os custos são invertidos, e os agentes passam a andar pelo caminho mais curto.
 
 ### Explosões
 
@@ -86,7 +91,7 @@ O jogador pode escolher com o rato o local onde quer causar uma explosão. Ao cl
 * **3º Raio** - Todos os agentes são assustados (`scared`), fugindo na direção oposta da explosão. Se um agente assustado entrar em contacto com outros agentes, estes ficam assustados também.
 
 ![anexoRaios](relatorioAnexos/raios.svg)
-(Anexo 1 - Raios de Explosão)
+(Anexo 2 - Raios de Explosão)
 
 Perante as explosões, os agentes podem reagir de maneiras diferentes. Ao serem atingidos nos raios 2 ou 3, para além do referido anteriormente, ficam também em pânico. Agentes com `panic` afetam outros agentes perto deles, fazendo com que fiquem em `panic` também.
 
@@ -95,6 +100,8 @@ De um modo geral, a I.A. comportou-se como o esperado. No entanto, descobrimos a
 
 ## Conclusão
 Na elaboração desta simulação foi-nos possivel concluir que:
+
+
 Nesta secção devem relacionar o que foi apresentado na introdução, nomeadamente o problema que se propuseram a resolver, com os resultados que obtiveram, e como o vosso projeto e a vossa abordagem se relaciona no panorama
 geral da pesquisa que efetuaram sobre simulação de pânico em multidões.
 • Uma pessoa que leia a introdução e conclusão do vosso relatório deve ficar
@@ -104,9 +111,11 @@ detalhes.
 ## Agradecimentos
 * Prof. Nuno Fachada
 
-## Referencias
-Wagner, N. & Agrawal, V. (2014). "An agent-based simulation system for concert venue
-crowd evacuation modeling in the presence of a fire disaster".
+## Referências
+*Wagner, N. & Agrawal, V. (2014). "An agent-based simulation system for concert venue crowd evacuation modeling in the presence of a fire disaster".
+
+Millington, I. (2019). AI for Games (3rd ed.). CRC Press.
+
 
 [repositório]:https://github.com/andre-pedro/projeto1Ai
 [enunciado]:https://secure.grupolusofona.pt/ulht/moodle/pluginfile.php/669636/mod_assign/introattachment/0/p1.pdf?forcedownload=1
