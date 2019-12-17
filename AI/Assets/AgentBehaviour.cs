@@ -719,7 +719,7 @@ public class AgentBehaviour : MonoBehaviour
 
         //Creates a random point along the the area nearest to the upper stage
         along = new Vector3(
-            along.x + Random.Range(-15f, 15f),
+            along.x + Random.Range(-33, 33),
             along.y,
             along.z);
 
