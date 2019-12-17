@@ -165,6 +165,9 @@ public class AgentBehaviour : MonoBehaviour
         //Checks is agent is alive
         if (isAlive)
         {
+            //Checks exit
+            Check(exits, path);
+
             //Checks if agent is in panic, stunned and if he is alive
             if (!inPanic && !isStunned && isAlive)
             {
@@ -773,6 +776,37 @@ public class AgentBehaviour : MonoBehaviour
 
         //Returns best Exit
         return best;
+    }
+
+    /// <summary>
+    /// Checks Available exits
+    /// </summary>
+    /// <param name="exits"></param>
+    /// <param name="path"></param>
+    /// <returns>Available exits</returns>
+    public GameObject[] Check(GameObject[] exits, NavMeshPath path)
+    {
+        //cycle
+        int i = 0;
+        //Array where all available exits will be stored
+        GameObject[] availableExits = default;
+
+        //Checks every exit
+        foreach (GameObject exit in exits)
+        {
+            //If can calculate path
+            if (NavMesh.CalculatePath(this.transform.position,
+                exit.transform.position, NavMesh.AllAreas, path))
+            {
+                //Adds exit to available exits
+                availableExits.SetValue(exit, i);
+                //Next Cycle
+                i++;
+            }
+
+        }
+        //Returns available exits
+        return availableExits;
     }
 
     /// <summary>
