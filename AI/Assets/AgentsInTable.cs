@@ -17,6 +17,7 @@ public class AgentsInTable : MonoBehaviour
     /// </summary>
     public void RemoveAgents()
     {
+        //Removes Agent from this table
         AgentsIn--;
     }
 
@@ -25,6 +26,7 @@ public class AgentsInTable : MonoBehaviour
     /// </summary>
     public void AddAgents()
     {
+        //Increases number of agents in table
         AgentsIn++;
     }
 
@@ -34,6 +36,7 @@ public class AgentsInTable : MonoBehaviour
     /// <returns>Number of agents inside table</returns>
     public int GetAgents()
     {
+        //Returns number of agents
         return AgentsIn;
     }
 }

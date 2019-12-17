@@ -23,7 +23,10 @@ public class Fire : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        //Assign the collider
         col = GetComponent<Collider>();
+
+        //Assigns the NavMeshCollider
         navObs = GetComponent<NavMeshObstacle>();
     }
 
@@ -33,10 +36,15 @@ public class Fire : MonoBehaviour
     /// </summary>
     void Update()
     {
+        //Increases the size of the GameObject
         transform.localScale += new Vector3(Time.deltaTime, 0f,
             Time.deltaTime);
+
+        //Increses the size of the collider
         col.transform.localScale += new Vector3(Time.deltaTime, 0f,
             Time.deltaTime);
+
+        //Increases the size of the NavMeshCollider
         navObs.transform.localScale += new Vector3(Time.deltaTime, 0f,
             Time.deltaTime);
     }
@@ -48,12 +56,15 @@ public class Fire : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        //Checks if the "thing" entering the collider is an agent
         if(other.tag == "Agent")
         {
+            //Updated the number of dead agents
             GameManager.Instance.GetComponent<PopulationController>()
                     .UpdatedDeadAngents();
+
+            //Kills the agent
             other.GetComponent<AgentBehaviour>().Die();
-            Debug.Log($"Touched {other.name}");
         }
         
     }

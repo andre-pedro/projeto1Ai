@@ -19,8 +19,11 @@ public class PanicSpread : MonoBehaviour
     /// </summary>
     void Update()
     {
+        //Checks if this agent is allowed to sprea panic by seeing if he is
+        //in panic
         if (this.GetComponentInParent<AgentBehaviour>().inPanic)
         {
+            //Allows this agent to spread panic
             canPass = true;
         }
     }
@@ -32,23 +35,36 @@ public class PanicSpread : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        //Checks if the "thing" that entered this collider in an agent
         if (canPass && other.gameObject.GetComponent<AgentBehaviour>() != null)
         {
+            //Checks if the agent is in Panic already
             if (!other.gameObject.GetComponent<AgentBehaviour>().inPanic)
             {
+                //Increases the speed to the double of his original speed
                 other.gameObject.GetComponent<NavMeshAgent>().speed = 10;
+
+                //Sets the agent to be inPanic
                 other.gameObject.GetComponent<AgentBehaviour>().inPanic = true;
+
+                //Makes the agent to go to the neares exit
                 other.gameObject.GetComponent<AgentBehaviour>().GoToExit();
             }
             
-        }else if (!canPass)
-        {
-            if(other.tag == "Fire")
-            {
-                this.GetComponentInParent<AgentBehaviour>().inPanic = true;
-                this.GetComponent<AgentBehaviour>().GoToExit();
-                this.GetComponent<NavMeshAgent>().speed = 10;
-            }
         }
+        
+        //Sees if the "Thing" entering this collider is Fire
+        if(other.tag == "Fire" && !canPass)
+        {
+            //Sets this agent in panic
+            this.GetComponentInParent<AgentBehaviour>().inPanic = true;
+
+            //Makes the agent go to the nearest exit
+            this.GetComponent<AgentBehaviour>().GoToExit();
+
+            //Increases the speed to the double of the original
+            this.GetComponent<NavMeshAgent>().speed = 10;
+        }
+        
     }
 }

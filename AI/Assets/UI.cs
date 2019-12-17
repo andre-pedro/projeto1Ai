@@ -31,14 +31,16 @@ public class UI : MonoBehaviour
     /// a valid number
     /// </summary>
     [SerializeField]
-    private Text warming;
+    private Text warning;
 
     /// <summary>
     /// This start assigns values to variables
     /// </summary>
     private void Start()
     {
+        //Sets the minimum vale of the slider
         slider.minValue = 1;
+        //Sets the maximum value to the slider
         slider.maxValue = 3;
     }
 
@@ -47,6 +49,7 @@ public class UI : MonoBehaviour
     /// </summary>
     void Update()
     {
+        //Text that is showing the current amount of exits selected
         text.text = $"Amount of exits: {slider.value}";
     }
 
@@ -55,22 +58,42 @@ public class UI : MonoBehaviour
     /// </summary>
     public void OnClick()
     {
+        //Checks if can convert the input text to an integer
         try
         {
-            GameManager.Instance.GetComponent<PopulationController>()
+            //Only allows the progam to continue if the value is above or
+            //equal to 100
+            if(System.Convert.ToInt32(input.text) >= 100)
+            {
+                //Sends the slider value (Number of exits) to the
+                //PopulationController script
+                GameManager.Instance.GetComponent<PopulationController>()
                 .SetExits(System.Convert.ToInt32(slider.value));
 
-            GameManager.Instance.GetComponent<PopulationController>()
-            .SetMaxAgents(System.Convert.ToInt32(input.text));
+                ///Sends the amount of agents to be spawned to the 
+                //PopulationController script
+                GameManager.Instance.GetComponent<PopulationController>()
+                .SetMaxAgents(System.Convert.ToInt32(input.text));
 
-            GameManager.Instance.GetComponent<PopulationController>()
-                .canStart = true;
+                //Allows the PopulationController to start spawning agents
+                GameManager.Instance.GetComponent<PopulationController>()
+                    .canStart = true;
 
-            this.gameObject.SetActive(false);
+                //Disables this Gameobject and his children
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                //Displays a warning message in case the amount of agents
+                //to be spawned is inferior to 100
+                warning.text = "Value must be above or equal to 100";
+            }            
 
         }catch(System.Exception e)
         {
-            warming.text = "Please insert a number";
+            //Displays a warning message in case its not possible to convert
+            //string to int
+            warning.text = "Please insert a number";
         }
         
     }

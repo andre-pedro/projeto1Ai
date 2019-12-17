@@ -98,8 +98,13 @@ public class PopulationController : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        //Current amount of agents in scene
         i = 0;
+
+        //Amount of time in between each agent spawns
         timer = 0.1f;
+
+        //Fetched all the active spawners
         spawners = GameObject.FindGameObjectsWithTag("Spawn");
     }
 
@@ -109,21 +114,29 @@ public class PopulationController : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        //If it's allow to start this will begin to spawn agents until 
+        //it reaches the desired number
         if (canStart)
         {
+            //Decreases value according to time
             timer -= Time.deltaTime;
 
+            //When timer reaches 0 and the max amount of agents in scene has
+            //not been reached yet
             if (timer <= 0f && i != maxAgents)
             {
-                //Debug.Log($"{i + 1} agents on field");
+                //Spawns an agent
                 SpawnAgent(i);
+
+                //Increases number of active agents in scene
                 i++;
+
+                //Resets the time in between spawns to 0.1f
                 timer = 0.1f;
-                //SpawnPopulation();
             }
             else
             {
-
+                //Stops Spawning
             }
         }
         
@@ -134,11 +147,16 @@ public class PopulationController : MonoBehaviour
     /// </summary>
     void OnGUI()
     {
+        //Displays the current amount of agents in scene
         GUI.Label(new Rect(10, 10, 200, 20), $"Current agents on scene: " +
             $"{agents.Count}");
 
+        //Display current amount of dead agents in scene
         GUI.Label(new Rect(10, 25, 200, 20), $"Dead agents: {deadAgents}");
-        GUI.Label(new Rect(10, 40, 300, 20), $"Successfully escaped agents: {agentsThatEscaped}");
+
+        //Displays current amount of agents that successfully escaped
+        GUI.Label(new Rect(10, 40, 300, 20),
+            $"Successfully escaped agents: {agentsThatEscaped}");
     }
 
     /// <summary>
@@ -147,9 +165,16 @@ public class PopulationController : MonoBehaviour
     /// <param name="i"></param>
     private void SpawnAgent(int i)
     {
+        //Chooses a random spawn point for the agent to be spawned
         int x = Random.Range(0, spawners.Length);
+
+        //Spawns the agent
         GameObject agent = Instantiate(agentPrefab, spawners[x].transform);
+
+        //Assigns the agent name
         agent.name += i;
+
+        //Adds agent to the List of current amount of agents in scene
         agents.Add(agent);
     }
 
@@ -159,25 +184,8 @@ public class PopulationController : MonoBehaviour
     /// <param name="agent"></param>
     public void RemoveAgent(GameObject agent)
     {
+        //Removes agent of the amount of active agents on scene
         agents.Remove(agent);
-    }
-
-    /// <summary>
-    /// This method is used to retrn a random agent from the list
-    /// </summary>
-    /// <returns>Random Agent</returns>
-    public GameObject GetRandomAgent()
-    {
-        return agents[Random.Range(0, agents.Count - 1)];
-    }
-
-    /// <summary>
-    /// This list gets the size of the agent list
-    /// </summary>
-    /// <returns>Size of agent list</returns>
-    public int GetAgentListSize()
-    {
-        return agents.Count;
     }
 
     /// <summary>
@@ -185,6 +193,7 @@ public class PopulationController : MonoBehaviour
     /// </summary>
     public void UpdatedDeadAngents()
     {
+        //Increases the number of dead agents
         deadAgents++;
     }
 
@@ -193,6 +202,7 @@ public class PopulationController : MonoBehaviour
     /// </summary>
     public void EscapedAgents()
     {
+        //Increases number of escaped agents
         agentsThatEscaped++;
     }
 
@@ -202,6 +212,7 @@ public class PopulationController : MonoBehaviour
     /// <param name="x"></param>
     public void SetMaxAgents(int x)
     {
+        //Sets the max amount agents to be spawned
         maxAgents = x;
     }
 
@@ -211,6 +222,8 @@ public class PopulationController : MonoBehaviour
     /// <param name="x"></param>
     public void SetExits(int x)
     {
+        //See the amount of exits desired to be in the scene and acts according
+        //to it
         switch (x)
         {
             case 1:

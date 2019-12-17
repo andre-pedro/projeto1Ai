@@ -134,12 +134,16 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void Start()
     {        
+        //Sets value of hunger
         hunger = Random.Range(5f, 800f);
+
+        //Sets value of tired
         tired = Random.Range(5f, 500f);
 
         path = new NavMeshPath();
         agent = GetComponent<NavMeshAgent>();
 
+        
         stages = GameObject.FindGameObjectsWithTag("Fun");
         openAreas = GameObject.FindGameObjectsWithTag("Open");
         upperStage = GameObject.FindGameObjectsWithTag("Stage");
@@ -158,62 +162,88 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        //Debug.Log($"hunger {isEating} | tired {isResting}");
+        //Checks is agent is alive
         if (isAlive)
         {
+            //Checks if agent is in panic, stunned and if he is alive
             if (!inPanic && !isStunned && isAlive)
             {
                 Conditions();
                 ChecksStats();
             }
-            else if (inPanic)
+            else if (inPanic) //Checks if agent is in panic
             {
+                //Tells agent to flee
                 behaviour = Behaviour.Flee;
             }
             
+            //Switch to tell the agent how to act according to his behaviour
             switch (behaviour)
             {
+                //Case agent behaviour is being Idle
                 case Behaviour.Idle:
                     Idle();
                     break;
 
+                //Case agent behaviour is seek
                 case Behaviour.Seek:
-                    //Prioritizes Food over Tired
+                    //Prioritizes Food over Tired.
+                    //Checks if player is hungry and is not already going
+                    //for food
                     if (isHungry && !isGoingForFood)
                     {
+                        //Says agent is already going for food
                         isGoingForFood = true;
+
+                        //Checks if player has already found a seat
                         if (!hasFoundSeat)
                         {
                             SeekFood();
                         }                       
 
                     }
+                    //Checks if player is tired and
+                    //is not going for food already
                     else if (isTired && !isGoingToRest)
                     {
+                        //Says the agent is going to rest
                         isGoingToRest = true;
+                        //Says the agent is not going for food
                         isGoingForFood = false;
+
                         SeekOpenZone();
                     }
 
+                    //Checks if player is not hungry, not tires and not going
+                    //for a fun spot
                     if (!isHungry && !isTired && !isGoingToFun)
                     {
+                        //Says the player is not going to rest
                         isGoingToRest = false;
+
+                        //Says the player is going for a fun spot
                         isGoingToFun = true;
+
+                        //Says player is not going for food
                         isGoingForFood = false;
+
                         SeekFun();
                     }
                     break;
 
+                //Case agent behaviour is to flee
                 case Behaviour.Flee:
                     FleeWithoutExplosion();
                     break;
             }
 
+            //Draws lines in gizmos
             Debug.DrawLine(agent.transform.position, agent.pathEndPosition,
                 Color.black, 0.1f);
         }
         else
         {
+            //Stops all courotines
             StopAllCoroutines();
         }       
     }    
@@ -223,26 +253,33 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void Conditions()
     {
+        //Checks if player is eating
         if (isEating)
         {
+            //Increases hunger
             hunger += Random.Range(0.1f , 1f);
         }
         else
         {
+            //Checks if hungry is bellow 0.3f
             if(hunger > 0.3f)
             {
+                //Decreases hunger
                 hunger -= 0.03f;
             }            
         }
-        //----------------------------------------
+        //Checks if player is resting
         if (isResting)
         {
+            //Increses tired
             tired += Random.Range(0.1f, 1f);
         }
         else
         {
+            //Checks if tired is bellow 0.3f
             if (tired > 0.3f)
             {
+                //Decreases tired
                 tired -= 0.03f;
             }
         }    
@@ -254,25 +291,42 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void ChecksStats()
     {
+        //Checks if hunger is bellow or equal to 25f
         if (hunger <= 25f)
         {
+            //Agent is hungry
             isHungry = true;
+
+            //Agent is not going to fun
             isGoingToFun = false;
+
+            //Agent is not going to rest
             isGoingToRest = false;
         }
-        else if(hunger > 50f)
+        else if(hunger > 50f) //Checks if hunger is above 50f
         {
+            //Agent has no seat assigned
             hasFoundSeat = false;
+            
+            //Agent is not hungry
             isHungry = false;            
         }
-        if (tired <= 50f)
+
+        //Checks if tired is bellow or equal 30f
+        if (tired <= 30f)
         {
+            //Agent is not going for fun zone
             isGoingToFun = false;
+
+            //Agent is not going for food
             isGoingForFood = false;
+
+            //Agent is tired
             isTired = true;
         }
-        else if(tired > 50f)
+        else if(tired > 50f)//Checks if tired is above 50f
         {
+            //Agent is not tired
             isTired = false;
         }
     }
@@ -284,22 +338,44 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void SeekFun()
     {
+        //Checks if stage 1 has fewer people than stage 0
         if (stages[0].GetComponent<Count>().GetNumberOfAgents() >
             stages[1].GetComponent<Count>().GetNumberOfAgents())
         {
+            //Stops all courotines
+            StopAllCoroutines();
+
+            //Adds agent to the list of agents goin to the stage 1
             stages[1].GetComponent<Count>().IsGoing(this.name);
+
+            //Makes agent go to stage 1
             StartCoroutine(GoTo(SpreadAlong(1)));
         }
+        //Checks if stage 0 has fewer people than stage 1
         else if (stages[0].GetComponent<Count>().GetNumberOfAgents() <
            stages[1].GetComponent<Count>().GetNumberOfAgents())
         {
+            //Stops all courotines
+            StopAllCoroutines();
+
+            //Adds agent to the list of agents goin to the stage 0
             stages[0].GetComponent<Count>().IsGoing(this.name);
+
+            //Makes agent go to stage 0
             StartCoroutine(GoTo(SpreadAlong(0)));
         }
         else
         {
+            //Creates a random number
             int i = Random.Range(0, openAreas.Length);
+
+            //Stops all courotines
+            StopAllCoroutines();
+
+            //Adds player to the list of agents going to that random stage
             stages[i].GetComponent<Count>().IsGoing(this.name);
+
+            //Sends agent to a random stage
             StartCoroutine(GoTo(SpreadAlong(i)));
         }
     }
@@ -312,27 +388,48 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns></returns>
     private bool SeekFood()
     {
+        //Seat number
         int i = 0;
+
+        //Creates an object with the least full table
         GameObject table = LeastFullTable();
 
+        //Executes while the seat number has not reached the maximum 
+        //number of seats and agent has not found a valid seat
         while (i != seats.Length && !hasFoundSeat)
         {
-            if (seats[i].GetComponent<PeopleGoing>().GetNumberOfAgentsGoing() == 0 && !hasFoundSeat)
+            //Checks if the seat has been already assign to other agent and if
+            //agent has already found a seat
+            if (seats[i].GetComponent<PeopleGoing>()
+                .GetNumberOfAgentsGoing() == 0 && !hasFoundSeat)
             {
+                //Checks if the seat is assign to the least full table
                 if (CheckTransforms(table, seats[i]))
                 {
-                    seats[i].GetComponent<PeopleGoing>().UpdateAgentsGoing(agent.name);
+                    //Reserves seat to this agent
+                    seats[i].GetComponent<PeopleGoing>()
+                        .UpdateAgentsGoing(agent.name);
+
+                    //Stops all courotunes
                     StopAllCoroutines();
+
+                    //Sends player to seat
                     StartCoroutine(GoTo(seats[i].transform.position));
                 
+                    //Says player has seat assigned
                     hasFoundSeat = true;
+
+                    //returns true
                     return true;
                 }
                 
             }
+
+            //Advances to next seat
             i++;
         }
         
+        //Return false
         return false;
         
     }
@@ -345,14 +442,20 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns>If the Seat is in the least full table</returns>
     private bool CheckTransforms (GameObject table, GameObject seat)
     {
+        //Gets the transforms of all the seats assign to the table
         Transform[] transforms = table.GetComponentsInChildren<Transform>();
+
+        //Checks every transform of every seat
         foreach(Transform transform in transforms)
         {
+            //Checks if transform is the same transform of seat
             if(transform.position == seat.transform.position)
             {
+                //Returns true
                 return true;
             }
         }
+        //Return false
         return false;
 
     }
@@ -363,27 +466,50 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns>The least full table</returns>
     private GameObject LeastFullTable()
     {
+        //GameObject used to store the best table
         GameObject best = default;
+
+        //Current Cycle
         int cycle = 0;
+
+        //Number of Agents
         int numberOfAgents = 0;
+
+        //Best number of agents(the fewer the better)
         int bestNumber = 0;
+
+        //Checks every table inside scene
         foreach (GameObject table in tables)
         {
+            //Gets number of agents going to that table
             numberOfAgents = table.GetComponent<AgentsInTable>().GetAgents();
 
+            //Checks if it's the first cycle
             if (cycle == 0)
             {
+                //The best number is equal to the number of agents going to
+                //that table
                 bestNumber = numberOfAgents;
+
+                //The best table is equal to this table
                 best = table;
             }
+            //Checks if Number of Agents going to that table is inferior
+            //to the best number of agents
             else if (bestNumber > numberOfAgents)
             {
+                //Best number is equal to the number of agents
+                //going to that table
                 bestNumber = numberOfAgents;
+
+                //The best table is equal to this table
                 best = table;
             }
 
+            //Next cycle
             cycle++;
         }
+        //Returns best table
         return best;
     }
 
@@ -393,24 +519,44 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void SeekOpenZone()
     {
-        if(openAreas[0].GetComponent<Count>().GetNumberOfAgents() >
+        //Checks if open area 1 has fewer people than open area 0
+        if (openAreas[0].GetComponent<Count>().GetNumberOfAgents() >
             openAreas[1].GetComponent<Count>().GetNumberOfAgents())
         {
+            //Stops all courotines
             StopAllCoroutines();
+
+            //Adds agent to the list of agents going to this area
             openAreas[1].GetComponent<Count>().IsGoing(this.name);
+
+            //Sends agent to open area 1
             StartCoroutine(GoTo(RandomPointInsideCollider(1)));
-        }else if (openAreas[0].GetComponent<Count>().GetNumberOfAgents() <
+        }
+        //Checks if open area 0 has fewer people than open area 1
+        else if (openAreas[0].GetComponent<Count>().GetNumberOfAgents() <
             openAreas[1].GetComponent<Count>().GetNumberOfAgents())
         {
+            //Stops all courotines
             StopAllCoroutines();
+
+            //Adds agent to the list of agents going to this area
             openAreas[0].GetComponent<Count>().IsGoing(this.name);
+
+            //Sends agent to open area 0
             StartCoroutine(GoTo(RandomPointInsideCollider(0)));
         }
         else
         {
+            //Creates a random number
             int i = Random.Range(0, openAreas.Length);
+
+            //Stops all Courotines
             StopAllCoroutines();
+
+            //Adds player to the list of agents going to that random open area
             openAreas[i].GetComponent<Count>().IsGoing(this.name);
+
+            //Sends agent to random open area
             StartCoroutine(GoTo(RandomPointInsideCollider(i)));
         }            
     }
@@ -421,8 +567,13 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void Flee()
     {
+        //Reduces the price of walking in the area number 3
         NavMesh.SetAreaCost(3, 0);
+
+        //Generates a Flee destination based on a point of origin(explosion)
         GenerateFleeDestination(panicOrigin);
+
+        //Sends player to the nearest exit
         StartCoroutine(RunToExit());
     }
 
@@ -431,6 +582,7 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void FleeWithoutExplosion()
     {
+        //Sends player to flee to the nearest exit
         StartCoroutine(RunToExit());
     }
 
@@ -439,17 +591,20 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     public void Die()
     {
+        //Says player is dead(not alive)
         isAlive = false;
 
+        //Deactivated agent Components
         GetComponent<AgentBehaviour>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = false;
 
+        //Removes agents from the active agents list
         GameManager.Instance.GetComponent<PopulationController>()
             .RemoveAgent(gameObject);
 
+        //Starts courotine to destroy the agent
         StartCoroutine(DestroyAgent());
-
     }
 
     /// <summary>
@@ -457,6 +612,7 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     private void Idle()
     {
+        //Stops agent
         agent.isStopped = true;
     }
 
@@ -466,9 +622,13 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     public void Stun()
     {
+        //Says agent is stunned
         isStunned = true;
+
+        //Agent behaviour is idle
         behaviour = Behaviour.Idle;
 
+        //Starts courotine to regain consciouness
         StartCoroutine(RegainConsciousness());
     }
 
@@ -478,10 +638,19 @@ public class AgentBehaviour : MonoBehaviour
     /// <param name="origin"></param>
     public void Panic(Vector3 origin)
     {
+        //Says agent is in panic
         inPanic = true;
+
+        //Assigns the origin to panicOrigin
         panicOrigin = origin;
+
+        //Changes the behaviour of the agent to flee
         behaviour = Behaviour.Flee;
+
+        //Stops all courotines
         StopAllCoroutines();
+
+        //Calls flee method
         Flee();
     }
 
@@ -492,14 +661,19 @@ public class AgentBehaviour : MonoBehaviour
     /// <param name="panicOrigin"></param>
     private void GenerateFleeDestination(Vector3 panicOrigin)
     {
+        //Assigns a vector.zero the linear
         Vector3 linear = Vector3.zero;
 
+        //Calculates linear
         linear = transform.position - panicOrigin;
 
+        //Calculates linear
         linear = linear.normalized * 50;
 
+        //Calculates destination
         destination = transform.position + linear;
 
+        //Sends agent to the direction opost of the panic origin
         agent.SetDestination(destination);
     }
 
@@ -510,11 +684,16 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns>Random Point</returns>
     private Vector3 RandomPointInsideCollider(int i)
     {
+        //Gets collider of desired openarea
         Collider col = openAreas[i].GetComponent<Collider>();
+
+        //Creates random point inside the collider
         Vector3 RandomPoint = new Vector3(
             Random.Range(col.bounds.min.x, col.bounds.max.x),
             0f,
             Random.Range(col.bounds.min.z, col.bounds.max.z));
+
+        //Returns that random point
         return RandomPoint;
     }    
 
@@ -526,9 +705,16 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns>Point on front row</returns>
     private Vector3 SpreadAlong(int i)
     {
+        //Create a vector 3
         Vector3 along;
+
+        //Fetches the collider of the desired stage
         Collider col = stages[i].GetComponent<Collider>();
+
+        //Creates the closest point to the uppersatge of the stage area
         along = col.ClosestPoint(upperStage[i].transform.position);
+
+        //Creates a random point along the the area nearest to the upper stage
         along = new Vector3(
             along.x + Random.Range(-15f, 15f),
             along.y,
@@ -543,29 +729,49 @@ public class AgentBehaviour : MonoBehaviour
     /// <returns>The nearest exit</returns>
     private Transform ClosestExit()
     {
+        //Stores the best exit
         Transform best = default;
+
+        //Stores distance
         float dist;
+
+        //Stores bestDistance
         float bestDist = 0;
+
+        //Cycle
         int cycle = 0;
 
+        //Checks every exit
         foreach (GameObject exit in exits)
         {
+            //Stores current distance
             dist = Vector3.Distance(this.gameObject.transform.position,
                 exit.transform.position);
 
+            //Checks if its the first cycle
             if (cycle == 0)
             {
+                //BestExit is this exit
                 best = exit.transform;
+
+                //BestDist is this dist
                 bestDist = dist;
             }
+            //If dist is inferior to best distance
             else if (dist < bestDist)
             {
+                //Best exit is this exit
                 best = exit.transform;
+
+                //Best dist is this dist
                 bestDist = dist;
             }
+
+            //Next cycel
             cycle++;
         }     
 
+        //Returns best Exit
         return best;
     }
 
@@ -576,10 +782,16 @@ public class AgentBehaviour : MonoBehaviour
     private IEnumerator RegainConsciousness()
     {
         yield return new WaitForSeconds(Random.Range(2, 10));
+        //Checks if agent is alive
         if (isAlive)
         {
+            //Agent is no longer stunned
             isStunned = false;
+
+            //Agent is no longer stopped
             agent.isStopped = false;
+
+            //Panics
             Panic(panicOrigin);
         }
     }
@@ -592,8 +804,10 @@ public class AgentBehaviour : MonoBehaviour
     private IEnumerator GoTo(Vector3 place)
     {
         yield return new WaitForSeconds(Random.Range(1, 5));
+        //Checks if player is alive
         if (isAlive)
         {
+            //Sends player to a destination
             agent.SetDestination(place);
         }
     }
@@ -605,7 +819,10 @@ public class AgentBehaviour : MonoBehaviour
     private IEnumerator RunToExit()
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
+        //Changes the avoidance prediciton time
         NavMesh.avoidancePredictionTime = 5f;
+
+        //Checks if agent is alive and not stunned
         if (isAlive && isStunned == false)
         {
             agent.SetDestination(ClosestExit().position);
@@ -619,8 +836,13 @@ public class AgentBehaviour : MonoBehaviour
     private IEnumerator DestroyAgent()
     {
         yield return new WaitForSeconds(Random.Range(8, 15));
-        if (isAlive == false)
+        //Checks if player is not alive
+        if (!isAlive)
+        {
+            //Destroys agent
             Destroy(gameObject);
+        }
+            
     }
 
     /// <summary>
@@ -628,6 +850,7 @@ public class AgentBehaviour : MonoBehaviour
     /// </summary>
     public void GoToExit()
     {
+        //Flees
         Flee();
     }
 
@@ -637,6 +860,7 @@ public class AgentBehaviour : MonoBehaviour
     /// <param name="mode"></param>
     public void SetHungryMode(bool mode)
     {
+        //Changes eating mode
         isEating = mode;
     }
 }

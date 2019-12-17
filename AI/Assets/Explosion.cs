@@ -14,8 +14,13 @@ public class Explosion : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        //Calls the first Radius of explosion
         KillAgentsInRadius1();
+
+        //Calls second Radius of explosion
         StunAgentsInRadius2();
+
+        //Calls third radius of explosion
         ScareAgentsInRadius3();
     }
 
@@ -24,26 +29,30 @@ public class Explosion : MonoBehaviour
     /// </summary>
     private void KillAgentsInRadius1()
     {
+        //Creates a colliders that are "Fired" in a designated range
         Collider[] hits = Physics.OverlapSphere(
                   transform.position,
                   10f);
 
+        //Checks every collider hit
         foreach (Collider hit in hits)
         {
+            //Checks if collider has hit an agent
             if (hit.GetComponent<AgentBehaviour>() != null)
             {
+                //Kills the agent
                 hit.GetComponent<AgentBehaviour>().Die();
 
+                //Spawns a an explosion force
                 hit.GetComponent<Rigidbody>().AddExplosionForce(
                     1000f,
                     transform.position,
                     10f,
                     1000f);
 
+                //Updates number of dead agents
                 GameManager.Instance.GetComponent<PopulationController>()
                     .UpdatedDeadAngents();
-
-                Debug.Log($"Killed {hit.gameObject.name}");
             }
         }
     }
@@ -53,19 +62,23 @@ public class Explosion : MonoBehaviour
     /// </summary>
     private void StunAgentsInRadius2()
     {
+        //Creates a colliders that are "Fired" in a designated range
         Collider[] hits = Physics.OverlapSphere(
                   transform.position,
                   15f);
 
+        //Checks every collider hit
         foreach (Collider hit in hits)
         {
+            //Checks if collider has hit an agents and if he is alive
             if (hit.GetComponent<AgentBehaviour>() != null &&
                 hit.GetComponent<AgentBehaviour>().isAlive == true)
             {
+                //Decreases speed value to half of the original value
                 hit.GetComponent<NavMeshAgent>().speed = 2.5f;
-                hit.GetComponent<AgentBehaviour>().Stun();
 
-                Debug.Log($"Stunned {hit.gameObject.name}");
+                //Stuns the agent
+                hit.GetComponent<AgentBehaviour>().Stun();
             }
         }
     }
@@ -75,20 +88,24 @@ public class Explosion : MonoBehaviour
     /// </summary>
     private void ScareAgentsInRadius3()
     {
+        //Creates a colliders that are "Fired" in a designated range
         Collider[] hits = Physics.OverlapSphere(
                   transform.position,
                   50);
 
+        //Checks every collider hits
         foreach (Collider hit in hits)
         {
+            //Checks if collider has hit an agents and if he is alive
             if (hit.GetComponent<AgentBehaviour>() != null &&
                 hit.GetComponent<AgentBehaviour>().isAlive == true &&
                 hit.GetComponent<AgentBehaviour>().isStunned == false)
             {
+                //Increases speed value to double of his original speed 
                 hit.GetComponent<NavMeshAgent>().speed = 10f;
-                hit.GetComponent<AgentBehaviour>().Panic(transform.position);
 
-                Debug.Log($"Scared {hit.gameObject.name}");
+                //Makes agent panic
+                hit.GetComponent<AgentBehaviour>().Panic(transform.position);
             }
         }
     }

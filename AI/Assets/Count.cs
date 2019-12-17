@@ -23,9 +23,14 @@ public class Count : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
+        //Checks if the name of the "thing" that entered the collider is inside
+        //the list of agents that are assigned this GameObject
         if (nameOfAgents.Contains(other.name))
         {
+            //Decreases number of agents in this GameObject
             numberOfAgents--;
+
+            //Removes name of agent from the list
             nameOfAgents.Remove(other.name);
         }
     }
@@ -36,8 +41,10 @@ public class Count : MonoBehaviour
     /// <param name="nameOfAgent"></param>
     public void IsGoing(string nameOfAgent)
     {
+        //Increses number of agents in this GameObject
         numberOfAgents++;
-        //nameOfAgents.Add(nameOfAgent);
+
+        //Adds Name of agent to the list of agents in this GameObject
         nameOfAgents.Add(nameOfAgent);
     }
 
@@ -47,6 +54,7 @@ public class Count : MonoBehaviour
     /// <returns>Number of agents going/are</returns>
     public int GetNumberOfAgents()
     {
+        //Returns number of agents inside this GameObject
         return numberOfAgents;
     }
 }

@@ -16,8 +16,10 @@ public class DetectGround : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        //Checks if GameObject that entered the collider has Open tag
         if(other.tag == "Open")
         {
+            //Sets the agent to resting
             GetComponentInParent<AgentBehaviour>().isResting = true;
         }
     }
@@ -29,10 +31,11 @@ public class DetectGround : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
+        //Checks if GameObject that entered the collider has Open tag
         if (other.tag == "Open")
         {
+            //Stops the agent from resting
             GetComponentInParent<AgentBehaviour>().isResting = false;
-            //GetComponentInParent<NavMeshAgent>().radius = 0.6f;
         }
     }
 }

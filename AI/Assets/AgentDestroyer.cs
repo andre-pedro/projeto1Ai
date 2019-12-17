@@ -14,19 +14,29 @@ public class AgentDestroyer : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        //Checks if "other" has KillPlane tag
         if (other.name == "KillPlane")
         {
+            //Removes agent from the list of agents
             GameManager.Instance.GetComponent<PopulationController>()
                 .RemoveAgent(gameObject);
+
+            //Destroys agent
             Destroy(gameObject);
         }
 
+        //Checks if "other" has Exit tag
         if (other.tag == "Exit")
         {
+            //Removes agent from agents list
             GameManager.Instance.GetComponent<PopulationController>()
                 .RemoveAgent(gameObject);
+
+            //Increases number of escaped agents
             GameManager.Instance.GetComponent<PopulationController>()
                 .EscapedAgents();
+
+            //Destroys Agent
             Destroy(gameObject);
         }
     }

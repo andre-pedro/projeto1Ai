@@ -19,11 +19,6 @@ public class PeopleGoing : MonoBehaviour
     public string agentName;
 
     /// <summary>
-    /// Variable to see if an agent is permited to eat in this GameObject
-    /// </summary>
-    private bool canEat;
-
-    /// <summary>
     /// Variable used to fetch the table this GameObject is assigned tos
     /// </summary>
     private AgentsInTable table;
@@ -33,6 +28,7 @@ public class PeopleGoing : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        //Gets a component in parent
         table = GetComponentInParent<AgentsInTable>();
     }
 
@@ -43,9 +39,11 @@ public class PeopleGoing : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        //Checks if the agent that entered the collider is the one 
+        //allowed to eat
         if (other.gameObject.name == agentName)
         {
-            //Debug.Log("he entered");
+            //Let's the agent eat
             other.gameObject.GetComponent<AgentBehaviour>()
                 .SetHungryMode(true);
         }
@@ -58,12 +56,20 @@ public class PeopleGoing : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
+        //Checks if the agent that left the collider was the one allowed to eat
         if (other.gameObject.name == agentName)
         {
+            //Doesn't allow the agent to eat anymore
             other.gameObject.GetComponent<AgentBehaviour>()
                 .SetHungryMode(false);
+
+            //Resets the number of agents coming to this GameObject
             numberOfAgentsGoing = 0;
+
+            //Resets the agent name
             agentName = "";
+
+            //Removes an agent from the table
             table.RemoveAgents();
         }
     }
@@ -74,10 +80,14 @@ public class PeopleGoing : MonoBehaviour
     /// <param name="name"></param>
     public void UpdateAgentsGoing(string name)
     {
+        //Updates the name of the agent coming to this GameObject
         agentName = name;
+
+        //Updates the number of agents coming to thi GameObject
         numberOfAgentsGoing = 1;
-        table.AddAgents();
-        
+
+        //Adds an agent to the table
+        table.AddAgents();        
     }
 
     /// <summary>
@@ -86,6 +96,7 @@ public class PeopleGoing : MonoBehaviour
     /// <returns>number of agents assigned to that seat</returns>
     public int GetNumberOfAgentsGoing()
     {
+        //Returns the number of agents coming to this GameObject
         return numberOfAgentsGoing;
     }
 }
