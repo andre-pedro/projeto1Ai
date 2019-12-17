@@ -40,7 +40,7 @@ public class AgentBehaviour : MonoBehaviour
     private GameObject[] tables;
     private GameObject[] seats;
 
-    private float hunger;
+    public float hunger;
     private float tired;
     
     /// <summary>
