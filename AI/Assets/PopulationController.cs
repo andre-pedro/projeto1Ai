@@ -134,11 +134,11 @@ public class PopulationController : MonoBehaviour
     /// </summary>
     void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 200, 20), $"Current agents on scene - " +
+        GUI.Label(new Rect(10, 10, 200, 20), $"Current agents on scene: " +
             $"{agents.Count}");
 
-        GUI.Label(new Rect(10, 25, 200, 20), $"Dead agents - {deadAgents}");
-        GUI.Label(new Rect(10, 40, 300, 20), $"Sucessefully escaped agents - {agentsThatEscaped}");
+        GUI.Label(new Rect(10, 25, 200, 20), $"Dead agents: {deadAgents}");
+        GUI.Label(new Rect(10, 40, 300, 20), $"Successfully escaped agents: {agentsThatEscaped}");
     }
 
     /// <summary>

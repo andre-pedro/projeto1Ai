@@ -7,7 +7,7 @@ Projeto em desenvolvimento pelos seguintes alunos:
 
 ## Distribuição de tarefas
 Para a execução deste projeto, as tarefas foram repartidas de acordo com as aptidões de cada um:
-* **André Pedro** - 
+* **André Pedro** - Elaboração do relatório
 * **Diogo Maia** - 
 * **Tiago Alves** -
 
@@ -19,8 +19,11 @@ _O Flowchart_ abaixo reflete o nosso processo de verificação de estados de cad
 ![flowchart](relatorioAnexos/flowchart.svg)
 (Anexo 1 - Fluxograma)
 
+No inicio da simulação, é pedido ao jogador para escolher a quantidade de agentes, bem como o número de saídas disponíveis.
+
 ### Pesquisa
 Uma das grandes prioridades na gestão de eventos de grande escala (como concertos, estádios, entre outros) é a segurança. Em locais com imensas pessoas, tornar-se-ia bastante dispendioso construir diversos edifícios diferentes para comprovar qual deles teria o melhor método de segurança. Devido a esta necessidade, uma das maneiras mais económicas que [Neal Wagner e Vikas Agrawal](https://www.sciencedirect.com/science/article/pii/S0957417413008270?via%3Dihub) utilizaram foi simular situações catastróficas nos recintos em ambientes virtuais. A principal componente deste método é atribuir determinadas reações às pessoas (que nesta simulação são representados por agentes com inteligência artificial) perante a emergência. Para atribuir tais características semelhantes às de um ser humano, tivemos que utilizar diversos algoritmos que automatizassem as reações. Como tal, seguimos os principais algoritmos de movimento cinemático presentes em "[AI for Games](https://books.google.pt/books/about/Artificial_Intelligence_for_Games.html?id=zCiv-lMad-AC&redir_esc=y)", de Ian Millington: Seek e Flee. Aplicámos o primeiro aos agentes para poderem locomover-se do ponto A ao ponto B de forma individual e independente. Já o segundo é aplicado na presença de uma explosão, fazendo com que os agentes se afastem do centro da explosão.
+Tendo os comportamentos da I.A. funcionais, passámos para a implementação do recinto, 
 
 ## Metodologia
 A simulação foi implementada utilizando a Game Engine "Unity", num projeto 3D. A _build_ da mesma foi feita para Windows (64 bits).
@@ -80,6 +83,8 @@ No recinto do festival existem 3 zonas:
 
 Existem duas formas de andar no recinto: Pelos caminhos pré-definidos e pelo caminho mais curto. Numa situação normal, os caminhos pré-definidos têm um custo inferior do que o caminho mais curto, fazendo com que a I.A. caminhe pelos mesmos. Numa situação de emergência (uma explosão) os custos são invertidos, e os agentes passam a andar pelo caminho mais curto.
 
+![anexoRecinto](relatorioAnexos/recinto.png) Anexo 2 - Recinto. A vermelho os palcos, amarelo as àreas de descanso e a azul a área de restauração. 
+
 ### Explosões
 
 O jogador pode escolher com o rato o local onde quer causar uma explosão. Ao clicar com o rato, é criada uma explosão com 3 raios:
@@ -91,7 +96,7 @@ O jogador pode escolher com o rato o local onde quer causar uma explosão. Ao cl
 * **3º Raio** - Todos os agentes são assustados (`scared`), fugindo na direção oposta da explosão. Se um agente assustado entrar em contacto com outros agentes, estes ficam assustados também.
 
 ![anexoRaios](relatorioAnexos/raios.svg)
-(Anexo 2 - Raios de Explosão)
+(Anexo 3 - Raios de Explosão)
 
 Perante as explosões, os agentes podem reagir de maneiras diferentes. Ao serem atingidos nos raios 2 ou 3, para além do referido anteriormente, ficam também em pânico. Agentes com `panic` afetam outros agentes perto deles, fazendo com que fiquem em `panic` também.
 
@@ -104,17 +109,11 @@ De um modo geral, a I.A. comportou-se como o esperado. No entanto, descobrimos a
 Na elaboração desta simulação foi-nos possivel concluir que:
 
 
-Nesta secção devem relacionar o que foi apresentado na introdução, nomeadamente o problema que se propuseram a resolver, com os resultados que obtiveram, e como o vosso projeto e a vossa abordagem se relaciona no panorama
-geral da pesquisa que efetuaram sobre simulação de pânico em multidões.
-• Uma pessoa que leia a introdução e conclusão do vosso relatório deve ficar
-com uma boa ideia daquilo que fizeram e descobriram, embora sem saber os
-detalhes.
-
 ## Agradecimentos
 * Prof. Nuno Fachada
 
 ## Referências
-*Wagner, N. & Agrawal, V. (2014). "An agent-based simulation system for concert venue crowd evacuation modeling in the presence of a fire disaster".
+Wagner, N. & Agrawal, V. (2014). "An agent-based simulation system for concert venue crowd evacuation modeling in the presence of a fire disaster".
 
 Millington, I. (2019). AI for Games (3rd ed.). CRC Press.
 

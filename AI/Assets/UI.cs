@@ -47,7 +47,7 @@ public class UI : MonoBehaviour
     /// </summary>
     void Update()
     {
-        text.text = $"Amount of exits - {slider.value}";
+        text.text = $"Amount of exits: {slider.value}";
     }
 
     /// <summary>
